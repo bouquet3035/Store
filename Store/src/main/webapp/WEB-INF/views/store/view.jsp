@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${tobuy}</h1>
+<h1>${tobuy.tno}</h1>
 </body>
 </html>
