@@ -1,5 +1,6 @@
 package org.barakamon.web;
 
+import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,11 @@ public class StoreController {
 		
 		model.addAttribute("list",service.list(cri));
 		
+	}
+	
+	@GetMapping("/view")
+	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
+		model.addAttribute("tobuy", service.get(dto.getTno()));
 	}
 
 }

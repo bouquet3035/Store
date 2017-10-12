@@ -9,4 +9,6 @@ public interface BoardService {
 
 	public List<BoardDTO> list(Criteria cri);
 
+	public BoardDTO get(Long tno);
+
 }

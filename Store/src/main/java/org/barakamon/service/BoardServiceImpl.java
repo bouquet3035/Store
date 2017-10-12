@@ -27,4 +27,10 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.listPage(cri);
 	}
 
+	@Override
+	public BoardDTO get(Long tno) {
+		// TODO Auto-generated method stub
+		return mapper.findById(tno);
+	}
+
 }
