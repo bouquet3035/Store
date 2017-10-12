@@ -27,6 +27,7 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.listPage(cri);
 	}
 
+
 	@Override
 	public BoardDTO get(Long tno) {
 		// TODO Auto-generated method stub
@@ -37,5 +38,6 @@ public class BoardServiceImpl implements BoardService {
 		log.info("service registerPost: " + bDto);
 		mapper.registerPost(bDto);
 	}
+
 
 }
