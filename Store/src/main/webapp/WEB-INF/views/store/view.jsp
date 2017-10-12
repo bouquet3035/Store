@@ -7,6 +7,7 @@
 <title>상품 상세 페이지</title>
 </head>
 <body>
+
 	<h1>${tobuy}</h1>
 	<h2>${tobuy.tno}</h2>
 	<h2>${tobuy.title}</h2>
@@ -14,5 +15,10 @@
 	<h2>${tobuy.regdate}</h2>
 	<h2>${tobuy.viewcount}</h2>
 	
+
+<h1>${tobuy.tno}</h1>
+<h1>${tobuy.title}</h1>
+<h1>${tobuy.contents }</h1>
+
 </body>
 </html>
