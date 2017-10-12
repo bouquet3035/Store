@@ -27,4 +27,12 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.listPage(cri);
 	}
 
+	@Override
+	public void registerPost(BoardDTO bDto) {
+		log.info("service registerPost: " + bDto);
+		mapper.registerPost(bDto);
+		
+		
+	}
+
 }

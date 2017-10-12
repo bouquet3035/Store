@@ -1,5 +1,8 @@
 package org.barakamon.web;
 
+import java.util.Arrays;
+
+import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +34,11 @@ public class StoreController {
 	}
 	
 	@PostMapping("/register")
-	public String registerPost() {
+	public String registerPost(BoardDTO bDto,Model model) {
 		log.info("POST");
+		
+		service.registerPost(bDto);
+		model.addAttribute("regist","success"); 
 		
 		return "redirect:/store/list";
 	}
