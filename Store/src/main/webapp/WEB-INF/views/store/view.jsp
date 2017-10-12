@@ -9,5 +9,6 @@
 <body>
 <h1>${tobuy.tno}</h1>
 <h1>${tobuy.title}</h1>
+<h1>${tobuy.contents }</h1>
 </body>
 </html>
