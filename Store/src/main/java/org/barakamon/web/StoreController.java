@@ -1,9 +1,10 @@
 package org.barakamon.web;
 
+
 import java.util.Arrays;
 
-import org.barakamon.dto.BoardDTO;
 
+import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,39 +21,37 @@ import lombok.extern.java.Log;
 @RequestMapping("/store/*")
 @Log
 public class StoreController {
-
+	
 	@Autowired
 	private BoardService service;
-
+	
 	@GetMapping("/main")
 	public void main() {
-
+		
 	}
-
+	
 	@GetMapping("/register")
 	public void register() {
-
+		
 	}
-
+	
 	@PostMapping("/register")
-	public String registerPost() {
+	public String registerPost(BoardDTO bDto,Model model) {
 		log.info("POST");
-
-		log.info("register"+bDto);
+		
 		service.registerPost(bDto);
 		model.addAttribute("regist","success"); 
 		
-
 		return "redirect:/store/list";
 	}
-
+	
 	@GetMapping("/list")
-	public void list(@ModelAttribute("cri") Criteria cri, Model model) {
-
-		model.addAttribute("list", service.list(cri));
-
+	public void list(@ModelAttribute("cri") Criteria cri,Model model) {
+		
+		model.addAttribute("list",service.list(cri));
+		
 	}
-
+	
 	@GetMapping("/view")
 	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
 		model.addAttribute("tobuy", service.get(dto.getTno()));

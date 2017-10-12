@@ -8,18 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<h1>List Page</h1>
-<h2>${criteria.page}</h2>
-<h2>${criteria.total}</h2>
-<div>
-
 	<h1>${cri.page }</h1>
 	<h1>${cri.total }</h1>
-
-Tno<input type ="text" name='tno' readonly="readonly" value="${Board.tno }">
-
-</div>
 
 	<div class="listUl">
 		<ul>
@@ -91,6 +81,5 @@ Tno<input type ="text" name='tno' readonly="readonly" value="${Board.tno }">
 
 		})
 	</script>
-
 </body>
 </html>
