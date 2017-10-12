@@ -28,17 +28,14 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public BoardDTO get(Long tno) {
 		// TODO Auto-generated method stub
 		return mapper.findById(tno);
-=======
+	}
+
 	public void registerPost(BoardDTO bDto) {
 		log.info("service registerPost: " + bDto);
 		mapper.registerPost(bDto);
-		
-		
->>>>>>> branch 'master' of https://github.com/bouquet3035/Store
 	}
 
 }

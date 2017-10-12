@@ -1,10 +1,9 @@
 package org.barakamon.web;
 
-<<<<<<< HEAD
-=======
+
 import java.util.Arrays;
 
->>>>>>> branch 'master' of https://github.com/bouquet3035/Store
+
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.service.BoardService;
