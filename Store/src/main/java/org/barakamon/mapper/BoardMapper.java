@@ -2,6 +2,7 @@ package org.barakamon.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.barakamon.dto.BoardDTO;
@@ -22,4 +23,6 @@ public interface BoardMapper {
 	@Select("select * from tbl_board where tno = #{tno}")
 	public BoardDTO findById(Long tno);
 
+	@Delete("update tbl_todo set title = #{dto.title}, writer = #{dto.writer} where tno = #{tno}")
+	public void remove(long tno);
 }
