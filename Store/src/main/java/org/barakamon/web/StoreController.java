@@ -56,5 +56,10 @@ public class StoreController {
 	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
 		model.addAttribute("tobuy", service.get(dto.getTno()));
 	}
-
+	
+	@GetMapping("/modify")
+	public void modify() {
+		
+	}
+	
 }
