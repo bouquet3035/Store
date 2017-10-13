@@ -10,6 +10,7 @@
 <body>
 	<h1>${cri.page }</h1>
 	<h1>${cri.total }</h1>
+	<a href="/store/main">상품목록</a>
 
 	<div class="listUl">
 		<ul>
