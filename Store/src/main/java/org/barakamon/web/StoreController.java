@@ -1,7 +1,7 @@
 package org.barakamon.web;
 
 
-import java.util.Arrays;
+
 
 
 import org.barakamon.dto.BoardDTO;
@@ -57,18 +57,31 @@ public class StoreController {
 		model.addAttribute("tobuy", service.get(dto.getTno()));
 	}
 	
-	@GetMapping("/modify")
-	public void modify() {
-		
-	}
-	
 	@PostMapping("/view")
 	public String removePost(BoardDTO bDto, Model model) {
 		
 		service.remove(bDto.getTno());
 		model.addAttribute("remove", "delsuccess");
 		
+		
 		return "redirect:/store/list";
 	}
+	
+	@GetMapping("/modify")
+	public void modify(BoardDTO bDto, @ModelAttribute("cri") Criteria cri, Model model) {
+		model.addAttribute("tobuy", service.get(bDto.getTno()));
+		view(bDto, cri, model);
+	}
 
+	@PostMapping("/modify")
+	public String modifyPost(BoardDTO bDto, Criteria cri, Model model) {
+		
+		service.modify(bDto, cri);
+		
+		model.addAttribute("bDto", bDto.getTno());
+		model.addAttribute("page", cri.getPage());
+		model.addAttribute("modify", "modsuccess");
+		
+		return "redirect:/store/list";
+	}
 }

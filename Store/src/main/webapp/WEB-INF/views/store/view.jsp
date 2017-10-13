@@ -15,9 +15,19 @@
 	<h2>${tobuy.contents}</h2>
 	<h2>${tobuy.regdate}</h2>
 	<h2>${tobuy.viewcount}</h2>
+	<h2>,페이지</h2>
+
 
 	<form method="post">	
 		<button>삭제</button>
+	</form>
+
+		
+	
+	<form action="/store/modify" method="get">
+		<input type="hidden" name="page" value='${cri.page }'>
+ 		<input type='hidden' name='tno' value='${tobuy.tno}'>
+ 		<button>수정</button>
 	</form>
 
 </body>
