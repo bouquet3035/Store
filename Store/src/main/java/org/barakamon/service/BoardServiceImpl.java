@@ -38,4 +38,8 @@ public class BoardServiceImpl implements BoardService {
 		mapper.registerPost(bDto);
 	}
 
+	@Override
+	public void remove(Long tno) {
+		mapper.remove(tno);
+	}
 }

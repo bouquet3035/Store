@@ -14,4 +14,6 @@ public interface BoardService {
 
 	public BoardDTO get(Long tno);
 
+	public void remove(Long tno);
+
 }

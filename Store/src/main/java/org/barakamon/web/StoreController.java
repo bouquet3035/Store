@@ -40,7 +40,7 @@ public class StoreController {
 		log.info("POST");
 		
 		service.registerPost(bDto);
-		model.addAttribute("regist","success"); 
+		model.addAttribute("register","success"); 
 		
 		return "redirect:/store/list";
 	}
@@ -62,4 +62,13 @@ public class StoreController {
 		
 	}
 	
+	@PostMapping("/view")
+	public String removePost(BoardDTO bDto, Model model) {
+		
+		service.remove(bDto.getTno());
+		model.addAttribute("remove", "delsuccess");
+		
+		return "redirect:/store/list";
+	}
+
 }
