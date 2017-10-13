@@ -66,7 +66,8 @@
 			});
 			
 			$(".pageUl").on("click", "li", function(e) {
-				var pageNum = $(this).html();
+				var pageNum = $(this).attr("name");
+				console.log(pageNum);
 				
 				self.location = "/store/list?page=" + pageNum;
 			});
@@ -74,7 +75,9 @@
 			var pageStr = makePage({
 		        total:${cri.total},
 		        current:${cri.page},
-		        pageSize: 10
+		        pageSize: 10,
+		        prevBtn: "이전",
+		        nextBtn: "다음"
 		    });
 			
 			$(".pageUl").html(pageStr);
