@@ -716,7 +716,14 @@
 	<h2>${tobuy.contents}</h2>
 	<h2>${tobuy.regdate}</h2>
 	<h2>${tobuy.viewcount}</h2>
+
 	
+
+
+	<form method="post">	
+		<button>삭제</button>
+	</form>
+
 </body>
 </html>
 

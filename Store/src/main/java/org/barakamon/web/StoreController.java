@@ -56,7 +56,8 @@ public class StoreController {
 	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
 		model.addAttribute("tobuy", service.get(dto.getTno()));
 	}
-	@PostMapping
+	
+	@PostMapping("/view")
 	public String removePost(BoardDTO bDto, Model model) {
 		
 		service.remove(bDto.getTno());
