@@ -14,11 +14,9 @@
 	<h2>${tobuy.contents}</h2>
 	<h2>${tobuy.regdate}</h2>
 	<h2>${tobuy.viewcount}</h2>
-	
 
-<h1>${tobuy.tno}</h1>
-<h1>${tobuy.title}</h1>
-<h1>${tobuy.contents }</h1>
-
+	<form method="post">	
+		<button>삭제</button>
+	</form>
 </body>
 </html>
