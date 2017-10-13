@@ -23,7 +23,7 @@ public interface BoardMapper {
 	@Select("select * from tbl_board where tno = #{tno}")
 	public BoardDTO findById(Long tno);
 
-	
 	@Delete("delete from tbl_board where tno = #{tno}")
 	public void remove(long tno);
+	
 }
