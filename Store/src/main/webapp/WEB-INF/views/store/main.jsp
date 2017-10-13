@@ -20,8 +20,9 @@
 	
 	<!-- Custom Fonts -->
     <link rel="stylesheet" href="/resources/FashionShop/font-awesome/css/font-awesome.min.css"  type="text/css">
-    <link rel="stylesheet" href="/resources/FashionShop/fonts/font-slider.css" type="text/css">
-	
+   	<link rel="stylesheet" href="/resources/FashionShop/fonts/font-slider.css" type="text/css">
+   
+    	
 	<!-- jQuery and Modernizr-->
 	<script src="/resources/js/jquery-2.1.1.js"></script>
 	
