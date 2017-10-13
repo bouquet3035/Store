@@ -42,4 +42,10 @@ public class BoardServiceImpl implements BoardService {
 	public void remove(Long tno) {
 		mapper.remove(tno);
 	}
+
+	@Override
+	public void modify(BoardDTO bDto, Criteria cri) {
+		log.info("modify : "+bDto);
+		mapper.update(bDto);
+	}
 }

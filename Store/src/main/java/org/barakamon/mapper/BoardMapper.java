@@ -5,8 +5,10 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.Criteria;
+
 
 public interface BoardMapper {
 	
@@ -25,5 +27,8 @@ public interface BoardMapper {
 
 	@Delete("delete from tbl_board where tno = #{tno}")
 	public void remove(long tno);
+	
+	@Update("update tbl_board set title = #{title} , contents= #{contents} where tno = #{tno}")
+	public void update(BoardDTO bDto);
 	
 }
