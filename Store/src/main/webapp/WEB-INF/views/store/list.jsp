@@ -51,7 +51,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-			var page = '${cri.page}}';
+			var page = '${cri.page}';
 			var actionForm = $('#actionForm');
 
 			$(".listUl li a").on("click", function(e) {

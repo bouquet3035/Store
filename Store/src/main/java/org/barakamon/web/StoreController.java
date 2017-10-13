@@ -57,6 +57,11 @@ public class StoreController {
 		model.addAttribute("tobuy", service.get(dto.getTno()));
 	}
 	
+	@GetMapping("/modify")
+	public void modify() {
+		
+	}
+	
 	@PostMapping("/view")
 	public String removePost(BoardDTO bDto, Model model) {
 		
@@ -65,4 +70,5 @@ public class StoreController {
 		
 		return "redirect:/store/list";
 	}
+
 }

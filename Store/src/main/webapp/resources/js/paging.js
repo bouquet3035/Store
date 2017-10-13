@@ -8,7 +8,7 @@ function makePage(param){
     var tempEnd = makeTempEnd();
     var startNum = makeStart();
     var realEnd = makeRealEnd();
-    var prev = startNum -1;
+    var prev = startNum - 1;
     var next = tempEnd * pageSize > total? 0: tempEnd + 1;
 
 //    console.log("tempEnd: " + tempEnd);
@@ -23,7 +23,7 @@ function makePage(param){
         var str = "";
 
         if(prev != 0){
-            str += tag.replace("$$page", 'prev');
+            str += tag.replace("$$page", startNum - 1);
         }
 
         for(var i = startNum; i <= realEnd; i++){
@@ -31,7 +31,7 @@ function makePage(param){
         }
 
         if(next != 0){
-            str += tag.replace("$$page", 'next');
+            str += tag.replace("$$page", realEnd + 1);
         }
 
         return str;
