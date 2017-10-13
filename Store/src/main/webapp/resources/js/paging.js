@@ -1,9 +1,13 @@
 function makePage(param){
-    var tag = param.tag || "<li>$$page</li>";
+	var tag = param.tag || "<li>$$page</li>"
+    var tagStart = param.tagStart || "<li name=$$Num>";
+    var tagEnd = param.tagEnd || "$$page</li>";
     var pageSize = param.pageSize || 10;
     var liCount = param.liCount || 10;
     var total = param.total || 0;
     var current = param.current || 1;
+    var prevBtn = param.prevBtn || "prev";
+    var nextBtn = param.nextBtn || "next";
 
     var tempEnd = makeTempEnd();
     var startNum = makeStart();
@@ -23,15 +27,18 @@ function makePage(param){
         var str = "";
 
         if(prev != 0){
-            str += tag.replace("$$page", startNum - 1);
+//          str += tag.replace("$$page", prev);
+        	str += tagStart.replace("$$Num", prev) + tagEnd.replace("$$page", prevBtn);
         }
 
         for(var i = startNum; i <= realEnd; i++){
-            str += tag.replace("$$page", i);
+//            str += tag.replace("$$page", i);
+        	str += tagStart.replace("$$Num", i) + tagEnd.replace("$$page", i);
         }
 
         if(next != 0){
-            str += tag.replace("$$page", realEnd + 1);
+//            str += tag.replace("$$page", next);
+        	str += tagStart.replace("$$Num", next) + tagEnd.replace("$$page", nextBtn);
         }
 
         return str;

@@ -231,7 +231,7 @@
 								  <div class="col-sm-4">
 										<div class="product">
 											<div class="image">
-												<a href="product.html"><img src="/resources/FashionShop/images/clothing_sp5_1.jpg" /></a>
+												<a href="product.html"><img src="https://lh3.googleusercontent.com/TbOMn4T1yRrEyBZ3OJ6BuCangEpPiomfBdrFIUFuXQ091dE80Wlt-qEnb8rkC92sFFQkKJkRnCDvl9o=w1920-h949" /></a>
 												<ul class="buttons">
 													<li><a class="btn btn-2 cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 													<li><a class="btn btn-2 wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
@@ -239,8 +239,8 @@
 												</ul>
 											</div>
 											<div class="caption">
-												<div class="name"><h3><a href="product.html">Pretty Playsuit</a></h3></div>
-												<div class="price">$122<span>$98</span></div>
+												<div class="name"><h3><a href="product.html">프링글스 (치즈맛)</a></h3></div>
+												<div class="price">2500<span>3000</span></div>
 												<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 											</div>
 										</div>
@@ -248,7 +248,7 @@
 								  <div class="col-sm-4">
 									<div class="product">
 											<div class="image">
-												<a href="product.html"><img src="/resources/FashionShop/images/clothing_sp6_1.jpg" /></a>
+												<a href="product.html"><img src="https://lh3.googleusercontent.com/4x-D68770GgxLpw8y9Qt9btS7h6hXB8filuVpOS9fRyT-Ve3Vs5rf5vUrj5MlGsHtoJ2HTZN56S2hPI=w1468-h929" /></a>
 												<ul class="buttons">
 													<li><a class="btn btn-2 cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 													<li><a class="btn btn-2 wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
@@ -256,8 +256,8 @@
 												</ul>
 											</div>
 											<div class="caption">
-												<div class="name"><h3><a href="product.html">Pretty Playsuit</a></h3></div>
-												<div class="price">$122<span>$98</span></div>
+												<div class="name"><h3><a href="product.html">호박죽</a></h3></div>
+												<div class="price">2200원<span>3200원</span></div>
 												<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 											</div>
 										</div>
@@ -269,7 +269,7 @@
 									<div class="col-sm-6">
 										<div class="product">
 												<div class="image">
-													<a href="product.html"><img src="/resources/FashionShop/images/clothing_sp12_1.jpg" /></a>
+													<a href="product.html"><img src="https://lh5.googleusercontent.com/SRcx3rkV_d5QIkUX6DGHtd3yPzbS94hMNnBgMz-Vlt22zEVjeH5dY7DB0ui_LiMwws5ylUl8LBowO2M=w1468-h929" /></a>
 													<ul class="buttons">
 														<li><a class="btn btn-2 cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 														<li><a class="btn btn-2 wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
@@ -277,8 +277,8 @@
 													</ul>
 												</div>
 												<div class="caption">
-													<div class="name"><h3><a href="product.html">Pretty Playsuit</a></h3></div>
-													<div class="price">$122<span>$98</span></div>
+													<div class="name"><h3><a href="product.html">고향만두</a></h3></div>
+													<div class="price">4500원<span>5800원</span></div>
 													<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
 												</div>
 											</div>
@@ -286,7 +286,7 @@
 									<div class="col-sm-6">
 										<div class="product">
 												<div class="image">
-													<a href="product.html"><img src="/resources/FashionShop/images/clothing_sp19_1.jpg" /></a>
+													<a href="product.html"><img src="https://lh5.googleusercontent.com/289Dqaf4bkaUtuFp4HeV8YRPv9AzyxbAWJpTAZLo3FIoB_5YauDuxZlrZ0nFc8omkqzuRGZwzkdH2bg=w1752-h929" /></a>
 													<div class="hot">
 														<span>HOT</span>
 													</div>
@@ -297,8 +297,8 @@
 													</ul>
 												</div>
 												<div class="caption">
-													<div class="name"><h3><a href="product.html">Pretty Playsuit</a></h3></div>
-													<div class="price">$122<span>$98</span></div>
+													<div class="name"><h3><a href="product.html">몽쉘</a></h3></div>
+													<div class="price">2400원<span>3500원</span></div>
 													<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></div>
 												</div>
 												
