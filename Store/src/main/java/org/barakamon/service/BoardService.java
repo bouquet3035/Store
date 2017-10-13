@@ -6,6 +6,7 @@ import java.util.List;
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.Criteria;
 
+
 public interface BoardService {
 
 	public List<BoardDTO> list(Criteria cri);
@@ -15,5 +16,7 @@ public interface BoardService {
 	public BoardDTO get(Long tno);
 
 	public void remove(Long tno);
+	
+	public void modify(BoardDTO bDto, Criteria cri);
 
 }
