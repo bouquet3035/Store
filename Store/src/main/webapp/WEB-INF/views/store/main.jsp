@@ -214,7 +214,7 @@
 								  <div class="col-sm-4">
 										<div class="product">
 											<div class="image">
-												<a href="product.html"><img src="/resources/FashionShop/images/clothing_sp3_2.jpg" /></a>
+												<a href="product.html"><img src="/resources/FashionShop/images/망고바.png" /></a>
 												<ul class="buttons">
 													<li><a class="btn btn-2 cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 													<li><a class="btn btn-2 wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
@@ -710,18 +710,5 @@
 		});
 	});
 	</script>
-
-<h2>mainpage</h2>
-
-
-
-<a href="/store/register">1+1아이템</a>
-
-<ul>
-	<img src=http://localhost:8080/resources/images/img/store.png>
-</ul>
-
-</head>
-
 </body>
 </html>
