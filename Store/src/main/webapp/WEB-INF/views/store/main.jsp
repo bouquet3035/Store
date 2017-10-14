@@ -213,36 +213,18 @@
 								<div class="row">
 								  <div class="col-sm-4">
 										<div class="product">
-											<div class="image">
-												<a href="product.html"><img src="https://4.bp.blogspot.com/-50-75bhNrhQ/WeB-GFBhmRI/AAAAAAAAACg/11ZFFsDPZxMOJK_FJjm6BNc9yn27zHlvACLcBGAs/s1600/20171010_152342_15.png" /></a>
-												<ul class="buttons">
-													<li><a class="btn btn-2 cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-													<li><a class="btn btn-2 wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
-													<li><a class="btn btn-2 compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a></li>
-												</ul>
-											</div>
-											<div class="caption">
-												<div class="name"><h3><a href="product.html">망고바</a></h3></div>
-												<div class="price">$10<span>$20</span></div>
-												<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-											</div>
+											<img src="https://4.bp.blogspot.com/-50-75bhNrhQ/WeB-GFBhmRI/AAAAAAAAACg/11ZFFsDPZxMOJK_FJjm6BNc9yn27zHlvACLcBGAs/s1600/20171010_152342_15.png" />
+												<div class="name"><h3>망고바</h3></div>
+												<div class="price">10000</div>
+												<div class="event">2+1</div>
 										</div>
 								  </div>
 								  <div class="col-sm-4">
 										<div class="product">
-											<div class="image">
-												<a href="product.html"><img src="https://3.bp.blogspot.com/-FM8zs-_-O0Q/WeB-Hvm7bwI/AAAAAAAAACk/7csZ8wBomekitJlHh5SlHaN7QaFFykx9gCLcBGAs/s1600/20171010_152342_22.png" /></a>
-												<ul class="buttons">
-													<li><a class="btn btn-2 cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-													<li><a class="btn btn-2 wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a></li>
-													<li><a class="btn btn-2 compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a></li>
-												</ul>
-											</div>
-											<div class="caption">
-												<div class="name"><h3><a href="product.html">프링글스 (치즈맛)</a></h3></div>
-												<div class="price">2500<span>3000</span></div>
-												<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></div>
-											</div>
+											<img src="https://3.bp.blogspot.com/-FM8zs-_-O0Q/WeB-Hvm7bwI/AAAAAAAAACk/7csZ8wBomekitJlHh5SlHaN7QaFFykx9gCLcBGAs/s1600/20171010_152342_22.png" />
+												<div class="name"><h3>프링글스 (치즈맛)</h3></div>
+												<div class="price">2500</div>
+												<div class="event">1+1</div>
 										</div>
 								  </div>
 								  <div class="col-sm-4">
@@ -697,6 +679,9 @@
 	</footer>
 	
 	<!-- JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
 	<script>
 	$(document).ready(function(){
 		$(".nav-tabs a").click(function(){
@@ -708,6 +693,9 @@
 			$(".act span").text(x);
 			$(".prev span").text(y);
 		});
+		
+		
+		
 	});
 	</script>
 </body>
