@@ -7,6 +7,7 @@ package org.barakamon.web;
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.service.BoardService;
+import org.barakamon.service.ProService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,14 +26,19 @@ public class StoreController {
 	@Autowired
 	private BoardService service;
 	
+	@Autowired
+	private ProService pservice;
+	
 	@GetMapping("/main")
-	public void main() {
-		
+	public void main(Model model) {
+		model.addAttribute("plist", pservice.getList());
 	}
 	
 	@GetMapping("/register")
-	public void register() {
+	public void register(Integer pno, Model model) {
+		log.info("" + pno);
 		
+		model.addAttribute("pinfo", pservice.pInfo(pno));
 	}
 	
 	@PostMapping("/register")
@@ -51,6 +57,9 @@ public class StoreController {
 		model.addAttribute("list",service.list(cri));
 		
 	}
+	
+	
+	
 	
 	@GetMapping("/view")
 	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {

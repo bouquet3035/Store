@@ -9,7 +9,10 @@
 <body>
 <h2>register</h2>
 <h2>등록페이지</h2>
-
+<img src="${pinfo.pimg}"/>
+<h2>${pinfo.pname }</h2>
+<h2>${pinfo.saleprice }</h2>
+<h2>${pinfo.pevent }</h2>
 <form method="post">
 작성자:<input type="text" name="writer" value="tester" readonly="readonly">
  제목:<input type="text" name="title" value="구해요	">
