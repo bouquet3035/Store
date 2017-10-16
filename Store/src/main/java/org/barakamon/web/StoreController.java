@@ -5,6 +5,7 @@ package org.barakamon.web;
 
 
 import org.barakamon.dto.BoardDTO;
+import org.barakamon.dto.BuyProDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.service.BoardService;
 import org.barakamon.service.ProService;
@@ -29,6 +30,8 @@ public class StoreController {
 	@Autowired
 	private ProService pservice;
 	
+	
+	
 	@GetMapping("/main")
 	public void main(Model model) {
 		model.addAttribute("plist", pservice.getList());
@@ -42,10 +45,12 @@ public class StoreController {
 	}
 	
 	@PostMapping("/register")
-	public String registerPost(BoardDTO bDto,Model model) {
+	public String registerPost(BoardDTO bDto, BuyProDTO bpDto,Model model) {
 		log.info("POST");
 		
-		service.registerPost(bDto);
+		service.registerPost(bDto, bpDto);
+//		log.info(bDto.toString());
+//		log.info(bpDto.toString());
 		model.addAttribute("register","success"); 
 		
 		return "redirect:/store/list";
@@ -53,6 +58,12 @@ public class StoreController {
 	
 	@GetMapping("/list")
 	public void list(@ModelAttribute("cri") Criteria cri,Model model) {
+		
+		model.addAttribute("list",service.list(cri));
+		
+	}
+	@GetMapping("/boardlist")
+	public void boardlist(@ModelAttribute("cri") Criteria cri,Model model) {
 		
 		model.addAttribute("list",service.list(cri));
 		

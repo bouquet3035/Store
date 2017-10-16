@@ -5,18 +5,28 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.barakamon.dto.BoardDTO;
+import org.barakamon.dto.BuyProDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.mapper.BoardMapper;
+
+import org.barakamon.mapper.BuyProMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.extern.java.Log;
 
+@Transactional
 @Service
 @Log
 public class BoardServiceImpl implements BoardService {
 
 	@Inject
 	private BoardMapper mapper; 
+	
+	@Autowired
+	private BuyProMapper bpmapper;
 	
 	@Override
 	public List<BoardDTO> list(Criteria cri) {
@@ -32,9 +42,11 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.findById(tno);
 	}
 
-	public void registerPost(BoardDTO bDto) {
+	public void registerPost(BoardDTO bDto, BuyProDTO bpDto) {
 		log.info("service registerPost: " + bDto);
 		mapper.registerPost(bDto);
+		log.info(bpDto.toString());
+		bpmapper.registerBuyPro(bpDto);
 	}
 
 	@Override
