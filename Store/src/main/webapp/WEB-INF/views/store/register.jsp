@@ -8,17 +8,19 @@
 </head>
 <body>
 	<h2>글쓰기</h2>
-	<img src="${pinfo.pimg}" />
-	<h2>${pinfo.pname }</h2>
-	<h2>${pinfo.saleprice }</h2>
-	<h2>${pinfo.pevent }</h2>
+	<div>
+		<img src="${pinfo.pimg}" />
+	</div>
+	<div>${pinfo.pname }</div>
+	<div>${pinfo.saleprice }원</div>
+	<div>${pinfo.pevent }</div>
 	<form method="post" id="mainForm">
-		<input type="hidden" name="bpno" value="${pinfo.pno}">
-		<input type="hidden" name="bpimg" value="${pinfo.pimg}">
-		<input type="hidden" name="bpname" value="${pinfo.pname}">
-		<input type="hidden" name="bpevent" value="${pinfo.pevent}">
-		<input type="hidden" name="bsaleprice" value="${pinfo.saleprice}">
-		<input type="hidden" name="boriprice" value="${pinfo.oriprice}">
+		<input type="hidden" name="bpno" value="${pinfo.pno}"> <input
+			type="hidden" name="bpimg" value="${pinfo.pimg}"> <input
+			type="hidden" name="bpname" value="${pinfo.pname}"> <input
+			type="hidden" name="bpevent" value="${pinfo.pevent}"> <input
+			type="hidden" name="bsaleprice" value="${pinfo.saleprice}"> <input
+			type="hidden" name="boriprice" value="${pinfo.oriprice}">
 		<div>
 			작성자:<input type="text" name="writer" value="tester"
 				readonly="readonly">
@@ -33,7 +35,7 @@
 		</div>
 		<input type="submit">
 	</form>
-
+	<form action="/store/main" method="get"><button>상품목록</button></form>
 
 </body>
 </html>
