@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.mapper.BoardMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.java.Log;

@@ -59,7 +59,7 @@
 				<div id="logo">
 					<img src="/resources/FashionShop/images/logo.png" />
 				</div>
-				/*로고 파일 변경 필요.*/
+			
 			</div>
 			<div class="col-md-6 text-right">
 				<div class="phone">
