@@ -29,6 +29,8 @@ public class StoreController {
 	@Autowired
 	private ProService pservice;
 	
+	
+	
 	@GetMapping("/main")
 	public void main(Model model) {
 		model.addAttribute("plist", pservice.getList());
@@ -53,6 +55,12 @@ public class StoreController {
 	
 	@GetMapping("/list")
 	public void list(@ModelAttribute("cri") Criteria cri,Model model) {
+		
+		model.addAttribute("list",service.list(cri));
+		
+	}
+	@GetMapping("/boardlist")
+	public void boardlist(@ModelAttribute("cri") Criteria cri,Model model) {
 		
 		model.addAttribute("list",service.list(cri));
 		
