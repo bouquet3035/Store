@@ -116,7 +116,7 @@
 					getReplies();
 					<!--		$(".popup").hide("hide");-->
 				}
-			})
+			});
 		});
  </script>
 </body>
