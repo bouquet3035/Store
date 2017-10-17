@@ -16,15 +16,14 @@ public class ReplyServiceImpl implements ReplyService {
 	@Autowired
 	private ReplyMapper mapper;
 	
-	@Autowired
-	private BoardMapper boardMapper;
+
 	
 	@Transactional
 	@Override
 	public void register(ReplyDTO rDto) {
 	
 		mapper.create(rDto);
-		boardMapper.updateReplyCnt(rDto.getTno());
+
 	}
 
 	@Override

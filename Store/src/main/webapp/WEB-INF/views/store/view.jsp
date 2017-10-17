@@ -81,7 +81,7 @@
 
 			var rno = $(this).attr("data-rno");
 
-			$.getJSON("/store/view" + rno, function(replyObj) {
+			$.getJSON("/reply/" + rno, function(replyObj) {
 
 	<!--			$(".popup input[name='rno']").val(replyObj.rno);-->
 	<!--			$(".popup input[name='reply']").val(replyObj.reply);-->
@@ -105,16 +105,17 @@
 			$.ajax({
 				url : '/reply/new',
 				type : 'POST',
-				dataType : "application/json; charset=utf-8",//받는 레코드의 타입
+				contentType : "application/json; charset=utf-8",//받는 레코드의 타입
 				data : JSON.stringify(data),
 				success : function(result) {
-
+				
 				alert("success");	
 					getReplies();
 					<!--		$(".popup").hide("hide");-->
 				}
-			});
+			})
 		});
+		
  </script>
  <%@ include file="include/footer.jsp"%>
 </body>
