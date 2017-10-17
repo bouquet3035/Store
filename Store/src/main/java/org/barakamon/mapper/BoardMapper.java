@@ -31,7 +31,6 @@ public interface BoardMapper {
 	@Update("update tbl_board set title = #{title} , contents= #{contents} where tno = #{tno}")
 	public void update(BoardDTO bDto);
 
-	@Update("update tbl_board set replycnt = replycnt + 1 where tno=#{tno}")
-	public void updateReplyCnt(Long tno);
+
 	
 }

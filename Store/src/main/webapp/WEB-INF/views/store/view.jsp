@@ -113,12 +113,13 @@
 				contentType : "application/json; charset=utf-8",//받는 레코드의 타입
 				data : JSON.stringify(data),
 				success : function(result) {
-
+				
 				alert("success");	
 
 				}
 			})
 		});
+		
  </script>
 	<%@ include file="include/footer.jsp"%>
 </body>

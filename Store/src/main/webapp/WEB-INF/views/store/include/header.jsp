@@ -28,12 +28,13 @@
 <link rel="stylesheet"
 	href="/resources/FashionShop/fonts/font-slider.css" type="text/css">
 
-
 <!-- jQuery and Modernizr-->
-<script src="/resources/js/jquery-2.1.1.js"></script>
-
+<script src="/resources/FashionShop/js/jquery-2.1.1.js"></script>
 <!-- Core JavaScript Files -->
 <script src="/resources/FashionShop/js/bootstrap.min.js"></script>
+
+
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

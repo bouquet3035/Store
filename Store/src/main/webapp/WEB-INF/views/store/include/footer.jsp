@@ -27,7 +27,7 @@
 		<div class="wrap-footer">
 			<div class="row">
 				<div class="col-md-3 col-footer footer-1">
-					<img src="images/logofooter.png" />
+					
 					<p>혁주와 같이 작업을 하니 너무 힘듭니다.</p>
 				</div>
 				<div class="col-md-3 col-footer footer-2">
