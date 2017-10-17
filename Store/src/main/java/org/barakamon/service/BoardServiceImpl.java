@@ -8,8 +8,10 @@ import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.BuyProDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.mapper.BoardMapper;
+
 import org.barakamon.mapper.BuyProMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

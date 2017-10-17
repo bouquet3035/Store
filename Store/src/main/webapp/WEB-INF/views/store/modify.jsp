@@ -15,6 +15,9 @@ Tno <input type='text' name='tno' readonly="readonly" value="${tobuy.tno }">
 Title <input type='text' name='title' value="${tobuy.title }"> 
 </div>
 <div>
+Writer <input type='text' name='contents' value="${tobuy.writer }"> 
+</div>
+<div>
 Contents <input type='text' name='contents' value="${tobuy.contents }"> 
 </div>
 

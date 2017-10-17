@@ -7,10 +7,10 @@ import org.barakamon.mapper.ProMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lombok.extern.java.Log;
+//import lombok.extern.java.Log;
 
 @Service
-@Log
+//@Log
 public class ProServiceImpl implements ProService{
 
 	@Autowired

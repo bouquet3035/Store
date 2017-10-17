@@ -1,6 +1,6 @@
 package org.barakamon.dto;
 
-import java.util.Collections;
+
 
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -70,7 +70,7 @@ public class Criteria {
 	}
 	
 	public String getURI() {
-		String template = "";
+		//String template = "";
 	    UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page).build();
 	  
 	    return uriComponents.toUriString();
