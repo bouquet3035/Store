@@ -29,7 +29,7 @@ public class ReplyController {
 
 	@PostMapping("/new") // new작업은 post로 작업을 하는것. 댓글 작성하는 코드
 	public void addReply(@RequestBody ReplyDTO rDto) {
-		log.info("" + rDto);// rDTO가 제대로 들어오는지 test. 여기서 테스트하면 파라미터값이 널로 들어온다.
+		log.info("ReplyDTO" + rDto);// rDTO가 제대로 들어오는지 test. 여기서 테스트하면 파라미터값이 널로 들어온다.
 		service.register(rDto);
 	}
 
@@ -66,7 +66,6 @@ public class ReplyController {
 	}
 
 	@GetMapping("list/{page}")
-
 	public List<ReplyDTO> list(@PathVariable("page") int page) {
 
 		return service.listPage(new Criteria(page));

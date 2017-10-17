@@ -5,7 +5,7 @@
 <html lang="en">
 <%@ include file="include/header.jsp"%>
 <body>
-<h1>${buypro}</h1>
+	<h1>${buypro}</h1>
 	<h1>${tobuy}</h1>
 	<h2>${tobuy.tno}</h2>
 	<h2>${tobuy.title}</h2>
@@ -36,11 +36,10 @@
 	</form>
 
 	<div style="border: 1px solid; width: 600px; padding: 5px">
-		<form name="form1" action="/reply/*" method="post">
-			<input type="hidden" id="tno"
-				value="${tobuy.tno }"> 작성자: 
-				<input
-				type="text" name="replyer" size="20" maxlength="20" readonly="readonly" value="tester" id="replyer"> <br />
+		<form>
+			<input type="hidden" id="tno" value="${tobuy.tno }"> 작성자: <input
+				type="text" name="replyer" size="20" maxlength="20"
+				readonly="readonly" value="tester" id="replyer"> <br />
 			<textarea name="reply" rows="3" cols="60" maxlength="500"
 				placeholder="댓글을 달아주세요." id="reply"></textarea>
 			<a id="replyBtn">저장</a>
@@ -81,7 +80,7 @@
 
 			var rno = $(this).attr("data-rno");
 
-			$.getJSON("/store/view" + rno, function(replyObj) {
+			$.getJSON("/reply/" + rno, function(replyObj) {
 
 	<!--			$(".popup input[name='rno']").val(replyObj.rno);-->
 	<!--			$(".popup input[name='reply']").val(replyObj.reply);-->
@@ -95,28 +94,33 @@
 		$("#replyBtn").click(function(e) {
 			e.preventDefault();
 			console.log("button clicked");
+			console.log($("#reply").val());
+			console.log($("#replyer").val(),);
+			console.log($("#tno").val());
+			
 
 			var data = {
 				reply : $("#reply").val(),
 				replyer : $("#replyer").val(), 
 				tno:$("#tno").val()
 			};
+			
+			console.log(data);
 
 			$.ajax({
-				url : '/reply/new',
 				type : 'POST',
-				dataType : "application/json; charset=utf-8",//받는 레코드의 타입
+				url : '/reply/new',
+				contentType : "application/json; charset=utf-8",//받는 레코드의 타입
 				data : JSON.stringify(data),
 				success : function(result) {
 
 				alert("success");	
-					getReplies();
-					<!--		$(".popup").hide("hide");-->
+
 				}
 			})
 		});
  </script>
- <%@ include file="include/footer.jsp"%>
+	<%@ include file="include/footer.jsp"%>
 </body>
 </html>
 
