@@ -59,4 +59,13 @@ public class BoardServiceImpl implements BoardService {
 		log.info("modify : "+bDto);
 		mapper.update(bDto);
 	}
+
+	@Override
+	public BuyProDTO bpInfo(Long tno) {
+		return bpmapper.bpInfo(tno);
+	}
+
+
+	
+
 }

@@ -73,8 +73,10 @@ public class StoreController {
 	
 	
 	@GetMapping("/view")
-	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
+	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, BuyProDTO bpDto, Model model) {
 		model.addAttribute("tobuy", service.get(dto.getTno()));
+		model.addAttribute("buypro",service.bpInfo(dto.getTno()));
+
 	}
 	
 	@PostMapping("/view")
@@ -88,9 +90,9 @@ public class StoreController {
 	}
 	
 	@GetMapping("/modify")
-	public void modify(BoardDTO bDto, @ModelAttribute("cri") Criteria cri, Model model) {
+	public void modify(BoardDTO bDto, BuyProDTO bpDto, @ModelAttribute("cri") Criteria cri, Model model) {
 		model.addAttribute("tobuy", service.get(bDto.getTno()));
-		view(bDto, cri, model);
+		view(bDto,cri, bpDto, model);
 	}
 
 	@PostMapping("/modify")

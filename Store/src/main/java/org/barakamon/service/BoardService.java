@@ -19,5 +19,8 @@ public interface BoardService {
 	public void remove(Long tno);
 	
 	public void modify(BoardDTO bDto, Criteria cri);
+	
+	public BuyProDTO bpInfo(Long tno);
+
 
 }
