@@ -8,7 +8,7 @@
 <title>상품상세페이지입니다</title>
 </head>
 <body>
-
+<h1>${buypro}</h1>
 	<h1>${tobuy}</h1>
 	<h2>${tobuy.tno}</h2>
 	<h2>${tobuy.title}</h2>
