@@ -31,6 +31,10 @@ public class StoreController {
 	private ProService pservice;
 	
 	
+	@GetMapping("/")
+	public String noAdd() {
+		return "redirect:/store/main";
+	}
 	
 	@GetMapping("/main")
 	public void main(Model model) {

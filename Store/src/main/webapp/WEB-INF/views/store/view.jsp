@@ -3,10 +3,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>상품상세페이지입니다</title>
-</head>
+<%@ include file="include/header.jsp"%>
 <body>
 <h1>${buypro}</h1>
 	<h1>${tobuy}</h1>
@@ -119,6 +116,7 @@
 			});
 		});
  </script>
+ <%@ include file="include/footer.jsp"%>
 </body>
 </html>
 
