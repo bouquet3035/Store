@@ -51,9 +51,6 @@
 
 		</ul>
 	</div>
-
-
-
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
@@ -65,7 +62,7 @@
 
 				for (var i = 0; i < arr.length; i++) {
 					str += "<li data-rno ='"+arr[i].rno +"'>"+arr[i].rno
-							+"  "+ arr[i].reply + "</li>";
+							+"  "+ arr[i].replyer + "  "+ arr[i].reply+ "  "+ arr[i].tno +"</li>";
 				}
 				$(".replyUL").html(str);
 
@@ -112,10 +109,8 @@
 				url : '/reply/new',
 				contentType : "application/json; charset=utf-8",//받는 레코드의 타입
 				data : JSON.stringify(data),
-				success : function(result) {
-				
-				alert("success");	
-
+				success : function(result) {	
+				getReplies();
 				}
 			})
 		});
