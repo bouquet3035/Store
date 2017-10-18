@@ -45,7 +45,7 @@ public class BoardServiceImpl implements BoardService {
 		
 		return dto;
 	}
-
+	@Override
 	public void registerPost(BoardDTO bDto, BuyProDTO bpDto) {
 		log.info("service registerPost: " + bDto);
 		mapper.registerPost(bDto);

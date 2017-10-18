@@ -91,8 +91,8 @@ public class StoreController {
 	
 	@GetMapping("/modify")
 	public void modify(BoardDTO bDto, BuyProDTO bpDto, @ModelAttribute("cri") Criteria cri, Model model) {
-		model.addAttribute("tobuy", service.get(bDto.getTno()));
-		view(bDto,cri, bpDto, model);
+		
+		view(bDto, cri, bpDto, model);
 	}
 
 	@PostMapping("/modify")

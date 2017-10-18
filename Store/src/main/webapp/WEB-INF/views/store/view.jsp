@@ -62,12 +62,22 @@
 
 				for (var i = 0; i < arr.length; i++) {
 					str += "<li data-rno ='"+arr[i].rno +"'>"+arr[i].rno
-							+"  "+ arr[i].replyer + "  "+ arr[i].reply+ "  "+ arr[i].tno +"</li>";
+							+"  "+ arr[i].replyer + "  "+ arr[i].reply+ "  "+ arr[i].tno +
+							" <button><a href=''>수정</a></button>" +
+							" <button>삭제</button></li>";
 				}
 				$(".replyUL").html(str);
 
+
 			});
 		}
+		$(".getreplies").click(function(e) {
+			
+			var reply =$(this).parent();
+			var rno = reply.attr("data-rno");
+			var replytext = reply.text();
+			
+		});
 
 		$(".cloBtn").click(function(e) {
 			$(".popup").hide("slow");
@@ -87,9 +97,13 @@
 
 		});
 		getReplies();
-
+		$(".modBtn").click(function(e) {
+			e.preventDefault();
+			console.log("mod has been clicked");
+		})
 		$("#replyBtn").click(function(e) {
 			e.preventDefault();
+
 			console.log("button clicked");
 			console.log($("#reply").val());
 			console.log($("#replyer").val(),);
