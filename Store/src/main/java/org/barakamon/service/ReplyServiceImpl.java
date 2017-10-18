@@ -64,8 +64,10 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public List<ReplyDTO> listPage(Criteria cri) {
-
+	public List<ReplyDTO> listPage(Criteria cri, Long tno) {
+		cri.setSearchByInt(tno);
+		
+		log.info("" + cri.getSearchByInt());
 		return mapper.list(cri);
 	}
 

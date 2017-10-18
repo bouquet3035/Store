@@ -18,5 +18,5 @@ public interface ReplyService {
 	
 	public void update(ReplyDTO rDto);
 	
-	public List<ReplyDTO> listPage(Criteria cri);
+	public List<ReplyDTO> listPage(Criteria cri, Long tno);
 }

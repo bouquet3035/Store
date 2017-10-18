@@ -58,7 +58,7 @@
 		function getReplies() {
 
 			var str = "";
-			$.getJSON("/reply/list/1", function(arr) {
+			$.getJSON("/reply/list/1?tno=${tobuy.tno}", function(arr) {
 
 				for (var i = 0; i < arr.length; i++) {
 					str += "<li data-rno ='"+arr[i].rno +"'>"+arr[i].rno
