@@ -46,8 +46,15 @@ public class ReplyServiceImpl implements ReplyService {
 
 	@Override
 	public void remove(Integer rno) {
-		// TODO Auto-generated method stub
+		ReplyDTO rDto = mapper.read(rno);
+		Long tno = rDto.getTno();
 		mapper.delete(rno);
+		
+		BoardDTO bDto = new BoardDTO();
+		bDto.setTno(tno);
+		bDto.setReplycount(mapper.replycount(tno));
+		
+		bmapper.updateReplyCount(bDto);
 	}
 
 	@Override
@@ -58,7 +65,7 @@ public class ReplyServiceImpl implements ReplyService {
 
 	@Override
 	public List<ReplyDTO> listPage(Criteria cri) {
-		// TODO Auto-generated method stub
+
 		return mapper.list(cri);
 	}
 

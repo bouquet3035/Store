@@ -67,7 +67,7 @@ public class ReplyController {
 
 	@GetMapping("list/{page}")
 	public List<ReplyDTO> list(@PathVariable("page") int page) {
-
+		log.info("" + page);
 		return service.listPage(new Criteria(page));
 	}
 

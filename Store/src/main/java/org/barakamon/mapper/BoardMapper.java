@@ -34,5 +34,7 @@ public interface BoardMapper {
 	@Update("update tbl_board set replycount = #{replycount} where tno = #{tno}")
 	public void updateReplyCount(BoardDTO bDto);
 
+	@Update("update tbl_board set viewcount = #{viewcount} where tno = #{tno}")
+	public void viewInc(BoardDTO bDto);
 	
 }

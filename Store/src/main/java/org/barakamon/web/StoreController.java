@@ -73,14 +73,10 @@ public class StoreController {
 		
 	}
 	
-	
-	
-	
 	@GetMapping("/view")
 	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, BuyProDTO bpDto, Model model) {
 		model.addAttribute("tobuy", service.get(dto.getTno()));
 		model.addAttribute("buypro",service.bpInfo(dto.getTno()));
-
 	}
 	
 	@PostMapping("/view")

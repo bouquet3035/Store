@@ -38,8 +38,12 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardDTO get(Long tno) {
-		// TODO Auto-generated method stub
-		return mapper.findById(tno);
+
+		BoardDTO dto = mapper.findById(tno);
+		dto.setViewcount(dto.getViewcount()+1);
+		mapper.viewInc(dto);
+		
+		return dto;
 	}
 
 	public void registerPost(BoardDTO bDto, BuyProDTO bpDto) {
