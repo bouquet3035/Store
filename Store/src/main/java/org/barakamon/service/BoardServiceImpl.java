@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.BuyProDTO;
+import org.barakamon.dto.CoBuyDTO;
 import org.barakamon.dto.Criteria;
 import org.barakamon.mapper.BoardMapper;
 
@@ -46,11 +47,13 @@ public class BoardServiceImpl implements BoardService {
 		return dto;
 	}
 
+	@Override
 	public void registerPost(BoardDTO bDto, BuyProDTO bpDto) {
-		log.info("service registerPost: " + bDto);
 		mapper.registerPost(bDto);
-		log.info(bpDto.toString());
 		bpmapper.registerBuyPro(bpDto);
+		log.info("입력되는 bpDTO: " + bpDto);
+		bpmapper.registerCoBuy(bDto);
+		
 	}
 
 	@Override
@@ -67,6 +70,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BuyProDTO bpInfo(Long tno) {
 		return bpmapper.bpInfo(tno);
+	}
+
+	@Override
+	public List<CoBuyDTO> cbInfo(Long ono) {
+		return bpmapper.cbInfo(ono);
 	}
 
 
