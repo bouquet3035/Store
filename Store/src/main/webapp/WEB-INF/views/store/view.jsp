@@ -51,6 +51,7 @@
 
 		</ul>
 	</div>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
@@ -61,10 +62,10 @@
 			$.getJSON("/reply/list/1?tno=${tobuy.tno}", function(arr) {
 
 				for (var i = 0; i < arr.length; i++) {
-					str += "<li data-rno ='"+arr[i].rno +"'>"+arr[i].rno
+					str += "<li>"+arr[i].rno
 							+"  "+ arr[i].replyer + "  "+ arr[i].reply+ "  "+ arr[i].tno +
-							" <button><a href=''>수정</a></button>" +
-							" <button>삭제</button></li>";
+							" <button data-rno ='"+arr[i].rno +"' class='modBtn' name='mod'>수정</button>" +
+							" <button data-rno ='"+arr[i].rno +"' class='delBtn' name='del'>삭제</button></li>";
 				}
 				$(".replyUL").html(str);
 
@@ -83,28 +84,39 @@
 			$(".popup").hide("slow");
 		});
 
-		$(".replyUL").on("click", "li", function(e) {
+		$(".replyUL").on("click", "li .modBtn", function(e) {
+			
+			console.log('mod');
 
 			var rno = $(this).attr("data-rno");
-
-			$.getJSON("/reply/" + rno, function(replyObj) {
-
-	<!--			$(".popup input[name='rno']").val(replyObj.rno);-->
-	<!--			$(".popup input[name='reply']").val(replyObj.reply);-->
-	<!--			$(".popup input[name='replyer']").val(replyObj.replyer);-->
-				
-			});
+			
+			console.log(rno);
 
 		});
-		getReplies();
-		$(".modBtn").click(function(e) {
-			e.preventDefault();
-			console.log("mod has been clicked");
-		})
-		$("#replyBtn").click(function(e) {
-			e.preventDefault();
+		
+		$(".replyUL").on("click", "li .delBtn", function(e) {
+			
+			console.log('del');
 
-			console.log("button clicked");
+			var rno = $(this).attr("data-rno");
+			
+			console.log(rno);
+			
+			$.ajax({
+				type : 'DELETE',
+				url : '/reply/' + rno,
+				contentType : 'application/json; charset=utf-8',
+				success : function(result) {
+					alert("Delete Success");
+					getReplies();
+				}
+			});
+		});
+		
+		getReplies();
+		
+		$("#replyBtn").click(function(e) {
+			e.preventDefault();z
 			console.log($("#reply").val());
 			console.log($("#replyer").val(),);
 			console.log($("#tno").val());
