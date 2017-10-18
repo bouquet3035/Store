@@ -37,7 +37,7 @@
 	<c:forEach var="board" items="${list}">
 		<tr class="listUl">
 			<td>${board.tno}</td>
-			<td><a href="${board.tno}"> ${board.title}</a></td>
+			<td><a href="${board.tno}"> ${board.title}</a><span class="rcnt">[${board.replycount }]</span></td>
 			<td>${board.writer}</td>
 			<td>${board.regdate}</td>
 			<td>${board.viewcount}</td>
@@ -54,6 +54,10 @@
 </div>
 
 <style>
+.rcnt {
+color: orange;	
+}
+
 .pageUl li {
 	list-style: none;
 	margin-left: auto 0;

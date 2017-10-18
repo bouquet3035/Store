@@ -110,7 +110,7 @@
 				contentType : "application/json; charset=utf-8",//받는 레코드의 타입
 				data : JSON.stringify(data),
 				success : function(result) {	
-				getReplies();
+					getReplies();
 				}
 			})
 		});
