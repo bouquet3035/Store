@@ -5,6 +5,7 @@
 <html lang="en">
 <%@ include file="include/header.jsp"%>
 <body>
+	<h1>${cobuy }</h1>
 	<h1>${buypro}</h1>
 	<h1>${tobuy}</h1>
 	<h2>${tobuy.tno}</h2>
@@ -63,7 +64,7 @@
 				for (var i = 0; i < arr.length; i++) {
 					str += "<li data-rno ='"+arr[i].rno +"'>"+arr[i].rno
 							+"  "+ arr[i].replyer + "  "+ arr[i].reply+ "  "+ arr[i].tno +
-							" <button><a href=''>수정</a></button>" +
+							" <button id='#modBtn'><a href='/reply/list/1?tno=${tobuy.tno}'>수정</a></button>" +
 							" <button>삭제</button></li>";
 				}
 				$(".replyUL").html(str);
@@ -82,7 +83,6 @@
 		$(".cloBtn").click(function(e) {
 			$(".popup").hide("slow");
 		});
-
 		$(".replyUL").on("click", "li", function(e) {
 
 			var rno = $(this).attr("data-rno");
@@ -97,7 +97,7 @@
 
 		});
 		getReplies();
-		$(".modBtn").click(function(e) {
+		$("#modBtn").click(function(e) {
 			e.preventDefault();
 			console.log("mod has been clicked");
 		})
