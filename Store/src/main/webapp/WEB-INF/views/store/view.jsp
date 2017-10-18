@@ -65,13 +65,13 @@
 				for (var i = 0; i < arr.length; i++) {
 					str += "<li>"+arr[i].rno
 							+"  "+ arr[i].replyer + "  "+ arr[i].reply+ "  "+ arr[i].tno +
-<<<<<<< HEAD
+
 							" <button id='#modBtn'><a href='/reply/list/1?tno=${tobuy.tno}'>수정</a></button>" +
 							" <button>삭제</button></li>";
-=======
+
 							" <button data-rno ='"+arr[i].rno +"' class='modBtn' name='mod'>수정</button>" +
 							" <button data-rno ='"+arr[i].rno +"' class='delBtn' name='del'>삭제</button></li>";
->>>>>>> branch 'master' of https://github.com/bouquet3035/Store
+
 				}
 				$(".replyUL").html(str);
 
@@ -89,34 +89,34 @@
 		$(".cloBtn").click(function(e) {
 			$(".popup").hide("slow");
 		});
-<<<<<<< HEAD
-		$(".replyUL").on("click", "li", function(e) {
-=======
+
+	
+
 
 		$(".replyUL").on("click", "li .modBtn", function(e) {
 			
 			console.log('mod');
->>>>>>> branch 'master' of https://github.com/bouquet3035/Store
+
 
 			var rno = $(this).attr("data-rno");
 			
 			console.log(rno);
 
 		});
-<<<<<<< HEAD
+
 		getReplies();
 		$("#modBtn").click(function(e) {
 			e.preventDefault();
 			console.log("mod has been clicked");
-		})
+		});
 		$("#replyBtn").click(function(e) {
 			e.preventDefault();
-=======
+		});
 		
 		$(".replyUL").on("click", "li .delBtn", function(e) {
 			
 			console.log('del');
->>>>>>> branch 'master' of https://github.com/bouquet3035/Store
+
 
 			var rno = $(this).attr("data-rno");
 			
@@ -136,9 +136,9 @@
 		getReplies();
 		
 		$("#replyBtn").click(function(e) {
-			e.preventDefault();z
+			e.preventDefault();
 			console.log($("#reply").val());
-			console.log($("#replyer").val(),);
+			console.log($("#replyer").val());
 			console.log($("#tno").val());
 			
 
@@ -158,7 +158,7 @@
 				success : function(result) {	
 					getReplies();
 				}
-			})
+			});
 		});
 		
  </script>
