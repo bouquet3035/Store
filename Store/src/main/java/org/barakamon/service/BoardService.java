@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.BuyProDTO;
+import org.barakamon.dto.CoBuyDTO;
 import org.barakamon.dto.Criteria;
 
 
@@ -22,5 +23,5 @@ public interface BoardService {
 	
 	public BuyProDTO bpInfo(Long tno);
 
-
+	public List<CoBuyDTO> cbInfo(Long ono);
 }

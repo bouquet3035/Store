@@ -74,25 +74,25 @@ public class StoreController {
 	}
 	
 	@GetMapping("/view")
-	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, BuyProDTO bpDto, Model model) {
+	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
 		model.addAttribute("tobuy", service.get(dto.getTno()));
 		model.addAttribute("buypro",service.bpInfo(dto.getTno()));
+		model.addAttribute("cobuy", service.cbInfo(service.bpInfo(dto.getTno()).getOno()));
 	}
 	
 	@PostMapping("/view")
 	public String removePost(BoardDTO bDto, Model model) {
-		
 		service.remove(bDto.getTno());
 		model.addAttribute("remove", "delsuccess");
-		
 		
 		return "redirect:/store/list";
 	}
 	
 	@GetMapping("/modify")
 	public void modify(BoardDTO bDto, BuyProDTO bpDto, @ModelAttribute("cri") Criteria cri, Model model) {
-		
-		view(bDto, cri, bpDto, model);
+
+		view(bDto, cri, model);
+
 	}
 
 	@PostMapping("/modify")

@@ -7,7 +7,7 @@
 <h1>Modify Page</h1>
 
 <form id='modForm' action = "/store/modify" method='post'>
-
+<h1>${buypro }</h1>
 <div>
 Tno <input type='text' name='tno' readonly="readonly" value="${tobuy.tno }"> 
 </div>

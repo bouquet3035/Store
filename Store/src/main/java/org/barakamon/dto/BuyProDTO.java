@@ -7,5 +7,6 @@ public class BuyProDTO {
 	
 	private Long ono;
 	private String bpno, bpimg, bpname, bpevent;
-	private Long bsaleprice, boriprice, tno;
+	private Long bsaleprice, boriprice, tno, curpeople, maxpeople;
+	private Boolean bpexpired;
 }
