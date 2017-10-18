@@ -26,6 +26,9 @@ public interface ReplyMapper {
 	
 	@Select("select * from tbl_reply where rno > 0 limit #{skip}, 100")
 	public List<ReplyDTO> list(Criteria cri);
+	
+	@Select("select count(*) from tbl_reply where tno = #{tno}")
+	public Long replycount(Long tno);
 
 	
 }
