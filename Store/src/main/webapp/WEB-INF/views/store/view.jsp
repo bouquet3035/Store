@@ -5,6 +5,7 @@
 <html lang="en">
 <%@ include file="include/header.jsp"%>
 <body>
+	<h1>${cobuy }</h1>
 	<h1>${buypro}</h1>
 	<h1>${tobuy}</h1>
 	<h2>${tobuy.tno}</h2>
