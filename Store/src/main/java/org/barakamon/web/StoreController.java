@@ -70,8 +70,8 @@ public class StoreController {
 	@GetMapping("/view")
 	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
 		model.addAttribute("tobuy", service.get(dto.getTno()));
-		model.addAttribute("buypro",service.bpInfo(dto.getTno()));
-		model.addAttribute("cobuy", service.cbInfo(service.bpInfo(dto.getTno()).getOno()));
+//		model.addAttribute("buypro",service.bpInfo(dto.getTno()));
+//		model.addAttribute("cobuy", service.cbInfo(service.bpInfo(dto.getTno()).getOno()));
 	}
 	
 	@PostMapping("/view")
