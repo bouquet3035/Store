@@ -11,7 +11,7 @@
 <!-- 게시판 구현   -->
 <!-- 게시판 구현   -->
 <h3>게시글 목록</h3>
-<table class="table">
+<table class="table nav navbar-nav">
 	<tr>
 		<th><select>
 				<option class="pageSize" value="5">5개씩 보기</option>
@@ -25,8 +25,9 @@
 		<th></th>
 		<th></th>
 		<th><button class="btn btn-primary" style="float: right;"
-				onclick="location.href='/store/main'">작성</button></th>
-	</tr>
+				onclick="location.href='/store/main'">모집글 쓰기</button></th>
+	</tr></table>
+<table class="table nav navbar-nav">
 	<tr>
 		<th>No</th>
 		<th>제목</th>
@@ -56,6 +57,10 @@
 <style>
 .rcnt {
 color: orange;	
+}
+
+.table {
+
 }
 
 .pageUl li {

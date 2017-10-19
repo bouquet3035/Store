@@ -52,6 +52,16 @@
 
 		</ul>
 	</div>
+	<style>
+	.modForm {
+		display: none;
+	}
+	
+	.canBtn {
+		display: none;
+	}
+	
+	</style>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -63,36 +73,68 @@
 			$.getJSON("/reply/list/1?tno=${tobuy.tno}", function(arr) {
 
 				for (var i = 0; i < arr.length; i++) {
-					str += "<li>"+arr[i].rno
+					var rno = arr[i].rno;
+					str += "<li class='rpl'>"+rno
 							+"  "+ arr[i].replyer + "  "+ arr[i].reply+ "  "+ arr[i].tno +
-							" <button data-rno ='"+arr[i].rno +"' class='modBtn' name='mod'>수정</button>" +
-							" <button data-rno ='"+arr[i].rno +"' class='delBtn' name='del'>삭제</button></li>";
+							" <button data-rno ='"+rno +"' class='modBtn modBtn"+rno +"' name='mod'>수정</button>" +
+							"<button data-rno ='"+rno +"' class='canBtn canBtn"+rno +"'>취소</button>" +
+							" <button data-rno ='"+rno +"' class='delBtn' name='del'>삭제</button></br>" + 
+							"<form class='modForm "+ rno +"' action='/reply/"+ rno +"' method='put'><input type='text' value='"+ arr[i].reply+
+							"'></input><button data-rno ='"+rno +"' class='modAct'>수정</button></form></li>";
 				}
 				$(".replyUL").html(str);
 
 
 			});
 		}
-		$(".getreplies").click(function(e) {
-			
-			var reply =$(this).parent();
-			var rno = reply.attr("data-rno");
-			var replytext = reply.text();
-			
-		});
 
 		$(".cloBtn").click(function(e) {
 			$(".popup").hide("slow");
 		});
 
 		$(".replyUL").on("click", "li .modBtn", function(e) {
+			$(".modForm").hide("slow");
+			$(".canBtn").hide();
+			$(".modBtn").show();
 			
 			console.log('mod');
 
 			var rno = $(this).attr("data-rno");
 			
 			console.log(rno);
+			
+			var formstr = "."+rno +"";
+			var canstr = ".canBtn"+rno +"";
+			var modstr = ".modBtn"+rno +"";
+			
+			$(formstr).show("slow");
+			$(canstr).show();
+			$(modstr).hide();
+			
+		});
+		
+		$(".replyUL").on("click", "li .modForm .modAct", function(e) {
+			e.preventDefault();
+			
+			console.log('mod');
 
+			var rno = $(this).attr("data-rno");
+			
+			console.log(rno);
+			
+			
+		});
+		
+		$(".replyUL").on("click", "li .canBtn", function(e) {
+			var rno = $(this).attr("data-rno");
+			
+			var formstr = "."+rno +"";
+			var canstr = ".canBtn"+rno +"";
+			var modstr = ".modBtn"+rno +"";
+			
+			$(formstr).hide("slow");
+			$(canstr).hide();
+			$(modstr).show();
 		});
 		
 		$(".replyUL").on("click", "li .delBtn", function(e) {
@@ -117,7 +159,7 @@
 		getReplies();
 		
 		$("#replyBtn").click(function(e) {
-			e.preventDefault();z
+			e.preventDefault();
 			console.log($("#reply").val());
 			console.log($("#replyer").val(),);
 			console.log($("#tno").val());
@@ -129,8 +171,6 @@
 				tno:$("#tno").val()
 			};
 			
-			console.log(data);
-
 			$.ajax({
 				type : 'POST',
 				url : '/reply/new',
