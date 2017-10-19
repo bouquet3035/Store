@@ -91,12 +91,16 @@
 			$(".popup").hide("slow");
 		});
 
+	
+
+
 		$(".replyUL").on("click", "li .modBtn", function(e) {
 			$(".modForm").hide("slow");
 			$(".canBtn").hide();
 			$(".modBtn").show();
 			
 			console.log('mod');
+
 
 			var rno = $(this).attr("data-rno");
 			
@@ -153,10 +157,20 @@
 			$(canstr).hide();
 			$(modstr).show();
 		});
+
+		getReplies();
+		$("#modBtn").click(function(e) {
+			e.preventDefault();
+			console.log("mod has been clicked");
+		});
+		$("#replyBtn").click(function(e) {
+			e.preventDefault();
+		});
 		
 		$(".replyUL").on("click", "li .delBtn", function(e) {
 			
 			console.log('del');
+
 
 			var rno = $(this).attr("data-rno");
 			
@@ -178,7 +192,7 @@
 		$("#replyBtn").click(function(e) {
 			e.preventDefault();
 			console.log($("#reply").val());
-			console.log($("#replyer").val(),);
+			console.log($("#replyer").val());
 			console.log($("#tno").val());
 			
 
@@ -197,7 +211,7 @@
 					$("#reply").val("");
 					getReplies();
 				}
-			})
+			});
 		});
 		
  </script>
