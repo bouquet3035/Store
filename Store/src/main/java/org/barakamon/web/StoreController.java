@@ -42,29 +42,21 @@ public class StoreController {
 	}
 	
 	@GetMapping("/register")
-	public void register(Integer pno, Model model) {
-		log.info("" + pno);
-		
+	public void register(Integer pno, Model model) {	
 		model.addAttribute("pinfo", pservice.pInfo(pno));
 	}
 	
 	@PostMapping("/register")
-	public String registerPost(BoardDTO bDto, BuyProDTO bpDto,Model model) {
-		log.info("POST");
-		
+	public String registerPost(BoardDTO bDto, BuyProDTO bpDto, Model model) {
 		service.registerPost(bDto, bpDto);
-//		log.info(bDto.toString());
-//		log.info(bpDto.toString());
 		model.addAttribute("register","success"); 
-		
 		return "redirect:/store/list";
 	}
 	
 	@GetMapping("/list")
 	public void list(@ModelAttribute("cri") Criteria cri,Model model) {
-		
+		log.info("" + cri.toString());
 		model.addAttribute("list",service.list(cri));
-		
 	}
 	
 	@GetMapping("/view")

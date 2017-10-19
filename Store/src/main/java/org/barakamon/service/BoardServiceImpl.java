@@ -24,35 +24,41 @@ import lombok.extern.java.Log;
 public class BoardServiceImpl implements BoardService {
 
 	@Inject
-	private BoardMapper mapper; 
-	
+	private BoardMapper mapper;
+
 	@Autowired
 	private BuyProMapper bpmapper;
-	
+
 	@Override
 	public List<BoardDTO> list(Criteria cri) {
 		
-		cri.setTotal(mapper.getTotal(cri));
+		if(cri.getSearchByStr() == null) {			
+			cri.setTotal(mapper.getTotal(cri));
+			
+			return mapper.listPage(cri);
+		}
+		cri.setTotal(mapper.getSearchTotal(cri));
 		
-		return mapper.listPage(cri);
+		return mapper.searchByPno(cri);
 	}
 
 	@Override
 	public BoardDTO get(Long tno) {
 
 		BoardDTO dto = mapper.findById(tno);
-		dto.setViewcount(dto.getViewcount()+1);
+		dto.setViewcount(dto.getViewcount() + 1);
 		mapper.viewInc(dto);
-		
+
 		return dto;
 	}
+
 	@Override
 	public void registerPost(BoardDTO bDto, BuyProDTO bpDto) {
 		mapper.registerPost(bDto);
 		bpmapper.registerBuyPro(bpDto);
 		log.info("입력되는 bpDTO: " + bpDto);
 		bpmapper.registerCoBuy(bDto);
-		
+
 	}
 
 	@Override
@@ -62,7 +68,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void modify(BoardDTO bDto, Criteria cri) {
-		log.info("modify : "+bDto);
+		log.info("modify : " + bDto);
 		mapper.update(bDto);
 	}
 
@@ -77,6 +83,5 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 
-	
 
 }

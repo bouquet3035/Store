@@ -37,4 +37,12 @@ public interface BoardMapper {
 	@Update("update tbl_board set viewcount = #{viewcount} where tno = #{tno}")
 	public void viewInc(BoardDTO bDto);
 	
+	@Select("SELECT bd.* FROM tbl_board bd, tbl_buypro bp "
+			+ "WHERE bd.tno = bp.tno and bpno = #{searchByStr} and expired = 0 order by bd.tno desc")
+	public List<BoardDTO> searchByPno(Criteria cri);
+	
+	@Select("select count(*) FROM tbl_board bd, tbl_buypro bp "
+			+ "WHERE bd.tno = bp.tno and bpno = #{searchByStr} and bd.tno > 0 and expired = 0 order by bd.tno desc")
+	public int getSearchTotal(Criteria cri);
+	
 }

@@ -13,7 +13,7 @@ public class Criteria {
 	private int page;
 	private int total;
 	private Long searchByInt;
-//	private String searchByStr;
+	private String searchByStr;
 	
 	public int getTotal() {   
 		return total;
@@ -69,4 +69,19 @@ public class Criteria {
 	public void setSearchByInt(Long searchByInt) {
 		this.searchByInt = searchByInt;
 	}
+
+	public String getSearchByStr() {
+		return searchByStr;
+	}
+
+	public void setSearchByStr(String searchByStr) {
+		this.searchByStr = searchByStr;
+	}
+
+	@Override
+	public String toString() {
+		return "Criteria [page=" + page + ", total=" + total + ", searchByInt=" + searchByInt + ", searchByStr="
+				+ searchByStr + "]";
+	}
+
 }
