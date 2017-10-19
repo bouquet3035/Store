@@ -18,7 +18,7 @@ public interface ReplyMapper {
 	@Select("select * from tbl_reply where rno=#{rno}")
 	public ReplyDTO read(Integer rno);
 	
-	@Update("update tbl_reply set reply = #{reply}, replyer = #{replyer} where rno = #{rno}")
+	@Update("update tbl_reply set reply = #{reply} where rno = #{rno}")
 	public void update(ReplyDTO rDto);
 	
 	@Delete("delete from tbl_reply where rno = #{rno}")

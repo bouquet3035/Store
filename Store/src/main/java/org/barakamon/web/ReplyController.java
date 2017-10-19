@@ -65,7 +65,8 @@ public class ReplyController {
 		//@RequestBody 전송된 JSON데이터를 객체로 변환해주는 어노테이션으로 @ModelAttribute와 유사하나 JSON에서 사용된다는 것이 차이점.
 		rDto.setRno(rno);
 
-		log.info("Remove rno:" + rno);
+		log.info("update rno:" + rno);
+		log.info("rDto: " + rDto);
 
 		service.update(rDto);
 

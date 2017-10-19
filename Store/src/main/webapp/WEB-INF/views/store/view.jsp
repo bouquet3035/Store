@@ -79,12 +79,11 @@
 							" <button data-rno ='"+rno +"' class='modBtn modBtn"+rno +"' name='mod'>수정</button>" +
 							"<button data-rno ='"+rno +"' class='canBtn canBtn"+rno +"'>취소</button>" +
 							" <button data-rno ='"+rno +"' class='delBtn' name='del'>삭제</button></br>" + 
-							"<form class='modForm "+ rno +"' action='/reply/"+ rno +"' method='put'><input type='text' value='"+ arr[i].reply+
+							"<form class='modForm "+ rno +"' action='/reply/"+ rno +"' method='put'>"+
+							"<input type='text' class='modRpl"+ rno +"' value='"+ arr[i].reply+
 							"'></input><button data-rno ='"+rno +"' class='modAct'>수정</button></form></li>";
 				}
 				$(".replyUL").html(str);
-
-
 			});
 		}
 
@@ -122,6 +121,24 @@
 			
 			console.log(rno);
 			
+			var str = ".modRpl"+rno;
+			
+			var data = {
+					reply : $(str).val()
+				}
+			
+			console.log(data);
+
+			$.ajax({
+				type : 'PUT',
+				url : '/reply/' + rno,
+				contentType : 'application/json; charset=utf-8',
+				data : JSON.stringify(data),
+				success : function(result) {
+					alert("Update Success");
+					getReplies();
+				}
+			});
 			
 		});
 		
@@ -186,9 +203,3 @@
 	<%@ include file="include/footer.jsp"%>
 </body>
 </html>
-
-
-
-
-
-

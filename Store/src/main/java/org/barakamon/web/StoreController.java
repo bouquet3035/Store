@@ -66,12 +66,6 @@ public class StoreController {
 		model.addAttribute("list",service.list(cri));
 		
 	}
-	@GetMapping("/boardlist")
-	public void boardlist(@ModelAttribute("cri") Criteria cri,Model model) {
-		
-		model.addAttribute("list",service.list(cri));
-		
-	}
 	
 	@GetMapping("/view")
 	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
