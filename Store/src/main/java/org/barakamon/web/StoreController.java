@@ -56,6 +56,7 @@ public class StoreController {
 	@GetMapping("/list")
 	public void list(@ModelAttribute("cri") Criteria cri,Model model) {
 		log.info("" + cri.toString());
+		log.info("" + cri.getSkip());
 		model.addAttribute("list",service.list(cri));
 	}
 	

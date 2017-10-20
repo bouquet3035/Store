@@ -13,7 +13,7 @@ import org.barakamon.dto.Criteria;
 public interface BoardMapper {
 	
 	
-	@Select("select * from tbl_board order by tno desc limit #{skip}, 10")
+	@Select("select * from tbl_board order by tno desc limit #{skip}, #{pageSize}")
 	public List<BoardDTO> listPage(Criteria cri); 
 	
 	@Select("select count(*) from tbl_board where tno > 0")
@@ -38,7 +38,7 @@ public interface BoardMapper {
 	public void viewInc(BoardDTO bDto);
 	
 	@Select("SELECT bd.* FROM tbl_board bd, tbl_buypro bp "
-			+ "WHERE bd.tno = bp.tno and bpno = #{searchByStr} and expired = 0 order by bd.tno desc")
+			+ "WHERE bd.tno = bp.tno and bpno = #{searchByStr} and expired = 0 order by bd.tno desc limit #{skip}, #{pageSize}")
 	public List<BoardDTO> searchByPno(Criteria cri);
 	
 	@Select("select count(*) FROM tbl_board bd, tbl_buypro bp "

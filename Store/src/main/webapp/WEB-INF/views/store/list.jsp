@@ -13,7 +13,7 @@
 <h3>게시글 목록</h3>
 <table class="table nav navbar-nav">
 	<tr>
-		<th><select>
+		<th><select id="pageSize">
 				<option class="pageSize" value="5">5개씩 보기</option>
 				<option class="pageSize" value="10">10개씩 보기</option>
 				<option class="pageSize" value="15" selected="selected">15개씩 보기</option>
@@ -142,7 +142,7 @@ color: orange;
 </style>
 <br>
 <br>
-<form id="actionForm" action="">
+<form id="actionForm" action="" searchByStr="${cri.searchByStr}" searchByInt="${cri.searchByInt}">
 	<input type="hidden" name="page" value=${cri.page}> <input
 		type="hidden" name="tno">
 </form>
@@ -158,6 +158,7 @@ color: orange;
 		$(document).ready(function() {
 			var page = '${cri.page}';
 			var actionForm = $('#actionForm');
+					
 			$(".listUl td a").on("click", function(e) {
 				e.preventDefault();
 				var tno = $(this).attr("href");
@@ -166,23 +167,37 @@ color: orange;
 				actionForm.submit();
 			});
 			
-			$(".pageSize").on("click", function(e) {
-				e.preventDefault();
-				var pageSize = $(this).attr("value");
+			$("#pageSize").change(function() {
+				var pageSize = $(this).children("option:selected").val();	
 				console.log(pageSize);
+				
+		//		$(this).attr("action", "/store/list");
+		//		$(this).val(pageSize);
+	//			$(this).submit();
 			});
 			
 			$(".pageUl").on("click", "li", function(e) {
-				var pageNum = $(this).attr("name");
-				console.log(pageNum);
+				var page = $(this).attr("name");
+				var searchByStr = actionForm.attr("searchByStr");
+				var searchByInt = actionForm.attr("searchByInt")
+	
+				var pageLink = "/store/list?page=" + page;		
 				
-				self.location = "/store/list?page=" + pageNum;
+				if(searchByStr.length != 0){
+					pageLink += "&searchByStr=" + searchByStr;
+				}
+				
+				if(searchByInt.length != 0){
+					pageLink += "&searchByInt=" + searchByInt;
+				}
+						
+				self.location = pageLink;
 			});
 			
 			var pageStr = makePage({
 		        total:${cri.total},
 		        current:${cri.page},
-		        pageSize: 10,
+		        pageSize: ${cri.pageSize},
 		        prevBtn: "<<",
 		        nextBtn: ">>"
 		    });

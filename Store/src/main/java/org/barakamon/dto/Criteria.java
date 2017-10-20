@@ -1,7 +1,5 @@
 package org.barakamon.dto;
 
-
-
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -12,6 +10,7 @@ public class Criteria {
 
 	private int page;
 	private int total;
+	private int pageSize = 15;
 	private Long searchByInt;
 	private String searchByStr;
 	
@@ -38,10 +37,10 @@ public class Criteria {
 		if(page <= 0) {
 			page = 1;
 		}	
-		
+
 		this.page = page;
 	}
-
+	
 	public Criteria(int page) {
 		
 		if(page <= 0) {
@@ -53,12 +52,17 @@ public class Criteria {
 	public int getSkip() {
 
 		System.out.println("getSkip...");
-		return (this.page - 1) *10;
+		return (this.page - 1) * pageSize;
 	}
 	
 	public String getURI() {
 		//String template = "";
-	    UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page).build();
+	    UriComponents uriComponents = UriComponentsBuilder.newInstance()
+	    		.queryParam("page", page)
+	    		.queryParam("pageSize", pageSize)
+	    		.queryParam("searchByStr", searchByStr)
+	    		.queryParam("searchByInt", searchByInt)
+	    		.build();
 	    return uriComponents.toUriString();		
 	}
 
@@ -78,10 +82,19 @@ public class Criteria {
 		this.searchByStr = searchByStr;
 	}
 
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
 	@Override
 	public String toString() {
-		return "Criteria [page=" + page + ", total=" + total + ", searchByInt=" + searchByInt + ", searchByStr="
-				+ searchByStr + "]";
+		return "Criteria [page=" + page + ", total=" + total + ", pageSize=" + pageSize + ", searchByInt=" + searchByInt
+				+ ", searchByStr=" + searchByStr + "]";
 	}
+
 
 }
