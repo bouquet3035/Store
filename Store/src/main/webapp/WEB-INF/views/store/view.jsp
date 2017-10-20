@@ -57,12 +57,6 @@
 			<a id="replyBtn">저장</a>
 		</form>
 	</div>
-	
-	<form  class="participateBtn">
-		<button> 참여하기</button>
-	</form>
-
-
 	<style>
 .modForm {
 	display: none;
@@ -128,11 +122,7 @@
 					alert("성공"); 
 					getCobuy();
 				}
-			})
-			
-			
-			
-			
+			});
 		});
 	
 
