@@ -34,7 +34,7 @@
 		<input type="submit">
 	</form>
 	<form action="/store/main" method="get"><button>상품목록</button></form>
-	<form action="/store/list" method="get"><input type="hidden" name="searchByStr" value="${pinfo.pno}"><input type="submit" value="구매자검색"></form>
+	<form action="/store/list" method="get"><input type="hidden" name="searchType" value="bpno"><input type="hidden" name="keyword" value="${pinfo.pno}"><input type="submit" value="구매자검색"></form>
 </body>
 <%@ include file="include/footer.jsp"%>
 </html>

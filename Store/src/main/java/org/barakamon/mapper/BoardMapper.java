@@ -12,7 +12,6 @@ import org.barakamon.dto.Criteria;
 
 public interface BoardMapper {
 	
-	
 	@Select("select * from tbl_board order by tno desc limit #{skip}, #{pageSize}")
 	public List<BoardDTO> listPage(Criteria cri); 
 	
@@ -34,15 +33,15 @@ public interface BoardMapper {
 	@Update("update tbl_board set replycount = #{replycount} where tno = #{tno}")
 	public void updateReplyCount(BoardDTO bDto);
 
-	@Update("update tbl_board set viewcount = #{viewcount} where tno = #{tno}")
-	public void viewInc(BoardDTO bDto);
+	@Update("update tbl_board set viewcount = viewcount + 1 where tno = #{tno}")
+	public void viewInc(Long tno);
 	
 	@Select("SELECT bd.* FROM tbl_board bd, tbl_buypro bp "
-			+ "WHERE bd.tno = bp.tno and bpno = #{searchByStr} and expired = 0 order by bd.tno desc limit #{skip}, #{pageSize}")
-	public List<BoardDTO> searchByPno(Criteria cri);
+			+ "WHERE bd.tno = bp.tno and #{searchType} = #{keyword} and expired = 0 order by bd.tno desc limit #{skip}, #{pageSize}")
+	public List<BoardDTO> search(Criteria cri);
 	
 	@Select("select count(*) FROM tbl_board bd, tbl_buypro bp "
-			+ "WHERE bd.tno = bp.tno and bpno = #{searchByStr} and bd.tno > 0 and expired = 0 order by bd.tno desc")
+			+ "WHERE bd.tno = bp.tno and #{searchType} = #{keyword} and bd.tno > 0 and expired = 0 order by bd.tno desc")
 	public int getSearchTotal(Criteria cri);
 	
 }

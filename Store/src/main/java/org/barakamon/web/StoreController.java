@@ -49,7 +49,10 @@ public class StoreController {
 	@PostMapping("/register")
 	public String registerPost(BoardDTO bDto, BuyProDTO bpDto, Model model) {
 		service.registerPost(bDto, bpDto);
-		model.addAttribute("register","success"); 
+		// log.info(bDto.toString());
+		// log.info(bpDto.toString());
+		model.addAttribute("register", "success");
+
 		return "redirect:/store/list";
 	}
 	

@@ -11,8 +11,8 @@ public class Criteria {
 	private int page;
 	private int total;
 	private int pageSize = 15;
-	private Long searchByInt;
-	private String searchByStr;
+	private String searchType;
+	private String keyword;
 	
 	public int getTotal() {   
 		return total;
@@ -60,26 +60,26 @@ public class Criteria {
 	    UriComponents uriComponents = UriComponentsBuilder.newInstance()
 	    		.queryParam("page", page)
 	    		.queryParam("pageSize", pageSize)
-	    		.queryParam("searchByStr", searchByStr)
-	    		.queryParam("searchByInt", searchByInt)
+	    		.queryParam("searchType", searchType)
+	    		.queryParam("keyword", keyword)
 	    		.build();
 	    return uriComponents.toUriString();		
 	}
 
-	public Long getSearchByInt() {
-		return searchByInt;
+	public String getSearchType() {
+		return searchType;
 	}
 
-	public void setSearchByInt(Long searchByInt) {
-		this.searchByInt = searchByInt;
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
 	}
 
-	public String getSearchByStr() {
-		return searchByStr;
+	public String getKeyword() {
+		return keyword;
 	}
 
-	public void setSearchByStr(String searchByStr) {
-		this.searchByStr = searchByStr;
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
 	}
 
 	public int getPageSize() {
@@ -92,8 +92,8 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [page=" + page + ", total=" + total + ", pageSize=" + pageSize + ", searchByInt=" + searchByInt
-				+ ", searchByStr=" + searchByStr + "]";
+		return "Criteria [page=" + page + ", total=" + total + ", pageSize=" + pageSize + ", searchType=" + searchType
+				+ ", keyword=" + keyword + "]";
 	}
 
 

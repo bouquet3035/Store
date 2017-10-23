@@ -32,23 +32,20 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<BoardDTO> list(Criteria cri) {
 		
-		if(cri.getSearchByStr() == null) {			
+		if(cri.getSearchType() == null) {			
 			cri.setTotal(mapper.getTotal(cri));
 			
 			return mapper.listPage(cri);
 		}
 		cri.setTotal(mapper.getSearchTotal(cri));
 		
-		return mapper.searchByPno(cri);
+		return mapper.search(cri);
 	}
 
 	@Override
 	public BoardDTO get(Long tno) {
-
+		mapper.viewInc(tno);
 		BoardDTO dto = mapper.findById(tno);
-		dto.setViewcount(dto.getViewcount() + 1);
-		mapper.viewInc(dto);
-
 		return dto;
 	}
 
