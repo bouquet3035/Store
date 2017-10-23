@@ -14,5 +14,7 @@ public class BoardDTO {
 	private Date regdate; 
 	private Long viewcount;
 	private Long replycount; 
+	private Boolean expired;
+	private Date expiretime;
  
 }
