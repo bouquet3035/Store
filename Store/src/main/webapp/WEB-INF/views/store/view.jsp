@@ -85,21 +85,21 @@
 			$.getJSON("/participate/itemlist/?tno=" + tno, function(e){
 				str += "<li>ono주문번호 ="+ e.ono + "</li>";
 				str += "<li>bpno 상품번호= "+ e.bpno+ "</li>"; 
-				str += "<li> 이미지 url: "+ e.bpimg+ "</li>";
+				str += "<li><img src='"+ e.bpimg+ "'></li>";
 				str += "<li> 상품이름:"+ e.bpname+ "</li>"; 
 				str += "<li> 행사이름:"+ e.bpevent+ "</li>"; 
-				str += "<li> 행사 가격:"+ e.bsaleprice+ "</li>"; 
-				str += "<li> 원래 가격:"+ e.boriprice+ "</li>"; 
+				str += "<li> 행사 가격:"+ e.bsaleprice+ "원</li>"; 
+				str += "<li> 원래 가격:"+ e.boriprice+ "원</li>"; 
 				str += "<li> tno:"+ e.tno+ "</li>";
 				str += "<li> 현재인원 : "+ e.curpeople+ "</li>"; 
 				str += "<li> 최대인원:"+ e.maxpeople+ "</li>"; 
 				str += "<li> 등록날짜 :"+ e.oregdate+ "</li>"; 
 				str += "<li> bpexpired :"+ e.bpexpired+ "</li>"; 
 		
-				if(e.bpexpired = true){
+				if(e.bpexpired == true){
 					
 				}else {
-					str += "<form ><button  class='participateBtn' ono = "+ e.ono +"> 참여하기</button></form>";
+					str += "<form ><button class='participateBtn' ono = "+ e.ono +"> 참여하기</button></form>";
 				}
 				
 				$(".cobuyUL").html(str);
