@@ -60,8 +60,6 @@ public class StoreController {
 	public void list(@ModelAttribute("cri") Criteria cri,Model model) {
 		log.info("" + cri.toString());
 		log.info("" + cri.getSkip());
-		BoardDTO dto = new BoardDTO();
-		log.info("" + dto.toString());
 		model.addAttribute("list", service.list(cri));
 
 	}

@@ -24,7 +24,7 @@ public interface ReplyMapper {
 	@Delete("delete from tbl_reply where rno = #{rno}")
 	public void delete(Integer rno);
 	
-	@Select("select * from tbl_reply where tno = #{searchByInt} order by rno limit #{skip}, 100")
+	@Select("select * from tbl_reply where tno = #{keyword} order by rno limit #{skip}, 100")
 	public List<ReplyDTO> list(Criteria cri);
 	
 	@Select("select count(*) from tbl_reply where tno = #{tno}")

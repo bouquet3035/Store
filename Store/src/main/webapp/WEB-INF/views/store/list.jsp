@@ -142,7 +142,7 @@ color: orange;
 </style>
 <br>
 <br>
-<form id="actionForm" action="" searchByStr="${cri.searchByStr}" searchByInt="${cri.searchByInt}">
+<form id="actionForm" action="" searchType="${cri.searchType}" keyword="${cri.keyword}">
 	<input type="hidden" name="page" value=${cri.page}> <input
 		type="hidden" name="tno">
 </form>
@@ -178,17 +178,17 @@ color: orange;
 			
 			$(".pageUl").on("click", "li", function(e) {
 				var page = $(this).attr("name");
-				var searchByStr = actionForm.attr("searchByStr");
-				var searchByInt = actionForm.attr("searchByInt")
+				var searchType = actionForm.attr("searchType");
+				var keyword = actionForm.attr("keyword");
 	
 				var pageLink = "/store/list?page=" + page;		
 				
-				if(searchByStr.length != 0){
-					pageLink += "&searchByStr=" + searchByStr;
+				if(searchType.length != 0){
+					pageLink += "&searchType=" + searchType;
 				}
 				
-				if(searchByInt.length != 0){
-					pageLink += "&searchByInt=" + searchByInt;
+				if(keyword.length != 0){
+					pageLink += "&keyword=" + keyword;
 				}
 						
 				self.location = pageLink;
