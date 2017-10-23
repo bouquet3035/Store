@@ -54,8 +54,8 @@
 				type="text" name="replyer" size="20" maxlength="20"
 				readonly="readonly" value="tester" id="replyer"> <br />
 			<textarea name="reply" rows="3" cols="60" maxlength="500"
-				placeholder="댓글을 달아주세요." id="reply"></textarea>
-			<a id="replyBtn">저장</a>
+				placeholder="댓글을 달아주세요." id="reply"></textarea><br/>
+			<button><a id="replyBtn">댓글달기</a></button>
 		</form>
 	</div>
 	<style>
