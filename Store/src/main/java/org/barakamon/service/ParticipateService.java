@@ -8,9 +8,13 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ParticipateService {
 	
-	public void addPeople(CoBuyDTO dto);
+	public BuyProDTO checkExpired (Long ono) ; 
 	
+	public void addPeople(CoBuyDTO dto);
+		
 	public BuyProDTO buyproList(Long tno); 
+	
+	public void addComplition(CoBuyDTO dto); 
 	
 	public List <CoBuyDTO> cobuyList (Long ono); 
 }

@@ -13,6 +13,14 @@ public interface ParticipateMapper {
 	// 사람증가
 	@Update("update tbl_buypro set curpeople =curpeople +1 where ono = #{ono}") 
 	public void addPeople(Long ono);
+
+	//update시  bpexpired = true 해주는 코드 
+	@Update("update tbl_buypro set bpexpired =true where ono = #{ono}")
+	public void addComplition(Long ono); 
+	
+	//  
+	@Select("select * from tbl_buypro where ono = #{ono}")
+	public BuyProDTO checkExpired (Long ono) ; 
 	
 	@Insert("insert into tbl_cobuy (ono,mname) values(#{ono},#{mname})")
 	public void addname(CoBuyDTO cbDto);

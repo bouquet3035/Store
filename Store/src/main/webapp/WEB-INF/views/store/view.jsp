@@ -20,6 +20,9 @@
 	<h2>${tobuy.viewcount}</h2>
 	<h2>페이지</h2>
 	
+	<style>
+	.hide{display: none; }
+	</style>
 	
 
 
@@ -93,7 +96,16 @@
 				str += "<li> 현재인원 : "+ e.curpeople+ "</li>"; 
 				str += "<li> 최대인원:"+ e.maxpeople+ "</li>"; 
 				str += "<li> 등록날짜 :"+ e.oregdate+ "</li>"; 
-				str += "<form ><button  class='participateBtn' ono = "+ e.ono +"> 참여하기</button></form>";
+				str += "<li> bpexpired :"+ e.bpexpired+ "</li>"; 
+				
+			
+				
+				if(e.bpexpired = true){
+					
+				}else {
+					str += "<form ><button  class='participateBtn' ono = "+ e.ono +"> 참여하기</button></form>";
+				}
+				
 								
 				$(".cobuyUL").html(str);
 		

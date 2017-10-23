@@ -5,6 +5,7 @@ import org.barakamon.dto.BuyProDTO;
 import org.barakamon.dto.CoBuyDTO;
 import org.barakamon.service.ParticipateService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,10 +24,19 @@ public class ParticipateController {
 	@Autowired 
 	private ParticipateService service;
 	
+	@Transactional
 	@PostMapping("/new")
-	public void addParticipate(@RequestBody CoBuyDTO dto) {
-		log.info("CoBuyono:"+ dto.getOno());
-		service.addPeople(dto);
+	public void addParticipate(@RequestBody CoBuyDTO dto, Model model) {
+		
+
+		if(service.checkExpired(dto.getOno()).getBpexpired()) {
+			model.addAttribute("fail", HttpStatus.OK); 
+		}else {
+		
+			log.info("CoBuyono:"+ dto.getOno());
+			service.addPeople(dto);
+			service.addComplition(dto);
+		}
 	}
 	
 	//아이템 리스트 뿌려주는 역활  // 해당 게시물 번호 가 필요함으로 파라미터에 BoardDTO dto 생성 

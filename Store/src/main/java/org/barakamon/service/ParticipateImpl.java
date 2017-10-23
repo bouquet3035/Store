@@ -40,6 +40,18 @@ public class ParticipateImpl implements ParticipateService {
 		return pmapper.cobuyList(ono) ; 
 	}
 
+	@Override
+	public void addComplition(CoBuyDTO dto) {
+		// TODO Auto-generated method stub
+		pmapper.addComplition(dto.getOno());
+	}
+
+
+	@Override
+	public BuyProDTO checkExpired(Long ono) {
+		return pmapper.checkExpired(ono); 
+	}
+
 
 
 }
