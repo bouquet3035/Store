@@ -31,15 +31,46 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardDTO> list(Criteria cri) {
-		
-		if(cri.getSearchType() == null) {			
+
+		if (cri.getSearchType() == null) {
 			cri.setTotal(mapper.getTotal(cri));
-			
+
 			return mapper.listPage(cri);
+			
+		} else if (cri.getSearchType().equals("bpno")) {
+			cri.setTotal(mapper.getPnoTotal(cri));
+
+			return mapper.searchPno(cri);
+			
+		} else if (cri.getSearchType().equals("t")) {
+			cri.setTotal(mapper.getTitleTotal(cri));
+
+			return mapper.searchTitle(cri);
+			
+		} else if (cri.getSearchType().equals("c")) {
+			cri.setTotal(mapper.getTnCTotal(cri));
+
+			return mapper.searchContent(cri);
+
+		} else if (cri.getSearchType().equals("tc")) {
+			cri.setTotal(mapper.getTnCTotal(cri));
+
+			return mapper.searchTnC(cri);
+
+		} else if (cri.getSearchType().equals("w")) {
+			cri.setTotal(mapper.getWTotal(cri));
+
+			return mapper.searchWriter(cri);
+
+		} else if (cri.getSearchType().equals("p")) {
+			cri.setTotal(mapper.getPnameTotal(cri));
+
+			return mapper.searchPname(cri);
 		}
-		cri.setTotal(mapper.getSearchTotal(cri));
-		
-		return mapper.search(cri);
+
+		cri.setTotal(mapper.getTotal(cri));
+
+		return mapper.listPage(cri);
 	}
 
 	@Override
@@ -78,7 +109,5 @@ public class BoardServiceImpl implements BoardService {
 	public List<CoBuyDTO> cbInfo(Long ono) {
 		return bpmapper.cbInfo(ono);
 	}
-
-
 
 }

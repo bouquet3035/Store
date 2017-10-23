@@ -46,8 +46,6 @@
 	<div class='replyDiv'>
 		<ul class='replyUL'>
 		
-		
-
 		</ul>
 	</div>
 	<div style="border: 1px solid; width: 600px; padding: 5px">
@@ -97,18 +95,14 @@
 				str += "<li> 최대인원:"+ e.maxpeople+ "</li>"; 
 				str += "<li> 등록날짜 :"+ e.oregdate+ "</li>"; 
 				str += "<li> bpexpired :"+ e.bpexpired+ "</li>"; 
-				
-			
-				
+		
 				if(e.bpexpired = true){
 					
 				}else {
 					str += "<form ><button  class='participateBtn' ono = "+ e.ono +"> 참여하기</button></form>";
 				}
 				
-								
 				$(".cobuyUL").html(str);
-		
 			});
 
 		}
