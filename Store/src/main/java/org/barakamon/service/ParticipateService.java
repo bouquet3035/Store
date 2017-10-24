@@ -16,5 +16,5 @@ public interface ParticipateService {
 	
 	public void addComplition(CoBuyDTO dto); 
 	
-	public List <CoBuyDTO> cobuyList (Long ono); 
+	public List<CoBuyDTO> cobuyList(Long ono); 
 }

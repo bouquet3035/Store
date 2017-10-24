@@ -27,11 +27,13 @@
 	<h2>${tobuy.regdate}</h2>
 	<h2>${tobuy.viewcount}</h2>
 	<h2>페이지</h2>
-	
+
 	<style>
-	.hide{display: none; }
-	</style>
-	
+.hide {
+	display: none;
+}
+</style>
+
 
 
 	<form action="/store/main" methon="get">
@@ -41,7 +43,7 @@
 	<form method="post">
 		<button>삭제</button>
 	</form>
-	
+
 	<form action="/store/modify" method="get">
 		<input type="hidden" name="page" value='${cri.page }'> <input
 			type='hidden' name='tno' value='${tobuy.tno}'>
@@ -53,7 +55,7 @@
 	</form>
 	<div class='replyDiv'>
 		<ul class='replyUL'>
-		
+
 		</ul>
 	</div>
 	<div style="border: 1px solid; width: 600px; padding: 5px">
@@ -62,8 +64,11 @@
 				type="text" name="replyer" size="20" maxlength="20"
 				readonly="readonly" value="tester" id="replyer"> <br />
 			<textarea name="reply" rows="3" cols="60" maxlength="500"
-				placeholder="댓글을 달아주세요." id="reply"></textarea><br/>
-			<button><a id="replyBtn">댓글달기</a></button>
+				placeholder="댓글을 달아주세요." id="reply"></textarea>
+			<br />
+			<button>
+				<a id="replyBtn">댓글달기</a>
+			</button>
 		</form>
 	</div>
 	<style>
@@ -80,17 +85,18 @@
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/resources/js/reply.js"></script>
-	
-	
+
+
 	<script>
 	var tno = $("#tno").val();
 		makeReplies(tno);
 		
-		function getCobuy() {
+		function getBuyPro() {
 			console.log(tno);
 			var str=""
-
-			$.getJSON("/participate/itemlist/?tno=" + tno, function(e){
+			
+			$.getJSON("/participate/itemlist?tno=" + tno, function(e){
+				
 				str += "<li>ono주문번호 ="+ e.ono + "</li>";
 				str += "<li>bpno 상품번호= "+ e.bpno+ "</li>"; 
 				str += "<li><img src='"+ e.bpimg+ "'></li>";
@@ -102,22 +108,32 @@
 				str += "<li> 현재인원 : "+ e.curpeople+ "</li>"; 
 				str += "<li> 최대인원:"+ e.maxpeople+ "</li>"; 
 				str += "<li> 등록날짜 :"+ e.oregdate+ "</li>"; 
-				str += "<li> bpexpired :"+ e.bpexpired+ "</li>"; 
-		
+				str += "<li> bpexpired :"+ e.bpexpired+ "</li>";
+
 				if(e.bpexpired == true){
 					
 				}else {
 					str += "<form ><button class='participateBtn' ono = "+ e.ono +"> 참여하기</button></form>";
 				}
 				
-				$(".cobuyUL").html(str);
+				$.getJSON("/participate/joined?ono=" + e.ono, function(arr){
+					str += "<li>참여자: ";
+					for (var i = 0; i < arr.length; i++) {
+						console.log(arr[i]);
+						if(i > 0){
+							str += ", "
+						}
+						str += arr[i].mname; 
+					}
+					str += "</li>";
+					$(".cobuyUL").html(str);
+				});
 			});
 
 		}
-		getCobuy();
 		
-	
-	
+		getBuyPro();
+		
 		$(".cobuyUL").on("click", "form .participateBtn",function(e){
 			e.preventDefault();
 			console.log("참여");
@@ -134,7 +150,7 @@
 				data : JSON.stringify(data),
 				success:function(result){
 					alert("성공"); 
-					getCobuy();
+					getBuyPro();
 				}
 			});
 		});
