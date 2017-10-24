@@ -1,5 +1,7 @@
 package org.barakamon.web;
 
+import java.util.List;
+
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.BuyProDTO;
 import org.barakamon.dto.CoBuyDTO;
@@ -42,14 +44,16 @@ public class ParticipateController {
 	//아이템 리스트 뿌려주는 역활  // 해당 게시물 번호 가 필요함으로 파라미터에 BoardDTO dto 생성 
 	//BuyProDTO 가 필요한 이유는 해당 상품 의 정보가 필요하기때문에 
 	//결론 : 파라미터 값과 반환 타입이 헷갈린다 .
-	@GetMapping("/itemlist/")
-	public BuyProDTO itemList(BoardDTO dto, Model model) {
+	@GetMapping("/itemlist")
+	public BuyProDTO itemList(BoardDTO dto) {
 		
-		log.info("Itemlist:"+service.buyproList(dto.getTno()));
-	//	model.addAttribute("itemlist",service.buyproList(dto.getTno()));
-	//	model.addAttribute("cobuylist",service.cobuyList(service.buyproList(dto.getTno()).getOno()));
 		return service.buyproList(dto.getTno());
+	}
+	
+	@GetMapping("/joined")
+	public List<CoBuyDTO> joinedList(CoBuyDTO cdto){
 		
+		return service.cobuyList(cdto.getOno());
 	}
 
 }

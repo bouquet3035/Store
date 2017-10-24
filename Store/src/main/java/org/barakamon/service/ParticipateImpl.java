@@ -28,21 +28,16 @@ public class ParticipateImpl implements ParticipateService {
 
 	@Override
 	public BuyProDTO buyproList(Long tno) {
-		// TODO Auto-generated method stub
-		log.info("buyproList:"+tno);
 		return 	pmapper.buyproList(tno);
 	}
 
 	@Override
 	public List<CoBuyDTO> cobuyList(Long ono) {
-		// TODO Auto-generated method stub
-		log.info("cobuyList :"+ ono);
 		return pmapper.cobuyList(ono) ; 
 	}
 
 	@Override
 	public void addComplition(CoBuyDTO dto) {
-		// TODO Auto-generated method stub
 		pmapper.addComplition(dto.getOno());
 	}
 
