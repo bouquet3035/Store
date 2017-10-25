@@ -4,11 +4,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%@ include file="include/header.jsp"%>
+
 <body>
 	<!--//////////////////////////////////////////////////-->
 	<!--///////////////////HomePage///////////////////////-->
 	<!--//////////////////////////////////////////////////-->
-	<div id="page-content" class="home-page">
+	
+	
+
+	<div id="page-content " class="home-page">
 		<div class="container">	
 			<div class="row">
 				<ul class="nav nav-tabs">
@@ -18,24 +22,43 @@
 				<input type = "button" value = "로그인" onclick = "location.href = '/login'"  vertical-align="middle">
 				<input type = "button" value = "로그아웃" onclick = "location.href = '/logout'"  vertical-align="middle">
 				<div class="tab-content">
-					<div id="featured" class="tab-pane fade in active">
-						<div class="products">
-							<div class="col-sm-7 five-three">
-								<div class="row">
-									<c:forEach var="plist" items="${plist}">
-										<div class="col-sm-4">
-											<div class="product" pno=${plist.pno }>
+					<div id="featured" class="tab-pane fade in active ">
+					<style>
+					    #product{
+					    	width: 200px; height: 345px;
+						    
+						    -webkit-box-sizing: border-box;
+						    -moz-box-sizing: border-box;
+						    box-sizing: border-box;
+						  
+						    }
+						  
+					</style>
+						<div  class="products" 	>
+							<div  class="col-sm-7 five-three">
+								<div  class="row"><h3>
+									<c:forEach  var="plist" items="${plist}"></h3>
+										<div id="product" class= "col-sm-4">
+											<div  class="product font" pno=${plist.pno }>
 												<!-- pimg=${plist.pimg }
 												pname=${plist.pname } price=${plist.saleprice }
 												pevent=${plist.pevent } -->
-												<div class="image">
+												<div  class="image">
 													<img src="${plist.pimg}" />
 												</div>
-												<div class="caption">
-													<div class="name">
+												
+												<style>
+												 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+												#font{
+													 font-family : Nanum Pen Script', cursive; 
+													}
+												</style>
+										
+												<div id="font" class="caption">
+													<div class="name" >
 														<h3>${plist.pname}</h3>
 													</div>
-													<div class="price">${plist.saleprice}원</div>
+													<div class="price korea">${plist.saleprice}원</div>
 													<div class="pevent">${plist.pevent}</div>
 												</div>
 											</div>
@@ -44,9 +67,39 @@
 								</div>
 								<!-- end inner row -->
 							</div>
+							
+							<div  class="col-sm-5 five-two ">
+								<div  class="row"><h3>
+									<c:forEach  var="plist" items="${plist}"></h3>
+										<div id="product" class= "col-sm-6">
+											<div class="product" pno=${plist.pno }>
+												<!-- pimg=${plist.pimg }
+												pname=${plist.pname } price=${plist.saleprice }
+												pevent=${plist.pevent } -->
+												<div class="image">
+													<img src="${plist.pimg}" />
+												</div>
+										
+												<div class="caption">
+													<div class="name" >
+														<h3>${plist.pname}</h3>
+													</div>
+													<div class="price korea">${plist.saleprice}원</div>
+													<div class="pevent">${plist.pevent}</div>
+												</div>
+											</div>
+										</div>
+									</c:forEach>
+								</div><!-- end inner row -->
+							</div>
+								
 							<div class="clear"></div>
 						</div>
 					</div>
+					<!-- //////////////////////////////// -->
+					<!-- /////////////END//////////////// -->
+					<!-- //////////////////////////////// -->
+					
 					<div id="new" class="tab-pane fade">
 						<div class="products">
 							<div class="col-sm-7 five-three">
@@ -66,7 +119,7 @@
 												</ul>
 											</div>
 											<div class="caption">
-												<div class="name">
+												<div  class="name">
 													<h3>
 														<a href="product.html">Pretty Playsuit</a>
 													</h3>
@@ -131,6 +184,7 @@
 															class="glyphicon glyphicon-transfer"></span></a></li>
 												</ul>
 											</div>
+											
 											<div class="caption">
 												<div class="name">
 													<h3>
@@ -149,10 +203,11 @@
 												</div>
 											</div>
 										</div>
-									</div>
-									<!-- end inner row -->
+									</div><!-- end inner row -->
 								</div>
 							</div>
+						</div>
+							
 							<div class="col-sm-5 five-two">
 								<div class="row">
 									<div class="col-sm-6">
@@ -231,7 +286,7 @@
 							<div class="clear"></div>
 						</div>
 					</div>
-				</div>
+				
 			</div>
 			<div class="row">
 				<div class="banner">
@@ -243,6 +298,8 @@
 					</div>
 				</div>
 			</div>
+			
+		
 			<div class="row">
 				<ul class="nav nav-tabs">
 					<li class="active"><a href="#best">BEST SALES</a></li>
@@ -250,7 +307,8 @@
 				</ul>
 				<div class="tab-content">
 					<div id="best" class="tab-pane fade in active">
-						<div class="products">
+						
+						<div  class="products">
 							<div class="col-sm-7 five-three">
 								<div class="row">
 									<div class="col-sm-4">
@@ -645,7 +703,7 @@
 				
 				self.location = "/store/register?pno=" + pno;
 				
-				<!--				var data = {
+				<!--				var data = {  -->
 						<!--	pimg : $(this).attr("pimg"),
 						<!--pname : $(this).attr("pname"),
 						<!--		price : $(this).attr("price"),

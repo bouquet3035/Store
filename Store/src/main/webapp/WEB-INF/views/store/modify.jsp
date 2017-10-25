@@ -18,7 +18,10 @@ Title <input type='text' name='title' value="${tobuy.title }">
 Writer <input type='text' name='contents' value="${tobuy.writer }"> 
 </div>
 <div>
-Contents <input type='text' name='contents' value="${tobuy.contents }"> 
+Contents 
+</div>
+<div>
+<textarea name='contents' rows="3" cols="60" maxlength="500">${tobuy.contents }</textarea> 
 </div>
 
 <div>

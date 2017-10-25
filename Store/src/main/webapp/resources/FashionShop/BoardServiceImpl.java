@@ -84,7 +84,9 @@ public class BoardServiceImpl implements BoardService {
 	public void registerPost(BoardDTO bDto, BuyProDTO bpDto) {
 		mapper.registerPost(bDto);
 		bpmapper.registerBuyPro(bpDto);
+		log.info("입력되는 bpDTO: " + bpDto);
 		bpmapper.registerCoBuy(bDto);
+
 	}
 
 	@Override

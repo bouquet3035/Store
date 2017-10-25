@@ -5,6 +5,7 @@ import java.util.List;
 import org.barakamon.dto.BoardDTO;
 import org.barakamon.dto.BuyProDTO;
 import org.barakamon.dto.CoBuyDTO;
+import org.barakamon.dto.CoBuyProDTO;
 import org.barakamon.service.ParticipateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,9 +46,8 @@ public class ParticipateController {
 	//BuyProDTO 가 필요한 이유는 해당 상품 의 정보가 필요하기때문에 
 	//결론 : 파라미터 값과 반환 타입이 헷갈린다 .
 	@GetMapping("/itemlist")
-	public BuyProDTO itemList(BoardDTO dto) {
-		
-		return service.buyproList(dto.getTno());
+	public List<CoBuyProDTO> itemList(BoardDTO dto) {
+		return service.viewProInfo(dto.getTno());
 	}
 	
 	@GetMapping("/joined")
