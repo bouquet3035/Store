@@ -19,9 +19,9 @@ function makeReplies(param) {
 						+ "' class='delBtn' name='del'>삭제</button></br>"
 						+ "<form class='modForm " + rno + "' action='/reply/"
 						+ rno + "' method='put'>"
-						+ "<input type='text' class='modRpl" + rno
-						+ "' value='" + arr[i].reply
-						+ "'></input><button data-rno ='" + rno
+						+ "<textarea class='modRpl" + rno
+						+ "' rows='3' cols='60' maxlength='500'>" + arr[i].reply
+						+ "'</textarea><button data-rno ='" + rno
 						+ "' class='modAct'>수정</button></form></li>";
 			}
 			$(".replyUL").html(str);

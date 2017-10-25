@@ -90,16 +90,11 @@
 			$.getJSON("/participate/itemlist?tno=" + tno, function(arr){
 				
 				for (var i = 0; i < arr.length; i++) {					
-					str += "<li>ono주문번호 ="+ arr[i].ono + "</li>";
-					str += "<li><img src='"+ arr[i].bpimg+ "'></li>";
-					str += "<li> 상품이름:"+ arr[i].bpname+ "</li>"; 
-					str += "<li> 행사이름:"+ arr[i].bpevent+ "</li>"; 
-					str += "<li> 행사 가격:"+ arr[i].bsaleprice+ "원</li>"; 
-					str += "<li> 원래 가격:"+ arr[i].boriprice+ "원</li>"; 
-					str += "<li> 현재인원 : "+ arr[i].curpeople+ "</li>"; 
-					str += "<li> 최대인원:"+ arr[i].maxpeople+ "</li>"; 
-					str += "<li> bpexpired :"+ arr[i].bpexpired+ "</li>";
-					str += "<li>참여자: ";
+					str += "<li><img src='"+ arr[i].bpimg+ "'>"
+					+ "상품이름:"+ arr[i].bpname
+					+ ", 행사이름:"+ arr[i].bpevent
+					+ ", 행사 가격:"+ arr[i].bsaleprice
+					+ "원, 참여자("+ arr[i].curpeople+ "/"+ arr[i].maxpeople+ "): ";
 
 					for (var j = 0; j < arr[i].mname.length; j++) {
 						if(j > 0){
@@ -107,14 +102,14 @@
 						}
 						str += arr[i].mname[j]; 
 					}
-					str += "</li>";
+					
 					
 					if(arr[i].bpexpired == true){
 						
 					}else {
 						str += "<form ><button class='participateBtn' ono = "+ arr[i].ono +"> 참여하기</button></form>";
 					}
-					
+					str += "</li>";
 				}
 				
 				$(".cobuyUL").html(str);

@@ -16,7 +16,7 @@
 		<result property="bpexpired" column="bpexpired"/>
 		<collection property="mname" ofType="java.lang.String" javaType="list">
 			<id column="mname"/>
-			</collection>
+		</collection>
 	</resultMap>
 	
 	<select id="getProInfoList" resultMap="viewProInfo">
@@ -24,8 +24,8 @@
 		bp.ono ono, bpimg, bpname, bpevent, bsaleprice, boriprice,
 		curpeople, maxpeople, bpexpired, mname
 	FROM tbl_buypro bp
-	left join tbl_cobuy cb
-	on bp.ono = cb.ono
+		left join tbl_cobuy cb
+		on bp.ono = cb.ono
 	where tno = #{tno}
 	order by cb.cno
 	</select>
