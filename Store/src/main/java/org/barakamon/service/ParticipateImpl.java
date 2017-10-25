@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.barakamon.dto.BuyProDTO;
 import org.barakamon.dto.CoBuyDTO;
+import org.barakamon.dto.CoBuyProDTO;
 import org.barakamon.mapper.ParticipateMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,8 @@ import lombok.extern.java.Log;
 @Log
 public class ParticipateImpl implements ParticipateService {
 	
-	@Autowired ParticipateMapper pmapper;
+	@Autowired 
+	private ParticipateMapper pmapper;
 
 	@Transactional
 	@Override
@@ -45,6 +47,12 @@ public class ParticipateImpl implements ParticipateService {
 	@Override
 	public BuyProDTO checkExpired(Long ono) {
 		return pmapper.checkExpired(ono); 
+	}
+
+
+	@Override
+	public List<CoBuyProDTO> viewProInfo(Long tno) {
+		return pmapper.getProInfoList(tno);
 	}
 
 

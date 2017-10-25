@@ -1,27 +1,15 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <%@ include file="include/header.jsp"%>
-<head>
-<meta content="UTF=8">
-</head>
 <body>
-
-<h1>Test</h1>
-
 	<div class='cobuyDiv'>
 		<ul class='cobuyUL'>
 
 		</ul>
 	</div>
-	<!-- /////////////////////////////////////////// -->
-	<!-- /////////////////////////////////////////// -->
-	<!-- /////////////////////////////////////////// -->
-	
-	
 	<h1>${cobuy }</h1>
 	<h1>${buypro}</h1>
 	<h1>${tobuy}</h1>
@@ -99,39 +87,32 @@
 			console.log(tno);
 			var str=""
 			
-			$.getJSON("/participate/itemlist?tno=" + tno, function(e){
+			$.getJSON("/participate/itemlist?tno=" + tno, function(arr){
 				
-				str += "<li>ono주문번호 ="+ e.ono + "</li>";
-				str += "<li>bpno 상품번호= "+ e.bpno+ "</li>"; 
-				str += "<li><img src='"+ e.bpimg+ "'></li>";
-				str += "<li> 상품이름:"+ e.bpname+ "</li>"; 
-				str += "<li> 행사이름:"+ e.bpevent+ "</li>"; 
-				str += "<li> 행사 가격:"+ e.bsaleprice+ "원</li>"; 
-				str += "<li> 원래 가격:"+ e.boriprice+ "원</li>"; 
-				str += "<li> tno:"+ e.tno+ "</li>";
-				str += "<li> 현재인원 : "+ e.curpeople+ "</li>"; 
-				str += "<li> 최대인원:"+ e.maxpeople+ "</li>"; 
-				str += "<li> 등록날짜 :"+ e.oregdate+ "</li>"; 
-				str += "<li> bpexpired :"+ e.bpexpired+ "</li>";
+				for (var i = 0; i < arr.length; i++) {					
+					str += "<li><img src='"+ arr[i].bpimg+ "'>"
+					+ "상품이름:"+ arr[i].bpname
+					+ ", 행사이름:"+ arr[i].bpevent
+					+ ", 행사 가격:"+ arr[i].bsaleprice
+					+ "원, 참여자("+ arr[i].curpeople+ "/"+ arr[i].maxpeople+ "): ";
 
-				if(e.bpexpired == true){
-					
-				}else {
-					str += "<form ><button class='participateBtn' ono = "+ e.ono +"> 참여하기</button></form>";
-				}
-				
-				$.getJSON("/participate/joined?ono=" + e.ono, function(arr){
-					str += "<li>참여자: ";
-					for (var i = 0; i < arr.length; i++) {
-						console.log(arr[i]);
-						if(i > 0){
+					for (var j = 0; j < arr[i].mname.length; j++) {
+						if(j > 0){
 							str += ", "
 						}
-						str += arr[i].mname; 
+						str += arr[i].mname[j]; 
+					}
+					
+					
+					if(arr[i].bpexpired == true){
+						
+					}else {
+						str += "<form ><button class='participateBtn' ono = "+ arr[i].ono +"> 참여하기</button></form>";
 					}
 					str += "</li>";
-					$(".cobuyUL").html(str);
-				});
+				}
+				
+				$(".cobuyUL").html(str);
 			});
 
 		}
