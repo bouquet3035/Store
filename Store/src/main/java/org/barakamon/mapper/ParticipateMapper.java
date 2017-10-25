@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.barakamon.dto.BuyProDTO;
 import org.barakamon.dto.CoBuyDTO;
+import org.barakamon.dto.CoBuyProDTO;
 
 public interface ParticipateMapper {
 	//update 테이블명 set 컬럼명 = 컬럼명+ 1 where 컬럼명 = 값 // 컬럼명이 값이면 1을 더함
@@ -33,5 +34,6 @@ public interface ParticipateMapper {
 	
 	@Select("select * from tbl_cobuy where ono = #{ono}")
 	public List<CoBuyDTO> cobuyList(Long ono);
-
+	
+	public List<CoBuyProDTO> getProInfoList(Long tno);
 }

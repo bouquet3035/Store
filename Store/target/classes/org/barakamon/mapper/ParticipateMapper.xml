@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.barakamon.mapper.ParticipateMapper">
+	<resultMap type="org.barakamon.dto.CoBuyProDTO" id="viewProInfo">
+		<result property="ono" column="ono"/>
+		<result property="bpimg" column="bpimg"/>
+		<result property="bpname" column="bpname"/>
+		<result property="bpevent" column="bpevent"/>
+		<result property="bsaleprice" column="bsaleprice"/>
+		<result property="boriprice" column="boriprice"/>
+		<result property="curpeople" column="curpeople"/>
+		<result property="maxpeople" column="maxpeople"/>
+		<result property="bpexpired" column="bpexpired"/>
+		<collection property="mname" ofType="java.lang.String" javaType="list">
+			<id column="mname"/>
+			</collection>
+	</resultMap>
+	
+	<select id="getProInfoList" resultMap="viewProInfo">
+	SELECT
+		bp.ono ono, bpimg, bpname, bpevent, bsaleprice, boriprice,
+		curpeople, maxpeople, bpexpired, mname
+	FROM tbl_buypro bp
+	left join tbl_cobuy cb
+	on bp.ono = cb.ono
+	where tno = #{tno}
+	order by cb.cno
+	</select>
+</mapper>
