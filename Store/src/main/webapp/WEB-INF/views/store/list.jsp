@@ -18,71 +18,71 @@
 	#writer{width: 5%}
 	#data{width: 10%}
 	#view{width: 7%}
-	#menu1{
+	#total{
 	
-		margin-left: 300px;
+		margin-left: 50px;
 		margin-right: 300px;
+		width: 95%;
 		}
-	#menu2{
 	
-	margin-left: 300px;
-	margin-right: 300px;
-	}
+	
 
 </style>
-<div id='menu1'>
-
-<h3>게시글 목록</h3>
-
-<table class="table nav navbar-nav ">
-	<tr>
-		<th><form action="/store/list" method="get"><select name="searchType">
-				<option value="n" <c:out value="${cri.searchType == null ?'selected':'' }"/>>-Search By-</option>
-				<option value="t" <c:out value="${cri.searchType eq 't'?'selected':'' }"/>>Title</option>
-				<option value="c" <c:out value="${cri.searchType eq 'c'?'selected':'' }"/>>Content</option>
-				<option value="tc" <c:out value="${cri.searchType eq 'tc'?'selected':'' }"/>>Title OR Content</option>
-				<option value="w" <c:out value="${cri.searchType eq 'w'?'selected':'' }"/>>Writer</option>
-				<option value="p" <c:out value="${cri.searchType eq 'p'?'selected':'' }"/>>Product Name</option>
-				<option value="bpno" <c:out value="${cri.searchType eq 'bpno'?'selected':'' }"/>>Product ID</option>
-		</select><input name="keyword" type="text" value="${cri.keyword }"><input type="submit" value="Search"></form></th>
-		<th></th>
-		<th></th>
-		<th></th>
-		<th><button class="btn btn-primary" style="float: right;"
-				onclick="location.href='/store/main'">모집글 쓰기</button></th>
-	</tr></table>
-</div>
-<div id='menu2'>
-<table class="table nav navbar-nav menubar">
-	<tr>
-		<th id="num">No</th>
-		<th id="title" >제목</th>
-		<th id="writer" >작성자</th>
-		<th id="date" >작성날짜</th>
-		<th id="viewcount" >조회수</th>
-	</tr>
-		<c:forEach var="board" items="${list}">
-			<tr class="listUl">
-				<td>${board.tno}</td>
-				<td><a href="${board.tno}"> ${board.title}</a><span class="rcnt">[${board.replycount }]</span></td>
-				<td>${board.writer}</td>
-				<td>${board.regdate}</td>
-				<td>${board.viewcount}</td>
-			</tr>
+<div id='total'>
+	<div id='menu1'>
 	
-		</c:forEach>
+	<h3>게시글 목록</h3>
 	
-</table>
+	<table class="table nav navbar-nav ">
+		<tr>
+			<th><form action="/store/list" method="get"><select name="searchType">
+					<option value="n" <c:out value="${cri.searchType == null ?'selected':'' }"/>>-Search By-</option>
+					<option value="t" <c:out value="${cri.searchType eq 't'?'selected':'' }"/>>Title</option>
+					<option value="c" <c:out value="${cri.searchType eq 'c'?'selected':'' }"/>>Content</option>
+					<option value="tc" <c:out value="${cri.searchType eq 'tc'?'selected':'' }"/>>Title OR Content</option>
+					<option value="w" <c:out value="${cri.searchType eq 'w'?'selected':'' }"/>>Writer</option>
+					<option value="p" <c:out value="${cri.searchType eq 'p'?'selected':'' }"/>>Product Name</option>
+					<option value="bpno" <c:out value="${cri.searchType eq 'bpno'?'selected':'' }"/>>Product ID</option>
+			</select><input name="keyword" type="text" value="${cri.keyword }"><input type="submit" value="Search"></form></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th><button class="btn btn-primary" style="float: right;"
+					onclick="location.href='/store/main'">모집글 쓰기</button></th>
+		</tr></table>
+	</div>
+	<div id='menu2'>
+	<table class="table nav navbar-nav menubar">
+		<tr>
+			<th id="num">No</th>
+			<th id="title" >제목</th>
+			<th id="writer" >작성자</th>
+			<th id="date" >작성날짜</th>
+			<th id="viewcount" >조회수</th>
+		</tr>
+			<c:forEach var="board" items="${list}">
+				<tr class="listUl">
+					<td>${board.tno}</td>
+					<td><a href="${board.tno}"> ${board.title}</a><span class="rcnt">[${board.replycount }]</span></td>
+					<td>${board.writer}</td>
+					<td>${board.regdate}</td>
+					<td>${board.viewcount}</td>
+				</tr>
+		
+			</c:forEach>
+		
+	</table>
+	</div>
 </div>
-
-
-<!-- 페이지네이션   -->
-<!-- 페이지네이션   -->
-<!-- 페이지네이션   -->
-
-<div class="pageDiv text-center ">
-	<ul class="pageUl pagination btn btm"></ul>
-</div>
+	
+	<!-- 페이지네이션   -->
+	<!-- 페이지네이션   -->
+	<!-- 페이지네이션   -->
+	<br>
+	<div class="pageDiv text-center ">
+		<ul class="pageUl pagination btn btm"></ul>
+	</div>
+	<br>
 
 <style>
 
@@ -95,10 +95,10 @@ color: orange;
 
 .pageUl li {
 	list-style: none;
-	margin-left: auto 0;
+	margin-left: auto 0px ;
 	width: 3em;
 	background-color: lime;
-	float: left;
+	
 	text-align: center;
 	border-radius: 5px;
 	background: #3498db;
@@ -142,13 +142,20 @@ color: orange;
 	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 }
+
 </style>
-<br>
-<br>
+
 <form id="actionForm" action="" searchType="${cri.searchType}" keyword="${cri.keyword}">
 	<input type="hidden" name="page" value=${cri.page}> <input
 		type="hidden" name="tno">
 </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 <!-- 임시로 밑으로 빼놓은 페이지 당 글 수 선전 선택지. 아직 작동 안함둥 ㅠㅠ -->
 

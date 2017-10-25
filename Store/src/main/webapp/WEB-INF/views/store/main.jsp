@@ -28,7 +28,7 @@
 						    -webkit-box-sizing: border-box;
 						    -moz-box-sizing: border-box;
 						    box-sizing: border-box;
-						    font-family:sans-serif;
+						  
 						    }
 						  
 					</style>
@@ -46,9 +46,9 @@
 												</div>
 												
 												<style>
+												 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 												#font{
 													 font-family : Nanum Pen Script', cursive; 
-												
 													}
 												</style>
 										
