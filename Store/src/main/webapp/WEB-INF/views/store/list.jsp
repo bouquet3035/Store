@@ -5,13 +5,36 @@
 <!DOCTYPE html>
 
 <html>
-
+</html>
 <%@ include file="include/header.jsp"%>
 <!-- 게시판 구현   -->
 <!-- 게시판 구현   -->
 <!-- 게시판 구현   -->
+
+ 
+<style>
+	#num{width: 5%}
+	#title{width: 60%}
+	#writer{width: 5%}
+	#data{width: 10%}
+	#view{width: 7%}
+	#menu1{
+	
+		margin-left: 300px;
+		margin-right: 300px;
+		}
+	#menu2{
+	
+	margin-left: 300px;
+	margin-right: 300px;
+	}
+
+</style>
+<div id='menu1'>
+
 <h3>게시글 목록</h3>
-<table class="table nav navbar-nav">
+
+<table class="table nav navbar-nav ">
 	<tr>
 		<th><form action="/store/list" method="get"><select name="searchType">
 				<option value="n" <c:out value="${cri.searchType == null ?'selected':'' }"/>>-Search By-</option>
@@ -28,41 +51,47 @@
 		<th><button class="btn btn-primary" style="float: right;"
 				onclick="location.href='/store/main'">모집글 쓰기</button></th>
 	</tr></table>
-<table class="table nav navbar-nav">
+</div>
+<div id='menu2'>
+<table class="table nav navbar-nav menubar">
 	<tr>
-		<th>No</th>
-		<th>제목</th>
-		<th>작성자</th>
-		<th>작성날짜</th>
-		<th>조회수</th>
+		<th id="num">No</th>
+		<th id="title" >제목</th>
+		<th id="writer" >작성자</th>
+		<th id="date" >작성날짜</th>
+		<th id="viewcount" >조회수</th>
 	</tr>
-	<c:forEach var="board" items="${list}">
-		<tr class="listUl">
-			<td>${board.tno}</td>
-			<td><a href="${board.tno}"> ${board.title}</a><span class="rcnt">[${board.replycount }]</span></td>
-			<td>${board.writer}</td>
-			<td>${board.regdate}</td>
-			<td>${board.viewcount}</td>
-
-		</tr>
-	</c:forEach>
+		<c:forEach var="board" items="${list}">
+			<tr class="listUl">
+				<td>${board.tno}</td>
+				<td><a href="${board.tno}"> ${board.title}</a><span class="rcnt">[${board.replycount }]</span></td>
+				<td>${board.writer}</td>
+				<td>${board.regdate}</td>
+				<td>${board.viewcount}</td>
+			</tr>
+	
+		</c:forEach>
+	
 </table>
+</div>
+
 
 <!-- 페이지네이션   -->
 <!-- 페이지네이션   -->
 <!-- 페이지네이션   -->
-<div class="pageDiv text-center">
+
+<div class="pageDiv text-center ">
 	<ul class="pageUl pagination btn btm"></ul>
 </div>
 
 <style>
+
 .rcnt {
 color: orange;	
 }
-
 .table {
-
 }
+
 
 .pageUl li {
 	list-style: none;
@@ -83,8 +112,8 @@ color: orange;
 	border-radius: 28px;
 	font-family: Arial;
 	color: #ffffff;
-	font-size: 15px;
-	padding: 10px 20px 10px 20px;
+	font-size: 12px;
+	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 	background: #3cb0fd;
 	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
@@ -109,35 +138,8 @@ color: orange;
 	border-radius: 28px;
 	font-family: Arial;
 	color: #ffffff;
-	font-size: 15px;
-	padding: 10px 20px 10px 20px;
-	text-decoration: none;
-}
-
-.btm {
-	background: #3498db;
-	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-	background-image: -o-linear-gradient(top, #3498db, #2980b9);
-	background-image: linear-gradient(to bottom, #3498db, #2980b9);
-	-webkit-border-radius: 28;
-	-moz-border-radius: 28;
-	border-radius: 28px;
-	font-family: Arial;
-	color: #ffffff;
-	font-size: 20px;
-	padding: 10px 20px 10px 20px;
-	text-decoration: none;
-}
-
-.btm:hover {
-	background: #3cb0fd;
-	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	font-size: 12px;
+	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 }
 </style>
@@ -149,14 +151,6 @@ color: orange;
 </form>
 
 <!-- 임시로 밑으로 빼놓은 페이지 당 글 수 선전 선택지. 아직 작동 안함둥 ㅠㅠ -->
-<select id="pageSize">
-				<option class="pageSize" value="5">5개씩 보기</option>
-				<option class="pageSize" value="10">10개씩 보기</option>
-				<option class="pageSize" value="15" selected="selected">15개씩 보기</option>
-				<option class="pageSize" value="20">20개씩 보기</option>
-				<option class="pageSize" value="30">30개씩 보기</option>
-				<option class="pageSize" value="50">50개씩 보기</option>
-		</select>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

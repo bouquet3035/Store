@@ -4,11 +4,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%@ include file="include/header.jsp"%>
+
 <body>
 	<!--//////////////////////////////////////////////////-->
 	<!--///////////////////HomePage///////////////////////-->
 	<!--//////////////////////////////////////////////////-->
-	<div id="page-content" class="home-page">
+	
+
+	<div id="page-content " class="home-page">
 		<div class="container">	
 			<div class="row">
 				<ul class="nav nav-tabs">
@@ -16,12 +19,12 @@
 					<li><a href="#new">새로운 행사상품</a></li>
 				</ul>
 				<div class="tab-content">
-					<div id="featured" class="tab-pane fade in active">
-						<div class="products">
-							<div class="col-sm-7 five-three">
-								<div class="row">
-									<c:forEach var="plist" items="${plist}">
-										<div class="col-sm-4">
+					<div id="featured" class="tab-pane fade in active ">
+						<div  class="products" 	>
+							<div  class="col-sm-7 five-three ">
+								<div  class="row"><h3>
+									<c:forEach  var="plist" items="${plist}"></h3>
+										<div class= "col-sm-3">
 											<div class="product" pno=${plist.pno }>
 												<!-- pimg=${plist.pimg }
 												pname=${plist.pname } price=${plist.saleprice }
@@ -29,11 +32,12 @@
 												<div class="image">
 													<img src="${plist.pimg}" />
 												</div>
+										
 												<div class="caption">
-													<div class="name">
+													<div class="name" >
 														<h3>${plist.pname}</h3>
 													</div>
-													<div class="price">${plist.saleprice}원</div>
+													<div class="price korea">${plist.saleprice}원</div>
 													<div class="pevent">${plist.pevent}</div>
 												</div>
 											</div>
@@ -64,7 +68,7 @@
 												</ul>
 											</div>
 											<div class="caption">
-												<div class="name">
+												<div  class="name">
 													<h3>
 														<a href="product.html">Pretty Playsuit</a>
 													</h3>
@@ -129,8 +133,11 @@
 															class="glyphicon glyphicon-transfer"></span></a></li>
 												</ul>
 											</div>
+											<style>
+											.ko{font-family: "Helvetica Neue",Helvetica,Arial,sans-seri}
+											</style>
 											<div class="caption">
-												<div class="name">
+												<div class="name ko">
 													<h3>
 														<a href="product.html">Pretty Playsuit</a>
 													</h3>
@@ -643,7 +650,7 @@
 				
 				self.location = "/store/register?pno=" + pno;
 				
-				<!--				var data = {
+				<!--				var data = {  -->
 						<!--	pimg : $(this).attr("pimg"),
 						<!--pname : $(this).attr("pname"),
 						<!--		price : $(this).attr("price"),

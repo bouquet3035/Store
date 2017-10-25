@@ -16,12 +16,16 @@
       margin-left:30px;
       margin-right: 30px;
     }
+    
+   
+
+
   </style>
 
 </head>
 <body>
 <!-- 메인화면  -->
-	<div id="main-content" class="col-md-8 main">
+	<div id="main-content" class="col-md-8 main ">
 			<div class="product">
 				<div class="col-md-6">
 					<div class="image">
@@ -45,8 +49,8 @@
 					</div>
 				</div>
 				<div class="col-md-6">
-							<div class="caption">
-								<div class="name"><h3>${pinfo.pname}(${pinfo.pevent})</h3></div>
+							<div class="caption ">
+								<div class="name"><h2>${pinfo.pname}(${pinfo.pevent})</h2></div>
 								<div class="event"><h3>${pinfo.pevent}행사</h3></div>
 								<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 								<div class="info">
