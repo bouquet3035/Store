@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.java96.web">
+	<logger name="org.barakamon.web">
 		<level value="info" />
 	</logger>
 	

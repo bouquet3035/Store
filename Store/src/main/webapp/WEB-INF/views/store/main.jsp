@@ -15,6 +15,8 @@
 					<li class="active"><a href="#featured">행사 상품 목록</a></li>
 					<li><a href="#new">새로운 행사상품</a></li>
 				</ul>
+				<input type = "button" value = "로그인" onclick = "location.href = '/login'"  vertical-align="middle">
+				<input type = "button" value = "로그아웃" onclick = "location.href = '/logout'"  vertical-align="middle">
 				<div class="tab-content">
 					<div id="featured" class="tab-pane fade in active">
 						<div class="products">

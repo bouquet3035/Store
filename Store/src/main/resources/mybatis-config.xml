@@ -6,6 +6,6 @@
   
   <configuration>
   	<typeAliases>
-  		<package name="com.java96.dto"/>
+  		<package name="org.barakamon.dto"/>
   	</typeAliases>
   </configuration>
