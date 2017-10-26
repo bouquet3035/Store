@@ -14,7 +14,7 @@ function makeReplies(param) {
 				str += "<li class='rpl'>" + rno + "  " + arr[i].replyer + "<pre>  "
 						+ arr[i].reply + "</pre>  " + arr[i].tno;
 				
-				if(mid = rid){
+				if(mid == rid){
 					
 					str += " <button data-rno ='" + rno
 					+ "' class='modBtn modBtn" + rno
