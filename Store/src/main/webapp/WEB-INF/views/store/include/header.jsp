@@ -60,7 +60,7 @@
 				<div id="logo">
 					<img src="/resources/FashionShop/images/logo.png" />
 				</div>
-				
+
 			</div>
 			<div class="col-md-6 text-right">
 				<div class="phone">
@@ -76,10 +76,19 @@
 					</button>
 				</form>
 			</div>
-			<div id="cart">
-				<a class="btn btn-cart" href="cart.html"><span
-					class="glyphicon glyphicon-shopping-cart"></span>CART<strong>0</strong></a>
-			</div>
+			<c:choose>
+				<c:when test="${memberDTO.mid == null }">
+				<div id="cart">
+					<a class="btn btn-cart" href="/login">Login<strong>0</strong></a>
+				</div>
+				</c:when>
+				<c:otherwise>
+				<div id="cart">
+				<a class="btn btn-cart" href="/logout">
+					Logout<strong>0</strong></a>
+					</div>
+				</c:otherwise>
+			</c:choose>
 		</div>
 	</div>
 	</header>

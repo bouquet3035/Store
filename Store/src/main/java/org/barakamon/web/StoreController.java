@@ -91,10 +91,10 @@ public class StoreController {
 		
 		service.modify(bDto, cri);
 		
-		model.addAttribute("bDto", bDto.getTno());
+		model.addAttribute("tno", bDto.getTno());
 		model.addAttribute("page", cri.getPage());
 		model.addAttribute("modify", "modsuccess");
 		
-		return "redirect:/store/list";
+		return "redirect:/store/view";
 	}
 }
