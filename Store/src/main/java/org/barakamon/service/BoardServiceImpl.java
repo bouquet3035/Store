@@ -57,10 +57,15 @@ public class BoardServiceImpl implements BoardService {
 
 			return mapper.searchTnC(cri);
 
-		} else if (cri.getSearchType().equals("w")) {
-			cri.setTotal(mapper.getWTotal(cri));
+		} else if (cri.getSearchType().equals("wn")) {
+			cri.setTotal(mapper.getWNTotal(cri));
 
-			return mapper.searchWriter(cri);
+			return mapper.searchWriterName(cri);
+
+		}  else if (cri.getSearchType().equals("wi")) {
+			cri.setTotal(mapper.getWITotal(cri));
+
+			return mapper.searchWriterID(cri);
 
 		} else if (cri.getSearchType().equals("p")) {
 			cri.setTotal(mapper.getPnameTotal(cri));

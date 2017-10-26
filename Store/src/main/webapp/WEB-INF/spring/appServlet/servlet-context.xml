@@ -32,9 +32,9 @@
 		class="org.barakamon.interceptor.LoginAfterInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
-			<mapping path="/store/main" />
+			<mapping path="/store/register" />
+			<mapping path="/store/view" />
 			<beans:ref bean="checkLogin" />
-
 		</interceptor>
 		<interceptor>
 			<mapping path="/login" />

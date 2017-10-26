@@ -40,7 +40,8 @@
 					<option value="t" <c:out value="${cri.searchType eq 't'?'selected':'' }"/>>Title</option>
 					<option value="c" <c:out value="${cri.searchType eq 'c'?'selected':'' }"/>>Content</option>
 					<option value="tc" <c:out value="${cri.searchType eq 'tc'?'selected':'' }"/>>Title OR Content</option>
-					<option value="w" <c:out value="${cri.searchType eq 'w'?'selected':'' }"/>>Writer</option>
+					<option value="wn" <c:out value="${cri.searchType eq 'wn'?'selected':'' }"/>>Writer Name</option>
+					<option value="wi" <c:out value="${cri.searchType eq 'wi'?'selected':'' }"/>>Writer ID</option>
 					<option value="p" <c:out value="${cri.searchType eq 'p'?'selected':'' }"/>>Product Name</option>
 					<option value="bpno" <c:out value="${cri.searchType eq 'bpno'?'selected':'' }"/>>Product ID</option>
 			</select><input name="keyword" type="text" value="${cri.keyword }"><input type="submit" value="Search"></form></th>
