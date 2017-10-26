@@ -8,6 +8,6 @@ import lombok.Data;
 public class CoBuyDTO {
 	
 	private Long cno, ono;
-	private String mname;
+	private String mname, mid;
 	private Date cregdate;
 }

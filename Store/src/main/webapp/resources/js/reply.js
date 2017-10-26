@@ -129,6 +129,7 @@ function makeReplies(param) {
 		var data = {
 			reply : $("#reply").val(),
 			replyer : $("#replyer").val(),
+			mid : $("#mid").val(),
 			tno : tno
 		};
 

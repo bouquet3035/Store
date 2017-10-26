@@ -23,7 +23,7 @@ public interface ParticipateMapper {
 	@Select("select * from tbl_buypro where ono = #{ono}")
 	public BuyProDTO checkExpired (Long ono) ; 
 	
-	@Insert("insert into tbl_cobuy (ono,mname) values(#{ono},#{mname})")
+	@Insert("insert into tbl_cobuy (ono,mname, mid) values(#{ono},#{mname}, #{mid})")
 	public void addname(CoBuyDTO cbDto);
 	
 	

@@ -17,10 +17,10 @@ public interface BuyProMapper {
 	@Select("select * from tbl_buypro where tno = #{tno}")
 	public BuyProDTO bpInfo(Long tno);
 
-	@Insert("insert into tbl_cobuy (ono, mname) values(LAST_INSERT_ID(), #{writer})")
+	@Insert("insert into tbl_cobuy (ono, mname, mid) values(LAST_INSERT_ID(), #{writer}, #{mid})")
 	public void registerCoBuy(BoardDTO bDto);
 	
-	@Insert("insert into tbl_cobuy (ono, mname) values(#{ono}, #{mname})")
+	@Insert("insert into tbl_cobuy (ono, mname, mid) values(#{ono}, #{mname}, #{mid})")
 	public void joinCoBuy(CoBuyDTO cDto);
 
 	@Select("select * from tbl_cobuy where ono = #{ono}")
