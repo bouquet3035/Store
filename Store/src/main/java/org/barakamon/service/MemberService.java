@@ -2,6 +2,8 @@ package org.barakamon.service;
 
 
 
+import java.util.List;
+
 import org.barakamon.dto.LoginDTO;
 import org.barakamon.dto.MemberDTO;
 
@@ -11,8 +13,9 @@ public interface MemberService {
 
 	public void registermemberPost(MemberDTO mDto);
 	
-	public MemberDTO updatemember(MemberDTO mDto) throws Exception;
+	public void updatemember(MemberDTO mDto) throws Exception;
 	
-	public MemberDTO deletemember(String mid) throws Exception;
+	public void deletemember(String mid) throws Exception;
 
+	public List<MemberDTO> checkmember(MemberDTO mDto);
 }

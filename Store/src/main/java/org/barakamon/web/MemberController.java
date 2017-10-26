@@ -1,5 +1,6 @@
 package org.barakamon.web;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,13 +63,47 @@ public class MemberController {
 
 	@PostMapping("/memberregister")
 	public String memberregisterpost(MemberDTO mDto, Model model) throws Exception {
-		//log.info("회원가입 페이지 돌입" + mDto);
-		log.info("왜안되냐" + mDto.toString());
-		
-		service.registermemberPost(mDto);
-		
-		model.addAttribute("register", "success");
+		Boolean check = service.checkmember(mDto).isEmpty();
+		if (!check) {
+			model.addAttribute("fail", HttpStatus.OK);
+			
+		} else {
+			log.info("왜안되냐" + mDto.toString());
 
+			service.registermemberPost(mDto);
+
+			model.addAttribute("register", "success");
+
+		}
 		return "redirect:/login";
 	}
+
+	@GetMapping("/memberout")
+	public void memberout() {
+		log.info("탈퇴 GET");
+	}
+
+	@PostMapping("/memberout")
+	public String memberoutpost(MemberDTO mDto, Model model) throws Exception {
+		log.info("될까" + mDto.toString());
+		service.deletemember(mDto.getMid());
+		model.addAttribute("remove", "delsuccess");
+
+		return "redirect:/store/list";
+	}
+
+	@GetMapping("/membermodify")
+	public void membermodify() {
+		log.info("수정 GET");
+	}
+
+	@PostMapping("/membermodify")
+	public String membermodifypost(MemberDTO mDto, Model model) throws Exception {
+		log.info("될거야" + mDto.toString());
+		service.updatemember(mDto);
+		model.addAttribute("modify", "modsuccess");
+
+		return "redirect:/store/main";
+	}
+
 }

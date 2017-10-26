@@ -1,5 +1,7 @@
 package org.barakamon.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.barakamon.dto.LoginDTO;
@@ -33,15 +35,21 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDTO updatemember(MemberDTO mDto) throws Exception {
+	public void updatemember(MemberDTO mDto) throws Exception {
 		// TODO Auto-generated method stub
-		return mmapper.updatemember(mDto);
+		mmapper.updatemember(mDto);
 	}
 
 	@Override
-	public MemberDTO deletemember(String mid) throws Exception {
+	public void deletemember(String mid) throws Exception {
 		// TODO Auto-generated method stub
-		return mmapper.deletemember(mid);
+		mmapper.deletemember(mid);
+	}
+
+	@Override
+	public List<MemberDTO> checkmember(MemberDTO mDto) {
+		// TODO Auto-generated method stub
+		return mmapper.checkmember(mDto);
 	}
 
 	

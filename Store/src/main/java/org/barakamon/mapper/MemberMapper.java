@@ -1,5 +1,7 @@
 package org.barakamon.mapper;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.ibatis.annotations.Delete;
@@ -28,9 +30,13 @@ public interface MemberMapper {
 	
 	//회원정보수정
 	@Update("update tbl_members set mname = #{mname} where mid = #{mid}")
-	public MemberDTO updatemember(MemberDTO mDto);
+	public void updatemember(MemberDTO mDto);
 	
 	//회원 탈퇴
 	@Delete("delete from tbl_members where mid = #{mid}")
-	public MemberDTO deletemember(String mid);
+	public void deletemember(String mid);
+	
+	//닉네임 중복 체크
+	@Select("select * from tbl_members where mid = #{mid} or mname = #{mname}")
+	public List<MemberDTO> checkmember(MemberDTO mDto);
 }
