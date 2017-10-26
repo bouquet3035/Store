@@ -30,17 +30,24 @@
 		class="org.barakamon.interceptor.LoginCheckInterceptor"></beans:bean>
 	<beans:bean id="afterLogin"
 		class="org.barakamon.interceptor.LoginAfterInterceptor"></beans:bean>
+	<beans:bean id="afterLogout"
+		class="org.barakamon.interceptor.LogoutInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
-			<mapping path="/store/main" />
+			<mapping path="/store/register" />
+			<mapping path="/store/view" />
 			<beans:ref bean="checkLogin" />
-
 		</interceptor>
 		<interceptor>
 			<mapping path="/login" />
 			<beans:ref bean="afterLogin" />
-
 		</interceptor>
+		
+		<interceptor>
+			<mapping path="/logout" />
+			<beans:ref bean="afterLogout" />
+		</interceptor>
+		
 	</interceptors>
 	<resources mapping="/img/**" location="/resources/img/" />
 

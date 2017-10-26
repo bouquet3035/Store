@@ -39,6 +39,10 @@ public class MemberController {
 
 		
 	}
+	
+	@GetMapping("/logout")
+	public void logout() {	
+	}
 
 	@GetMapping("/loginresult")
 	public void loginresult() {

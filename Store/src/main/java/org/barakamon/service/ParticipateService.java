@@ -15,8 +15,6 @@ public interface ParticipateService {
 		
 	public BuyProDTO buyproList(Long tno); 
 	
-	public void addComplition(CoBuyDTO dto); 
-	
 	public List<CoBuyDTO> cobuyList(Long ono); 
 	
 	public List<CoBuyProDTO> viewProInfo(Long tno);

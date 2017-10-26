@@ -10,8 +10,6 @@
 
 		</ul>
 	</div>
-	<h1>${cobuy }</h1>
-	<h1>${buypro}</h1>
 	<h1>${tobuy}</h1>
 	<h2>${tobuy.tno}</h2>
 	<h2>${tobuy.title}</h2>
@@ -25,8 +23,6 @@
 	display: none;
 }
 </style>
-
-
 
 	<form action="/store/main" methon="get">
 		<button>상품리스트</button>
