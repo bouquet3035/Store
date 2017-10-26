@@ -52,11 +52,10 @@
 	</div>
 	<div style="border: 1px solid; width: 600px; padding: 5px">
 		<form>
-			<input type="hidden" id="tno" value="${tobuy.tno }"> 작성자: <input
-				type="text" name="replyer" size="20" maxlength="20"
-				readonly="readonly" value="tester" id="replyer"> <br />
-			<textarea name="reply" rows="3" cols="60" maxlength="500"
-				placeholder="댓글을 달아주세요." id="reply"></textarea>
+			<input type="hidden" id="tno" value="${tobuy.tno }"> 
+			<input type="hidden" name="replyer" readonly="readonly" value="${memberDTO.mname }" id="replyer">
+			<input type="hidden" name="mid" readonly="readonly" value="${memberDTO.mid }" id="mid">
+			<textarea name="reply" rows="3" cols="60" maxlength="500" placeholder="댓글을 달아주세요." id="reply"></textarea>
 			<br />
 			<button>
 				<a id="replyBtn">댓글달기</a>
@@ -82,9 +81,10 @@
 	<script>
 	var tno = $("#tno").val();
 		makeReplies(tno);
-		
+		var mid = $("#mid").val();
+		var mname = $("#replyer").val();
+
 		function getBuyPro() {
-			console.log(tno);
 			var str=""
 			
 			$.getJSON("/participate/itemlist?tno=" + tno, function(arr){
@@ -103,11 +103,10 @@
 						str += arr[i].mname[j]; 
 					}
 					
-					
 					if(arr[i].bpexpired == true){
 						
 					}else {
-						str += "<form ><button class='participateBtn' ono = "+ arr[i].ono +"> 참여하기</button></form>";
+						str += "<form ><button class='participateBtn' ono = "+ arr[i].ono +" mid='" + mid + "' mname='" + mname + "'> 참여하기</button></form>";
 					}
 					str += "</li>";
 				}
@@ -126,7 +125,8 @@
 			
 			var data = {
 				 ono :$(this).attr("ono"),
-				 mname : "test2"
+				 mname : $(this).attr("mname"),
+				 mid: $(this).attr("mid")
 			};
 			$.ajax({
 				type:'POST',

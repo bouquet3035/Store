@@ -17,7 +17,7 @@ public interface BoardMapper {
 	@Select("select count(*) from tbl_board where tno > 0")
 	public int getTotal(Criteria cri);
 
-	@Insert("insert into tbl_board (title,writer,contents) values(#{title},#{writer},#{contents})")
+	@Insert("insert into tbl_board (title,writer,contents, mid) values(#{title},#{writer},#{contents}, #{mid})")
 	public void registerPost(BoardDTO bDto);
 
 	@Select("select * from tbl_board where tno = #{tno}")
