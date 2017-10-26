@@ -187,8 +187,7 @@
 			 <input type="hidden" name="replyer" readonly="readonly"value="${memberDTO.mname }" id="replyer"> 
 			 <input type="hidden" name="mid" readonly="readonly" value="${memberDTO.mid }" id="mid">
 				<textarea name="reply" rows="3" cols="60" maxlength="500"
-					placeholder="댓글을 달아주세요." id="reply">
-				</textarea>
+					placeholder="댓글을 달아주세요." id="reply"></textarea>
 				<br>
 			<button>
 				<a id="replyBtn">댓글달기</a>
