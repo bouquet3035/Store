@@ -27,17 +27,18 @@
 	<form action="/store/main" methon="get">
 		<button>상품리스트</button>
 	</form>
+	<c:if test="${memberDTO.mid == tobuy.mid }">
 
-	<form method="post">
-		<button>삭제</button>
-	</form>
+		<form method="post">
+			<button>삭제</button>
+		</form>
 
-	<form action="/store/modify" method="get">
-		<input type="hidden" name="page" value='${cri.page }'> <input
-			type='hidden' name='tno' value='${tobuy.tno}'>
-		<button>수정</button>
-	</form>
-
+		<form action="/store/modify" method="get">
+			<input type="hidden" name="page" value='${cri.page }'> <input
+				type='hidden' name='tno' value='${tobuy.tno}'>
+			<button>수정</button>
+		</form>
+	</c:if>
 	<form action="/store/list" method="get">
 		<button>게시판</button>
 	</form>
@@ -48,10 +49,13 @@
 	</div>
 	<div style="border: 1px solid; width: 600px; padding: 5px">
 		<form>
-			<input type="hidden" id="tno" value="${tobuy.tno }"> 
-			<input type="hidden" name="replyer" readonly="readonly" value="${memberDTO.mname }" id="replyer">
-			<input type="hidden" name="mid" readonly="readonly" value="${memberDTO.mid }" id="mid">
-			<textarea name="reply" rows="3" cols="60" maxlength="500" placeholder="댓글을 달아주세요." id="reply"></textarea>
+			<input type="hidden" id="tno" value="${tobuy.tno }"> <input
+				type="hidden" name="replyer" readonly="readonly"
+				value="${memberDTO.mname }" id="replyer"> <input
+				type="hidden" name="mid" readonly="readonly"
+				value="${memberDTO.mid }" id="mid">
+			<textarea name="reply" rows="3" cols="60" maxlength="500"
+				placeholder="댓글을 달아주세요." id="reply"></textarea>
 			<br />
 			<button>
 				<a id="replyBtn">댓글달기</a>
@@ -75,68 +79,74 @@
 
 
 	<script>
-	var tno = $("#tno").val();
-		makeReplies(tno);
+		var tno = $("#tno").val();
 		var mid = $("#mid").val();
 		var mname = $("#replyer").val();
 
+		var replyStr = makeReplies({
+			tno: tno,
+			mid: mid
+		})
+		
 		function getBuyPro() {
-			var str=""
-			
-			$.getJSON("/participate/itemlist?tno=" + tno, function(arr){
-				
-				for (var i = 0; i < arr.length; i++) {					
-					str += "<li><img src='"+ arr[i].bpimg+ "'>"
-					+ "상품이름:"+ arr[i].bpname
-					+ ", 행사이름:"+ arr[i].bpevent
-					+ ", 행사 가격:"+ arr[i].bsaleprice
-					+ "원, 참여자("+ arr[i].curpeople+ "/"+ arr[i].maxpeople+ "): ";
+			var str = ""
 
-					for (var j = 0; j < arr[i].mname.length; j++) {
-						if(j > 0){
-							str += ", "
-						}
-						str += arr[i].mname[j]; 
-					}
-					
-					if(arr[i].bpexpired == true){
-						
-					}else {
-						str += "<form ><button class='participateBtn' ono = "+ arr[i].ono +" mid='" + mid + "' mname='" + mname + "'> 참여하기</button></form>";
-					}
-					str += "</li>";
-				}
-				
-				$(".cobuyUL").html(str);
-			});
+			$
+					.getJSON(
+							"/participate/itemlist?tno=" + tno,
+							function(arr) {
+
+								for (var i = 0; i < arr.length; i++) {
+									str += "<li><img src='"+ arr[i].bpimg+ "'>"
+											+ "상품이름:" + arr[i].bpname
+											+ ", 행사이름:" + arr[i].bpevent
+											+ ", 행사 가격:" + arr[i].bsaleprice
+											+ "원, 참여자(" + arr[i].curpeople
+											+ "/" + arr[i].maxpeople + "): ";
+
+									for (var j = 0; j < arr[i].mname.length; j++) {
+										if (j > 0) {
+											str += ", "
+										}
+										str += arr[i].mname[j];
+									}
+
+									if (arr[i].bpexpired == true) {
+
+									} else {
+										str += "<form ><button class='participateBtn' ono = "+ arr[i].ono +" mid='" + mid + "' mname='" + mname + "'> 참여하기</button></form>";
+									}
+									str += "</li>";
+								}
+
+								$(".cobuyUL").html(str);
+							});
 
 		}
-		
+
 		getBuyPro();
-		
-		$(".cobuyUL").on("click", "form .participateBtn",function(e){
+
+		$(".cobuyUL").on("click", "form .participateBtn", function(e) {
 			e.preventDefault();
 			console.log("참여");
-			console.log("ono :"+ $(this).attr("ono"));
-			
+			console.log("ono :" + $(this).attr("ono"));
+
 			var data = {
-				 ono :$(this).attr("ono"),
-				 mname : $(this).attr("mname"),
-				 mid: $(this).attr("mid")
+				ono : $(this).attr("ono"),
+				mname : $(this).attr("mname"),
+				mid : $(this).attr("mid")
 			};
 			$.ajax({
-				type:'POST',
-				url: '/participate/new',
+				type : 'POST',
+				url : '/participate/new',
 				contentType : "application/json; charset=utf-8",// 받는 레코드의 타입
 				data : JSON.stringify(data),
-				success:function(result){
-					alert("성공"); 
+				success : function(result) {
+					alert("성공");
 					getBuyPro();
 				}
 			});
 		});
-	
-
 	</script>
 	<%@ include file="include/footer.jsp"%>
 </body>

@@ -24,7 +24,7 @@ public class ParticipateImpl implements ParticipateService {
 	public void addPeople(CoBuyDTO dto) {
 		// TODO Auto-generated method stub
 		
-		if(pmapper.buyerCheck(dto) == null) {
+		if(pmapper.buyerCheck(dto).isEmpty()) {
 			pmapper.addPeople(dto.getOno());
 			pmapper.addname(dto);
 			pmapper.addComplition(dto.getOno());
