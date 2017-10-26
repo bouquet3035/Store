@@ -12,7 +12,7 @@
 <body>
 
 	<%
-		response.sendRedirect("/");
+		response.sendRedirect("/store/main");
 	%>
 
 	<%@ include file="./store/include/footer.jsp" %>
