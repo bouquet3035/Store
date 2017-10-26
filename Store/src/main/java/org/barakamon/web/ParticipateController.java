@@ -38,7 +38,6 @@ public class ParticipateController {
 		
 			log.info("CoBuyono:"+ dto.getOno());
 			service.addPeople(dto);
-			service.addComplition(dto);
 		}
 	}
 	

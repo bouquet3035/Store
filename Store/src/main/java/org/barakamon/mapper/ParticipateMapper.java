@@ -36,4 +36,9 @@ public interface ParticipateMapper {
 	public List<CoBuyDTO> cobuyList(Long ono);
 	
 	public List<CoBuyProDTO> getProInfoList(Long tno);
+	
+	
+	@Select("select * from tbl_cobuy where ono=#{ono} and mid = #{mid}")
+	public List<CoBuyDTO> buyerCheck(CoBuyDTO dto);
+	
 }
