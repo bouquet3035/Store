@@ -33,7 +33,7 @@
 		<button type = "submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
 		</div>
 		 <input
-			type="submit" value="회원가입"> <input type="reset" value="Reset">
+			type="button" value="회원가입" action="/loginreg"> <input type="reset" value="Reset">
 
 
 
