@@ -23,8 +23,8 @@ public interface MemberMapper {
 	public MemberDTO findByCookie(String mid);
 	
 	//회원가입
-	@Insert("insert into tbl_members (mid, mpw, mname) values mid=#{mid}, mpw=#{mpw}, mname=#{mname}")
-	public MemberDTO registermember(MemberDTO mDto);
+	@Insert("insert into tbl_members (mid, mpw, mname) values (#{mid}, #{mpw}, #{mname})")
+	public void registermemberPost(MemberDTO mDto);
 	
 	//회원정보수정
 	@Update("update tbl_members set mname = #{mname} where mid = #{mid}")

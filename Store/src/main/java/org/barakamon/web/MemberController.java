@@ -27,21 +27,18 @@ public class MemberController {
 
 	@PostMapping("/login")
 	public void loginPost(LoginDTO dto, Model model) throws Exception {
-		
 
 		log.info("post...login" + dto);
-		
-		MemberDTO member = service.login(dto);
-		
 
-		log.info("EhEh"+member);
+		MemberDTO member = service.login(dto);
+
+		log.info("EhEh" + member);
 		model.addAttribute("memberDTO", member);
 
-		
 	}
-	
+
 	@GetMapping("/logout")
-	public void logout() {	
+	public void logout() {
 	}
 
 	@GetMapping("/loginresult")
@@ -58,4 +55,20 @@ public class MemberController {
 
 	}
 
+	@GetMapping("/memberregister")
+	public void memberregister() throws Exception {
+		log.info("회원가입 GET");
+	}
+
+	@PostMapping("/memberregister")
+	public String memberregisterpost(MemberDTO mDto, Model model) throws Exception {
+		//log.info("회원가입 페이지 돌입" + mDto);
+		log.info("왜안되냐" + mDto.toString());
+		
+		service.registermemberPost(mDto);
+		
+		model.addAttribute("register", "success");
+
+		return "redirect:/login";
+	}
 }

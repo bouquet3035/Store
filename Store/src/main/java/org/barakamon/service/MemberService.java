@@ -9,7 +9,7 @@ public interface MemberService {
 
 	public MemberDTO login(LoginDTO dto) throws Exception;
 
-	public MemberDTO registermember(MemberDTO mDto) throws Exception;
+	public void registermemberPost(MemberDTO mDto);
 	
 	public MemberDTO updatemember(MemberDTO mDto) throws Exception;
 	

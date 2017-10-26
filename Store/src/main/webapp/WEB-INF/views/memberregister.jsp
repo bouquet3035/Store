@@ -4,29 +4,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>회원가입 페이지 입니다</title>
 </head>
  <body>
-        <form action = "#" accept-charset="utf-8" name = "person_info" method = "get">
+        <form action = "/memberregister" accept-charset="utf-8" name = "person_info" method = "post">
             <fieldset style = "width:150">
                 <legend>개인 정보 입력</legend>
-                   이름 : <input type = "text" name = "name" required/><br><br>
-                   주민번호 : <input type = "text" name = "security_number" 
-                              pattern = "\d{6}\-\d{7}" 
-                              title = "123456-1234567 형식으로 입력해주세요"/><br><br>
+                   이름 : <input type = "text" name = "mname" required/><br><br>
+                  
 
-                   아이디 : <input type = "text" name = "id"/><br><br>
-                   패스워드 : <input type = "password" name = "password"/><br><br>
+                   아이디 : <input type = "text" name = "mid" class='form-control' required/><br><br>
+                   패스워드 : <input type = "password" name = "mpw" class='form-control' required/><br><br>
 
-                   성별 : 남<input type = "radio" name = "gender" />
-                          여<input type = "radio" name = "gender" /><br><br>
-
-                   관심사 : 연예<input type = "checkbox" name = "checkbox1" />
-                            스포츠<input type = "checkbox" name = "checkbox2" />
-                            IT<input type = "checkbox" name = "checkbox3" /><br><br>
-
-                   <input type = "submit" value = "submit"/>
-                   <input type = "reset" value = "reset"/><br><br>
+                   <input type = "submit" value = "회원가입"/ onclick="location.href='/login'">
+                   <input type = "reset" value = "초기화"/><br><br>
             </fieldset> 
         </form>
     </body>

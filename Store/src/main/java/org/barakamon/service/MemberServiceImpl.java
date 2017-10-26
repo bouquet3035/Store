@@ -25,9 +25,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDTO registermember(MemberDTO mDto) throws Exception {
+	public void registermemberPost(MemberDTO mDto) {
 		// TODO Auto-generated method stub
-		return mmapper.registermember(mDto);
+		log.info("" +mDto.getMid());
+		log.info("" +mDto.getMpw());
+		mmapper.registermemberPost(mDto);
 	}
 
 	@Override
