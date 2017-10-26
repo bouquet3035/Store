@@ -193,7 +193,7 @@
 	<form action="/store/main" method="get"><button>상품목록</button></form>
 	<form action="/store/list" method="get"><input type="hidden" name="searchType" value="bpno"><input type="hidden" name="keyword" value="${pinfo.pno}"><input type="submit" value="구매자검색"></form>
 	-->
-	<!-- 예전코드 보존  -->	
+	<!-- 예전코드 보존 end  -->	
 	<div class="brand">
 			<div class="container">
 				<div class="row">
