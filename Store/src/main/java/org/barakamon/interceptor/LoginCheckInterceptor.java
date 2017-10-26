@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.barakamon.dto.LoginDTO;
 import org.barakamon.dto.MemberDTO;
 import org.barakamon.mapper.MemberMapper;
 import org.springframework.ui.ModelMap;
@@ -55,5 +56,8 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter {// 인터페�
 		return false;
 		// return super.preHandle(request, response, handler);
 	}
+	
+	
 
+	
 }

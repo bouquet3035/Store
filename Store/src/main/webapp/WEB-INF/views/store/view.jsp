@@ -5,11 +5,33 @@
 <html lang="en">
 <%@ include file="include/header.jsp"%>
 <body>
+<style>
+	.main{
+	width:100%;
+	margin-left: auto 0 ; 
+	margin-right: auto 0 ;
+	font-size: 1.25em;
+	}
+</style>
+<div class="col-md-6 main" >
+	<div class="image">
+		<center>
+			<div class='cobuyDiv'>
+				<ul class='cobuyUL'>
+					
+				</ul>
+			</div>
+		</center>
+		
+	</div>
+</div>
+
 	<div class='cobuyDiv'>
 		<ul class='cobuyUL'>
 
 		</ul>
 	</div>
+	 
 	<h1>${cobuy }</h1>
 	<h1>${buypro}</h1>
 	<h1>${tobuy}</h1>
@@ -91,7 +113,7 @@
 				
 				for (var i = 0; i < arr.length; i++) {					
 					str += "<li><img src='"+ arr[i].bpimg+ "'>"
-					+ "상품이름:"+ arr[i].bpname
+					+ "상품이름:"+ arr[i].bpname 
 					+ ", 행사이름:"+ arr[i].bpevent
 					+ ", 행사 가격:"+ arr[i].bsaleprice
 					+ "원, 참여자("+ arr[i].curpeople+ "/"+ arr[i].maxpeople+ "): ";
