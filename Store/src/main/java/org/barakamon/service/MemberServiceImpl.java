@@ -24,6 +24,24 @@ public class MemberServiceImpl implements MemberService {
 	
 	}
 
+	@Override
+	public MemberDTO registermember(MemberDTO mDto) throws Exception {
+		// TODO Auto-generated method stub
+		return mmapper.registermember(mDto);
+	}
+
+	@Override
+	public MemberDTO updatemember(MemberDTO mDto) throws Exception {
+		// TODO Auto-generated method stub
+		return mmapper.updatemember(mDto);
+	}
+
+	@Override
+	public MemberDTO deletemember(String mid) throws Exception {
+		// TODO Auto-generated method stub
+		return mmapper.deletemember(mid);
+	}
+
 	
 
 }

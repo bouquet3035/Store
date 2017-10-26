@@ -53,4 +53,5 @@ public class MemberController {
 		model.addAttribute("memberDTO", member);
 
 	}
+
 }
