@@ -23,7 +23,7 @@ public interface ParticipateMapper {
 	@Select("select * from tbl_buypro where ono = #{ono}")
 	public BuyProDTO checkExpired (Long ono) ; 
 	
-	@Insert("insert into tbl_cobuy (ono,mname) values(#{ono},#{mname})")
+	@Insert("insert into tbl_cobuy (ono,mname, mid) values(#{ono},#{mname}, #{mid})")
 	public void addname(CoBuyDTO cbDto);
 	
 	
@@ -36,4 +36,9 @@ public interface ParticipateMapper {
 	public List<CoBuyDTO> cobuyList(Long ono);
 	
 	public List<CoBuyProDTO> getProInfoList(Long tno);
+	
+	
+	@Select("select * from tbl_cobuy where ono=#{ono} and mid = #{mid}")
+	public List<CoBuyDTO> buyerCheck(CoBuyDTO dto);
+	
 }

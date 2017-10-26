@@ -79,8 +79,8 @@
 							<form method="post" id="mainForm">
 							
 								<div class="well">
-								작성자 Id : <input  name="writer" value="tester"
-												readonly="readonly" class="form-inline quantity" type="text" value="1">
+								<input name="writer" value="${memberDTO.mname }" readonly="readonly" type="hidden">
+								<input name="mid" value="${memberDTO.mid }" readonly="readonly" type="hidden">
 													<button class="btn btn-2" >등록 버튼</button>
 										
 													<br>

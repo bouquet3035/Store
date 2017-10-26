@@ -23,8 +23,12 @@ public class ParticipateImpl implements ParticipateService {
 	@Override
 	public void addPeople(CoBuyDTO dto) {
 		// TODO Auto-generated method stub
-		pmapper.addPeople(dto.getOno());
-		pmapper.addname(dto);
+		
+		if(pmapper.buyerCheck(dto) == null) {
+			pmapper.addPeople(dto.getOno());
+			pmapper.addname(dto);
+			pmapper.addComplition(dto.getOno());
+		}
 	}
 	
 
@@ -37,12 +41,6 @@ public class ParticipateImpl implements ParticipateService {
 	public List<CoBuyDTO> cobuyList(Long ono) {
 		return pmapper.cobuyList(ono) ; 
 	}
-
-	@Override
-	public void addComplition(CoBuyDTO dto) {
-		pmapper.addComplition(dto.getOno());
-	}
-
 
 	@Override
 	public BuyProDTO checkExpired(Long ono) {

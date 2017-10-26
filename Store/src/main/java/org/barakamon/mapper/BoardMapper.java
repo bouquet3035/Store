@@ -17,7 +17,7 @@ public interface BoardMapper {
 	@Select("select count(*) from tbl_board where tno > 0")
 	public int getTotal(Criteria cri);
 
-	@Insert("insert into tbl_board (title,writer,contents) values(#{title},#{writer},#{contents})")
+	@Insert("insert into tbl_board (title,writer,contents, mid) values(#{title},#{writer},#{contents}, #{mid})")
 	public void registerPost(BoardDTO bDto);
 
 	@Select("select * from tbl_board where tno = #{tno}")
@@ -65,12 +65,19 @@ public interface BoardMapper {
 	@Select("select count(*) FROM tbl_board WHERE title like concat('%', #{keyword}, '%') or contents like concat('%', #{keyword}, '%') and tno > 0 order by tno desc")
 	public int getTnCTotal(Criteria cri);
 
-	// 작성자로 검색
+	// 작성자 넥네임으로 로 검색
 	@Select("SELECT * FROM tbl_board WHERE writer like concat('%', #{keyword}, '%') order by tno desc limit #{skip}, #{pageSize}")
-	public List<BoardDTO> searchWriter(Criteria cri);
+	public List<BoardDTO> searchWriterName(Criteria cri);
 
 	@Select("select count(*) FROM tbl_board WHERE writer like concat('%', #{keyword}, '%') and tno > 0 order by tno desc")
-	public int getWTotal(Criteria cri);
+	public int getWNTotal(Criteria cri);
+
+	// 작성자 아이디로 로 검색
+	@Select("SELECT * FROM tbl_board WHERE mid = #{keyword} order by tno desc limit #{skip}, #{pageSize}")
+	public List<BoardDTO> searchWriterID(Criteria cri);
+
+	@Select("select count(*) FROM tbl_board WHERE mid = #{keyword} and tno > 0 order by tno desc")
+	public int getWITotal(Criteria cri);
 
 	// 상품 번호로 검색
 	@Select("SELECT bd.* FROM tbl_board bd, tbl_buypro bp "

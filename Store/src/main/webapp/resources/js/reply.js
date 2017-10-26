@@ -9,20 +9,13 @@ function makeReplies(param) {
 
 			for (var i = 0; i < arr.length; i++) {
 				var rno = arr[i].rno;
-				str += "<li class='rpl'>" + rno + "  " + arr[i].replyer + "  "
-						+ arr[i].reply + "  " + arr[i].tno
-						+ " <button data-rno ='" + rno
-						+ "' class='modBtn modBtn" + rno
-						+ "' name='mod'>수정</button>" + "<button data-rno ='"
-						+ rno + "' class='canBtn canBtn" + rno
-						+ "'>취소</button>" + " <button data-rno ='" + rno
-						+ "' class='delBtn' name='del'>삭제</button></br>"
-						+ "<form class='modForm " + rno + "' action='/reply/"
-						+ rno + "' method='put'>"
-						+ "<textarea class='modRpl" + rno
-						+ "' rows='3' cols='60' maxlength='500'>" + arr[i].reply
-						+ "'</textarea><button data-rno ='" + rno
-						+ "' class='modAct'>수정</button></form></li>";
+				str += "<li class='rpl'>" + rno + "  " + arr[i].replyer + "  "+ arr[i].reply + "  " + arr[i].tno
+						+ " <button data-rno ='" + rno+ "' class='modBtn modBtn" + rno+ "' name='mod'>수정</button>" 
+						+ "<button data-rno ='"+ rno + "' class='canBtn canBtn" + rno+ "'>취소</button>" 
+						+ " <button data-rno ='" + rno+ "' class='delBtn' name='del'>삭제</button></br>"
+						+ "<form class='modForm " + rno + "' action='/reply/"+ rno + "' method='put'>"
+						+ "<textarea class='modRpl" + rno+ "' rows='3' cols='60' maxlength='500'>" + arr[i].reply
+						+ "'</textarea><button data-rno ='" + rno+ "' class='modAct'>수정</button></form></li>";
 			}
 			$(".replyUL").html(str);
 		});
@@ -129,6 +122,7 @@ function makeReplies(param) {
 		var data = {
 			reply : $("#reply").val(),
 			replyer : $("#replyer").val(),
+			mid : $("#mid").val(),
 			tno : tno
 		};
 

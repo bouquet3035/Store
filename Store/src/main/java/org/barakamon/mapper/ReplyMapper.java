@@ -12,7 +12,7 @@ import org.barakamon.dto.ReplyDTO;
 
 public interface ReplyMapper {
 
-	@Insert("insert into tbl_reply (reply, replyer, tno) values (#{reply}, #{replyer}, #{tno})")
+	@Insert("insert into tbl_reply (reply, replyer, tno, mid) values (#{reply}, #{replyer}, #{tno}, #{mid})")
 	public void create(ReplyDTO rDto);
 	
 	@Select("select * from tbl_reply where rno=#{rno}")
