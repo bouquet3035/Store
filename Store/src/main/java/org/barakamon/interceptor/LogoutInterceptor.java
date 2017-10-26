@@ -1,6 +1,6 @@
 package org.barakamon.interceptor;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -11,9 +11,9 @@ import org.barakamon.dto.MemberDTO;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.util.WebUtils;
 
-import lombok.extern.java.Log;
 
-@Log
+
+
 public class LogoutInterceptor extends HandlerInterceptorAdapter {
 
 	@Override

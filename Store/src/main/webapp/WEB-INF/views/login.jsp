@@ -8,10 +8,12 @@
 <title>로그인 페이지</title>
 </head>
 <body>
-	<h1>BARAKAMON APPLICATION LOGIN PAGE</h1>
+	
 	<img src="/resources/FashionShop/images/111.jpg">
 
 	<form action="/login" method="post">
+	<fieldset style = "width:150">
+	<legend>BARAKAMON APPLICATION LOGIN PAGE</legend>
 		<div class="form-group has-feedback">
 			<input type='text' name='mid' class='form-control'
 				placeholder='user id' /> <span
@@ -33,10 +35,12 @@
 		<button type = "submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
 		</div>
 		 <input
-			type="submit" value="회원가입"> <input type="reset" value="Reset">
+			type="button" value="회원가입" onclick="location.href='/memberregister'"> <input type="reset" value="Reset">
+			<input type ="button" value="회원탈퇴" onclick = "location.href='/memberout'">
+			<input type ="button" value="개인정보수정" onclick = "location.href='/membermodify'">
 
 
-
+</fieldset>
 	</form>
 </body>
 <%@ include file="./store/include/footer.jsp"%>

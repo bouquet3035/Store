@@ -21,6 +21,7 @@
 				</ul>
 				<input type = "button" value = "로그인" onclick = "location.href = '/login'"  vertical-align="middle">
 				<input type = "button" value = "로그아웃" onclick = "location.href = '/logout'"  vertical-align="middle">
+				<input type = "button" value ="회원가입" onclick = "location.href='/memberregister'" vertical-align = "middle">
 				<div class="tab-content">
 					<div id="featured" class="tab-pane fade in active ">
 					<style>
