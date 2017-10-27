@@ -10,6 +10,10 @@
 	margin-left: 200px;
 	margin-right: 200px
 }
+
+.btn-in-oneline {
+	float: right;
+}
 </style>
 
 	<div class="row">
@@ -39,30 +43,40 @@
 				${tobuy.contents}</div>
 		</div>
 	</div>
-	<div>
-		<form action="/store/list" method="get">
-			<button class="btn btn-2">게시판</button>
-		</form>
-	</div>
-	<div>
-		<form action="/store/main" method="get">
-			<button class="btn btn-2">상품목록</button>
-		</form>
-	</div>
-	<c:if test="${memberDTO.mid == tobuy.mid }">
-		<div>
-			<form method="post">
-				<button class="btn btn-2">삭제</button>
-			</form>
-		</div>
-		<div>
-			<form action="/store/modify" method="get">
-				<input type="hidden" name="page" value='${cri.page }'> <input
-					type='hidden' name='tno' value='${tobuy.tno}'>
-				<button class="btn btn-2">수정</button>
-			</form>
-		</div>
-	</c:if>
+	<ul>
+		<li class="btn-in-oneline">
+			<div>
+				<form action="/store/list" method="get">
+					<button class="btn btn-2">게시판</button>
+				</form>
+			</div>
+		</li>
+		<li class="btn-in-oneline">
+			<div>
+				<form action="/store/main" method="get">
+					<button class="btn btn-2">상품목록</button>
+				</form>
+			</div>
+		</li>
+		<c:if test="${memberDTO.mid == tobuy.mid }">
+			<li class="btn-in-oneline">
+				<div>
+					<form method="post">
+						<button class="btn btn-2">삭제</button>
+					</form>
+				</div>
+			</li>
+			<li class="btn-in-oneline">
+				<div>
+					<form action="/store/modify" method="get">
+						<input type="hidden" name="page" value='${cri.page }'> <input
+							type='hidden' name='tno' value='${tobuy.tno}'>
+						<button class="btn btn-2">수정</button>
+					</form>
+				</div>
+			</li>
+		</c:if>
+	</ul>
 	<div class="product-desc">
 		<ul class="nav nav-tabs">
 			<li class="active"><a>댓글</a></li>
