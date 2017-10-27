@@ -30,88 +30,6 @@
 
 		</ul>
 	</div>
-	<div id="main-content" class="col-md main ">
-		<div class="product">
-			<div class="col-md-6">
-				<div class="image">
-					<center>
-						<img style="margin-top: 50px;"
-							src="https://4.bp.blogspot.com/-F6VIVavVz1k/WeB-JivmjPI/AAAAAAAAACs/CrQgL2H7ii8OPSCYT-GgMI0ZleYjrWHtQCLcBGAs/s1600/20171010_152342_23.png " />
-					</center>
-					<div class="image-more">
-						<ul class="row">
-							<li class="col-lg-3 col-sm-3 col-xs-4"><a href="#"><img
-									class="img-responsive"
-									src="https://4.bp.blogspot.com/-F6VIVavVz1k/WeB-JivmjPI/AAAAAAAAACs/CrQgL2H7ii8OPSCYT-GgMI0ZleYjrWHtQCLcBGAs/s1600/20171010_152342_23.png"></a>
-							</li>
-							<li class="col-lg-3 col-sm-3 col-xs-4"><a href="#"><img
-									class="img-responsive"
-									src="https://4.bp.blogspot.com/-F6VIVavVz1k/WeB-JivmjPI/AAAAAAAAACs/CrQgL2H7ii8OPSCYT-GgMI0ZleYjrWHtQCLcBGAs/s1600/20171010_152342_23.png"></a>
-							</li>
-							<li class="col-lg-3 col-sm-3 col-xs-4"><a href="#"><img
-									class="img-responsive"
-									src="https://4.bp.blogspot.com/-F6VIVavVz1k/WeB-JivmjPI/AAAAAAAAACs/CrQgL2H7ii8OPSCYT-GgMI0ZleYjrWHtQCLcBGAs/s1600/20171010_152342_23.png"></a>
-							</li>
-							<li class="col-lg-3 col-sm-3 col-xs-4"><a href="#"><img
-									class="img-responsive"
-									src="https://4.bp.blogspot.com/-F6VIVavVz1k/WeB-JivmjPI/AAAAAAAAACs/CrQgL2H7ii8OPSCYT-GgMI0ZleYjrWHtQCLcBGAs/s1600/20171010_152342_23.png"></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-			<div class="col-md-6">
-				<div class="caption ">
-					<div class="title">제목:${tobuy.title }</div>
-					<div class="writer">작성자 :${tobuy.writer}</div>
-					<div class="date">작성날짜:${tobuy.regdate}</div>
-					<div class="rating">
-						<span class="glyphicon glyphicon-star"></span><span
-							class="glyphicon glyphicon-star"></span><span
-							class="glyphicon glyphicon-star"></span><span
-							class="glyphicon glyphicon-star"></span><span
-							class="glyphicon glyphicon-star-empty"></span>
-					</div>
-					<div class="info">
-						<ul>
-							<li>Brand: gs25</li>
-						</ul>
-					</div>
-					<div class="price">
-						3000원<span>5000원</span>
-					</div>
-
-					<div class="well">
-
-						내용 <br>
-						<style>
-.contents {
-	text-align: center;
-}
-</style>
-						<textarea class="form-control " name="contents" rows="4" cols="50"
-							maxlength="600" readonly="readonly">${tobuy.contents}</textarea>
-
-					</div>
-
-
-					<div class="share well">
-						<strong style="margin-right: 13px;">Share :</strong> <a href="#"
-							class="share-btn" target="_blank"> <i class="fa fa-twitter"></i>
-						</a> <a href="#" class="share-btn" target="_blank"> <i
-							class="fa fa-facebook"></i>
-						</a> <a href="#" class="share-btn" target="_blank"> <i
-							class="fa fa-linkedin"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
 	<div class="product-desc">
 		<ul class="nav nav-tabs">
 			<li class="active"><a>내용</a></li>
@@ -178,6 +96,28 @@
 			</div>
 		</div>
 	</div>
+	<div class="brand">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-xs-6">
+					<a href="#"><img
+						src="http://3.bp.blogspot.com/-xnHM9ZFhBTs/We7DBIS29BI/AAAAAAAAADQ/WxTfn8iX8LEIaJAu_lS7lscAmLV5-XN1gCK4BGAYYCw/s1600/gs25%25EB%25A1%259C%25EA%25B3%25A0.jpg" /></a>
+				</div>
+				<div class="col-lg-3 col-xs-6">
+					<a href="#"><img
+						src="http://4.bp.blogspot.com/-RxQs5gsvOPQ/We7DYhp50vI/AAAAAAAAADY/79O5w7zg0mANW3hgeZ1rZhhsfU7q7AixwCK4BGAYYCw/s1600/seveneleven.png" /></a>
+				</div>
+				<div class="col-lg-3 col-xs-6">
+					<a href="#"><img
+						src="http://4.bp.blogspot.com/-N7aCIgtLASo/We7EtTeO8kI/AAAAAAAAADs/idaEBnmfxy4m0OUVnBOMPSPR5SlM0JYlQCK4BGAYYCw/s1600/%25EB%25AF%25B8%25EB%258B%2588%25EC%258A%25A4%25ED%2586%25B1.png" /></a>
+				</div>
+				<div class="col-lg-3 col-xs-6">
+					<a href="#"><img
+						src="http://4.bp.blogspot.com/-hGH6pug_sLU/We7EbtCln5I/AAAAAAAAADk/OEcbddZGaEE0VScNHu13zNSAf7DiKTwjACK4BGAYYCw/s1600/cu.jpg" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!--
 	<div class='replyDiv'>
 		<ul class='replyUL'>
@@ -215,13 +155,6 @@
 	<h2>${tobuy.viewcount}</h2>
 	<h2>페이지</h2>
 	 -->
-
-	<style>
-.hide {
-	display: none;
-}
-</style>
-
 	<!-- 
 
 		<form action="/store/main" methon="get">
@@ -252,6 +185,10 @@
 	
 -->
 	<style>
+.hide {
+	display: none;
+}
+
 .modForm {
 	display: none;
 }
@@ -263,40 +200,15 @@
 .brand {
 	margin-top: 5%;
 }
+
+.maxedout {
+	color: red;
+}
 </style>
-
-
-	<div class="brand">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-xs-6">
-					<a href="#"><img
-						src="http://3.bp.blogspot.com/-xnHM9ZFhBTs/We7DBIS29BI/AAAAAAAAADQ/WxTfn8iX8LEIaJAu_lS7lscAmLV5-XN1gCK4BGAYYCw/s1600/gs25%25EB%25A1%259C%25EA%25B3%25A0.jpg" /></a>
-				</div>
-				<div class="col-lg-3 col-xs-6">
-					<a href="#"><img
-						src="http://4.bp.blogspot.com/-RxQs5gsvOPQ/We7DYhp50vI/AAAAAAAAADY/79O5w7zg0mANW3hgeZ1rZhhsfU7q7AixwCK4BGAYYCw/s1600/seveneleven.png" /></a>
-				</div>
-				<div class="col-lg-3 col-xs-6">
-					<a href="#"><img
-						src="http://4.bp.blogspot.com/-N7aCIgtLASo/We7EtTeO8kI/AAAAAAAAADs/idaEBnmfxy4m0OUVnBOMPSPR5SlM0JYlQCK4BGAYYCw/s1600/%25EB%25AF%25B8%25EB%258B%2588%25EC%258A%25A4%25ED%2586%25B1.png" /></a>
-				</div>
-				<div class="col-lg-3 col-xs-6">
-					<a href="#"><img
-						src="http://4.bp.blogspot.com/-hGH6pug_sLU/We7EbtCln5I/AAAAAAAAADk/OEcbddZGaEE0VScNHu13zNSAf7DiKTwjACK4BGAYYCw/s1600/cu.jpg" /></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-
-
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/resources/js/reply.js"></script>
-
-
 	<script>
 		var tno = $("#tno").val();
 		var mid = $("#mid").val();
@@ -310,32 +222,41 @@
 		function getBuyPro() {
 			var str = ""
 
-			$
-					.getJSON(
+			$.getJSON(
 							"/participate/itemlist?tno=" + tno,
 							function(arr) {
 
 								for (var i = 0; i < arr.length; i++) {
-									str += "<li><img src='"+ arr[i].bpimg+ "'>"
-											+ "상품이름:" + arr[i].bpname
-											+ ", 행사이름:" + arr[i].bpevent
-											+ ", 행사 가격:" + arr[i].bsaleprice
-											+ "원, 참여자(" + arr[i].curpeople
-											+ "/" + arr[i].maxpeople + "): ";
+									str += "<li><div id='main-content' class='col-md main '>" +
+									"<div class='product'><div class='col-md-6'><div class='image'>"+
+									"<center><img style='margin-top: 50px;' src='"+ arr[i].bpimg+ "'/></center>" +
+									"</div></div><div class='col-md-6'><div class='caption '><div>상품: " +
+									arr[i].bpname + "</div><div>행사: " + arr[i].bpevent + "</div><div>개당가격: " + arr[i].bsaleprice + "원" +
+									"</div><div class='well'><div>참여자(<a";
+									
+									if(arr[i].curpeople >= arr[i].maxpeople){
+										str += " class='maxedout'";
+									}
+
+									str += ">" + arr[i].curpeople + "/" + arr[i].maxpeople + "</a>): </div>";
 
 									for (var j = 0; j < arr[i].mname.length; j++) {
 										if (j > 0) {
-											str += ", "
+											str += ", </div>"
 										}
-										str += arr[i].mname[j];
+										str += "<div>" + arr[i].mname[j];
 									}
+
 
 									if (arr[i].bpexpired == true) {
 
 									} else {
-										str += "<form ><button class='participateBtn' ono = "+ arr[i].ono +" mid='" + mid + "' mname='" + mname + "'> 참여하기</button></form>";
+										str += "<form ><button class='participateBtn btn btn-2' ono = "+ arr[i].ono +" mid='" + mid + "' mname='" + mname + "'> 참여하기</button></form>";
 									}
-									str += "</li>";
+									str += "</div></div><div class='share well'><strong style='margin-right: 13px;'>Share :</strong> <a href='#'" +
+									" class='share-btn' target='_blank'> <i class='fa fa-twitter'></i>" + 
+									"</a> <a href='#' class='share-btn' target='_blank'> <i class='fa fa-facebook'></i>" + 
+									"</a> <a href='#' class='share-btn' target='_blank'> <i class='fa fa-linkedin'></i></a></div></div></div></div></li>";
 								}
 
 								$(".cobuyUL").html(str);
