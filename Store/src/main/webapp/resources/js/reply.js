@@ -27,7 +27,7 @@ function makeReplies(param) {
 					+ rno + "' method='put'>"
 					+ "<textarea class='modRpl" + rno
 					+ "' rows='3' cols='60' maxlength='500'>" + arr[i].reply
-					+ "'</textarea><button data-rno ='" + rno
+					+ "</textarea><button data-rno='" + rno
 					+ "' class='modAct'>수정</button></form>";
 				}
 
