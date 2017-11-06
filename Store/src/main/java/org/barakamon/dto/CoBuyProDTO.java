@@ -10,10 +10,10 @@ public class CoBuyProDTO {
 	
 	private Long ono;
 //	private String bpno;
-	private String bpimg, bpname, bpevent;
-	private Long bsaleprice, boriprice, curpeople, maxpeople;
+	private String pimg, pname, pevent;
+	private Long saleprice, oriprice, curpeople, maxpeople;
 //	private Long tno;
-	private Boolean bpexpired;
+	private Boolean pexpired;
 //	private Date oregdate;
 //	private List<CoBuyDTO> cdto;
 	private List<String> mname;

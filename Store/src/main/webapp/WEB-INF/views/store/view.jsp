@@ -22,9 +22,9 @@
 				<li>${tobuy.title }</li>
 			</ul>
 			<ul class="breadcrumb">
-				<li>작성자: <b>${tobuy.writer}</b>
+				<li>작성자: <b>${tobuy.mname}</b>
 				</li>
-				<li>날짜: ${tobuy.regdate}</li>
+				<li>날짜: ${tobuy.bregdate}</li>
 				<li>조회수: ${tobuy.viewcount}</li>
 			</ul>
 		</div>
@@ -95,8 +95,8 @@
 					<form name="form1" id="ff" method="post">
 						</label> <label> <span>Your message here:</span> <input
 							type="hidden" id="tno" value="${tobuy.tno }"> <input
-							type="hidden" name="replyer" readonly="readonly"
-							value="${memberDTO.mname }" id="replyer"> <input
+							type="hidden" name="mname" readonly="readonly"
+							value="${memberDTO.mname }" id="mname"> <input
 							type="hidden" name="mid" readonly="readonly"
 							value="${memberDTO.mid }" id="mid"> <textarea
 								name="reply" id="reply" placeholder="댓글을 달아주세요."></textarea>
@@ -226,7 +226,7 @@
 	<script>
 		var tno = $("#tno").val();
 		var mid = $("#mid").val();
-		var mname = $("#replyer").val();
+		var mname = $("#mname").val();
 
 		var replyStr = makeReplies({
 			tno : tno,
@@ -243,9 +243,9 @@
 								for (var i = 0; i < arr.length; i++) {
 									str += "<li><div id='main-content' class='col-md main '>" +
 									"<div class='product'><div class='col-md-6'><div class='image'>"+
-									"<center><img style='margin-top: 50px;' src='"+ arr[i].bpimg+ "'/></center>" +
+									"<center><img style='margin-top: 50px;' src='"+ arr[i].pimg+ "'/></center>" +
 									"</div></div><div class='col-md-6'><div class='caption '><div>상품: " +
-									arr[i].bpname + "</div><div>행사: " + arr[i].bpevent + "</div><div>개당가격: " + arr[i].bsaleprice + "원" +
+									arr[i].pname + "</div><div>행사: " + arr[i].pevent + "</div><div>개당가격: " + arr[i].bsaleprice + "원" +
 									"</div><div class='well'><div>참여자(<a";
 									
 									if(arr[i].curpeople >= arr[i].maxpeople){
@@ -262,7 +262,7 @@
 									}
 
 
-									if (arr[i].bpexpired == true) {
+									if (arr[i].oexpired == true) {
 
 									} else {
 										str += "<form ><button class='participateBtn btn btn-2' ono = "+ arr[i].ono +" mid='" + mid + "' mname='" + mname + "'> 참여하기</button></form>";

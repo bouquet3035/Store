@@ -1,19 +1,19 @@
 function makeReplies(param) {
 	
-	var tno = param.tno;
+	var bno = param.bno;
 	var mid = param.mid
 	
 	function getReplies() {
 
 		var str = "";
-		$.getJSON("/reply/list/1?tno=" + tno, function(arr) {
+		$.getJSON("/reply/list/1?bno=" + bno, function(arr) {
 
 			for (var i = 0; i < arr.length; i++) {
 				var rno = arr[i].rno;
 
 				var rid = arr[i].mid;
-				str += "<li class='rpl'>" + rno + "  " + arr[i].replyer + "<pre>  "
-						+ arr[i].reply + "</pre>  " + arr[i].tno;
+				str += "<li class='rpl'>" + rno + "  " + arr[i].mname + "<pre>  "
+						+ arr[i].reply + "</pre>  " + arr[i].bno;
 				
 				if(mid == rid){
 					
@@ -138,9 +138,9 @@ function makeReplies(param) {
 
 		var data = {
 			reply : $("#reply").val(),
-			replyer : $("#replyer").val(),
+			mname : $("#mname").val(),
 			mid : $("#mid").val(),
-			tno : tno
+			bno : bno
 		};
 
 		$.ajax({

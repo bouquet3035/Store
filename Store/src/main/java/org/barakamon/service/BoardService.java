@@ -15,13 +15,13 @@ public interface BoardService {
 
 	public void registerPost(BoardDTO bDto, BuyProDTO bpDto);
 
-	public BoardDTO get(Long tno);
+	public BoardDTO get(Long bno);
 
-	public void remove(Long tno);
+	public void remove(Long bno);
 	
 	public void modify(BoardDTO bDto, Criteria cri);
 	
-	public BuyProDTO bpInfo(Long tno);
+	public BuyProDTO bpInfo(Long bno);
 
 	public List<CoBuyDTO> cbInfo(Long ono);
 }

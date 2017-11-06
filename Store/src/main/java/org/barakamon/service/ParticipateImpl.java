@@ -33,8 +33,8 @@ public class ParticipateImpl implements ParticipateService {
 	
 
 	@Override
-	public BuyProDTO buyproList(Long tno) {
-		return 	pmapper.buyproList(tno);
+	public BuyProDTO buyproList(Long bno) {
+		return 	pmapper.buyproList(bno);
 	}
 
 	@Override
@@ -49,8 +49,8 @@ public class ParticipateImpl implements ParticipateService {
 
 
 	@Override
-	public List<CoBuyProDTO> viewProInfo(Long tno) {
-		return pmapper.getProInfoList(tno);
+	public List<CoBuyProDTO> viewProInfo(Long bno) {
+		return pmapper.getProInfoList(bno);
 	}
 
 

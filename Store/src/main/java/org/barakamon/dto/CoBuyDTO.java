@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class CoBuyDTO {
 	
-	private Long cno, ono;
+	private Long yno, ono;
 	private String mname, mid;
-	private Date cregdate;
+	private Date yregdate;
 }

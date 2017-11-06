@@ -7,14 +7,14 @@ import lombok.Data;
 @Data
 public class BoardDTO {
 	
-	private Long tno; 
+	private Long bno; 
 	private String title; 
-	private String writer, mid; 
+	private String writer, mid, mname; 
 	private String contents; 
-	private Date regdate; 
+	private Date bregdate; 
 	private Long viewcount;
 	private Long replycount; 
 	private Boolean expired;
-	private Date expiretime;
+	private Date expiredtime;
  
 }

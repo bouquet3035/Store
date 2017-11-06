@@ -63,10 +63,10 @@
 		</tr>
 			<c:forEach var="board" items="${list}">
 				<tr class="listUl">
-					<td>${board.tno}</td>
-					<td><a href="${board.tno}"> ${board.title}</a><span class="rcnt">[${board.replycount }]</span></td>
-					<td>${board.writer}</td>
-					<td>${board.regdate}</td>
+					<td>${board.bno}</td>
+					<td><a href="${board.bno}"> ${board.title}</a><span class="rcnt">[${board.replycount }]</span></td>
+					<td>${board.mname}</td>
+					<td>${board.bregdate}</td>
 					<td>${board.viewcount}</td>
 				</tr>
 		
@@ -148,7 +148,7 @@ color: orange;
 
 <form id="actionForm" action="" searchType="${cri.searchType}" keyword="${cri.keyword}">
 	<input type="hidden" name="page" value=${cri.page}> <input
-		type="hidden" name="tno">
+		type="hidden" name="bno">
 </form>
 <br>
 <br>
@@ -173,9 +173,9 @@ color: orange;
 					
 			$(".listUl td a").on("click", function(e) {
 				e.preventDefault();
-				var tno = $(this).attr("href");
+				var bno = $(this).attr("href");
 				actionForm.attr("action", "/store/view");
-				actionForm.find('input[name="tno"]').val(tno);
+				actionForm.find('input[name="bno"]').val(bno);
 				actionForm.submit();
 			});
 			

@@ -9,7 +9,7 @@ public class ReplyDTO {
 
 	private Integer rno;
 	private String reply;
-	private String replyer, mid;
-	private Date replydate;
-	private Long tno;
+	private String mid, mname;
+	private Date rregdate;
+	private Long bno;
 }

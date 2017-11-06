@@ -35,7 +35,7 @@
 				<div class="col-md-6">
 							<div class="caption ">
 								<div class="title">제목:${tobuy.title }</div>
-								<div class="writer">작성자 :${tobuy.writer}</div>
+								<div class="mname">작성자 :${tobuy.mname}</div>
 								<div class="date">작성날짜:${tobuy.regdate}</div>
 								<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
 								<div class="info">
@@ -50,13 +50,13 @@
 									<form id='modForm' action = "/store/modify" method='post'>
 									<h1>${buypro }</h1>
 									<div>
-									Tno <input type='text' name='tno' readonly="readonly" value="${tobuy.tno }"> 
+									Bno <input type='text' name='bno' readonly="readonly" value="${tobuy.bno }"> 
 									</div>
 									<div>
 									Title <input type='text' name='title' value="${tobuy.title }"> 
 									</div>
 									<div>
-									Writer <input type='text' name='content' value="${tobuy.writer }"> 
+									Mname <input type='text' name='content' value="${tobuy.mname }"> 
 									</div>
 									<div>
 									Contents 

@@ -13,9 +13,9 @@ public interface ParticipateService {
 	
 	public void addPeople(CoBuyDTO dto);
 		
-	public BuyProDTO buyproList(Long tno); 
+	public BuyProDTO buyproList(Long bno); 
 	
 	public List<CoBuyDTO> cobuyList(Long ono); 
 	
-	public List<CoBuyProDTO> viewProInfo(Long tno);
+	public List<CoBuyProDTO> viewProInfo(Long bno);
 }

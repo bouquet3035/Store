@@ -12,7 +12,7 @@ import org.barakamon.dto.ReplyDTO;
 
 public interface ReplyMapper {
 
-	@Insert("insert into tbl_reply (reply, replyer, tno, mid) values (#{reply}, #{replyer}, #{tno}, #{mid})")
+	@Insert("insert into tbl_reply (reply, mname, bno, mid) values (#{reply}, #{mname}, #{bno}, #{mid})")
 	public void create(ReplyDTO rDto);
 	
 	@Select("select * from tbl_reply where rno=#{rno}")
@@ -24,11 +24,11 @@ public interface ReplyMapper {
 	@Delete("delete from tbl_reply where rno = #{rno}")
 	public void delete(Integer rno);
 	
-	@Select("select * from tbl_reply where tno = #{keyword} order by rno limit #{skip}, 100")
+	@Select("select * from tbl_reply where bno = #{keyword} order by rno limit #{skip}, 100")
 	public List<ReplyDTO> list(Criteria cri);
 	
-	@Select("select count(*) from tbl_reply where tno = #{tno}")
-	public Long replycount(Long tno);
+	@Select("select count(*) from tbl_reply where bno = #{bno}")
+	public Long replycount(Long bno);
 
 	
 }

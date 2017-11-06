@@ -32,7 +32,7 @@ public class ParticipateController {
 	public void addParticipate(@RequestBody CoBuyDTO dto, Model model) {
 		
 
-		if(service.checkExpired(dto.getOno()).getBpexpired()) {
+		if(service.checkExpired(dto.getOno()).getOexpired()) {
 			model.addAttribute("fail", HttpStatus.OK); 
 		}else {
 		
@@ -46,7 +46,7 @@ public class ParticipateController {
 	//결론 : 파라미터 값과 반환 타입이 헷갈린다 .
 	@GetMapping("/itemlist")
 	public List<CoBuyProDTO> itemList(BoardDTO dto) {
-		return service.viewProInfo(dto.getTno());
+		return service.viewProInfo(dto.getBno());
 	}
 	
 	@GetMapping("/joined")

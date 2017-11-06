@@ -66,14 +66,14 @@ public class StoreController {
 	
 	@GetMapping("/view")
 	public void view(BoardDTO dto, @ModelAttribute("cri") Criteria cri, Model model) {
-		model.addAttribute("tobuy", service.get(dto.getTno()));
+		model.addAttribute("tobuy", service.get(dto.getBno()));
 //		model.addAttribute("buypro",service.bpInfo(dto.getTno()));
 //		model.addAttribute("cobuy", service.cbInfo(service.bpInfo(dto.getTno()).getOno()));
 	}
 	
 	@PostMapping("/view")
 	public String removePost(BoardDTO bDto, Model model) {
-		service.remove(bDto.getTno());
+		service.remove(bDto.getBno());
 		model.addAttribute("remove", "delsuccess");
 		
 		return "redirect:/store/list";
@@ -91,7 +91,7 @@ public class StoreController {
 		
 		service.modify(bDto, cri);
 		
-		model.addAttribute("tno", bDto.getTno());
+		model.addAttribute("bno", bDto.getBno());
 		model.addAttribute("page", cri.getPage());
 		model.addAttribute("modify", "modsuccess");
 		

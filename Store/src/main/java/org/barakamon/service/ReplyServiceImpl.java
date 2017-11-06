@@ -27,12 +27,12 @@ public class ReplyServiceImpl implements ReplyService {
 
 	@Override
 	public void register(ReplyDTO rDto) {
-		Long tno = rDto.getTno();
+		Long bno = rDto.getBno();
 		mapper.create(rDto);
 		
 		BoardDTO bDto = new BoardDTO();
-		bDto.setTno(tno);
-		bDto.setReplycount(mapper.replycount(tno));
+		bDto.setBno(bno);
+		bDto.setReplycount(mapper.replycount(bno));
 		
 		bmapper.updateReplyCount(bDto);
 
@@ -47,12 +47,12 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	public void remove(Integer rno) {
 		ReplyDTO rDto = mapper.read(rno);
-		Long tno = rDto.getTno();
+		Long bno = rDto.getBno();
 		mapper.delete(rno);
 		
 		BoardDTO bDto = new BoardDTO();
-		bDto.setTno(tno);
-		bDto.setReplycount(mapper.replycount(tno));
+		bDto.setBno(bno);
+		bDto.setReplycount(mapper.replycount(bno));
 		
 		bmapper.updateReplyCount(bDto);
 	}
@@ -64,8 +64,8 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public List<ReplyDTO> listPage(Criteria cri, Long tno) {
-		cri.setKeyword("" + tno);
+	public List<ReplyDTO> listPage(Criteria cri, Long bno) {
+		cri.setKeyword("" + bno);
 		
 		return mapper.list(cri);
 	}

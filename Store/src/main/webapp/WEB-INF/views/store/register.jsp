@@ -67,7 +67,7 @@
 						<li>
 							<div>
 								<form action="/store/list" method="get">
-									<input type="hidden" name="searchType" value="bpno"><input
+									<input type="hidden" name="searchType" value="pno"><input
 										type="hidden" name="keyword" value="${pinfo.pno}">
 									<button type="submit" class="btn btn-2">구매자 검색</button>
 								</form>
@@ -76,15 +76,15 @@
 					</ul>
 					<form method="post" id="mainForm">
 						<div class="well">
-							<input name="writer" value="${memberDTO.mname }"
+							<input name="mname" value="${memberDTO.mname }"
 								readonly="readonly" type="hidden"> <input name="mid"
 								value="${memberDTO.mid }" readonly="readonly" type="hidden"><input
-								type="hidden" name="bpno" value="${pinfo.pno}"> <input
-								type="hidden" name="bpimg" value="${pinfo.pimg}"><input
-								type="hidden" name="bpname" value="${pinfo.pname}"><input
-								type="hidden" name="bpevent" value="${pinfo.pevent}"><input
-								type="hidden" name="bsaleprice" value="${pinfo.saleprice}"><input
-								type="hidden" name="boriprice" value="${pinfo.oriprice}">제목<input
+								type="hidden" name="pno" value="${pinfo.pno}"> <input
+								type="hidden" name="pimg" value="${pinfo.pimg}"><input
+								type="hidden" name="pname" value="${pinfo.pname}"><input
+								type="hidden" name="pevent" value="${pinfo.pevent}"><input
+								type="hidden" name="saleprice" value="${pinfo.saleprice}"><input
+								type="hidden" name="oriprice" value="${pinfo.oriprice}">제목<input
 								type="text" class="form-control" placeholder="Username :"
 								name="title" id="username" required
 								value="${pinfo.pname }같이 구매하실분 구해요 "> <br> 내용 <br>

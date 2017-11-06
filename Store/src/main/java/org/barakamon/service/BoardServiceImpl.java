@@ -79,9 +79,9 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BoardDTO get(Long tno) {
-		mapper.viewInc(tno);
-		BoardDTO dto = mapper.findById(tno);
+	public BoardDTO get(Long bno) {
+		mapper.viewInc(bno);
+		BoardDTO dto = mapper.findById(bno);
 		return dto;
 	}
 
@@ -93,8 +93,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void remove(Long tno) {
-		mapper.remove(tno);
+	public void remove(Long bno) {
+		mapper.remove(bno);
 	}
 
 	@Override
@@ -104,8 +104,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BuyProDTO bpInfo(Long tno) {
-		return bpmapper.bpInfo(tno);
+	public BuyProDTO bpInfo(Long bno) {
+		return bpmapper.bpInfo(bno);
 	}
 
 	@Override

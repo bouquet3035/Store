@@ -10,20 +10,20 @@ import org.barakamon.dto.CoBuyDTO;
 
 public interface BuyProMapper {
 
-	@Insert("insert into tbl_buypro (bpno, bpimg, bpname, bpevent, bsaleprice, boriprice, tno, curpeople, maxpeople, bpexpired) "
-			+ "values(#{bpno}, #{bpimg}, #{bpname}, #{bpevent}, #{bsaleprice}, #{boriprice}, LAST_INSERT_ID(), 1, 2, false)")
+	@Insert("insert into tbl_order (pno, pimg, pname, pevent, saleprice, oriprice, bno, curpeople, maxpeople, oexpired) "
+			+ "values(#{pno}, #{pimg}, #{pname}, #{pevent}, #{saleprice}, #{oriprice}, LAST_INSERT_ID(), 1, 2, false)")
 	public void registerBuyPro(BuyProDTO bpDto);
 
-	@Select("select * from tbl_buypro where tno = #{tno}")
-	public BuyProDTO bpInfo(Long tno);
+	@Select("select * from tbl_order where bno = #{bno}")
+	public BuyProDTO bpInfo(Long bno);
 
-	@Insert("insert into tbl_cobuy (ono, mname, mid) values(LAST_INSERT_ID(), #{writer}, #{mid})")
+	@Insert("insert into tbl_buy (ono, mname, mid) values(LAST_INSERT_ID(), #{writer}, #{mid})")
 	public void registerCoBuy(BoardDTO bDto);
 	
-	@Insert("insert into tbl_cobuy (ono, mname, mid) values(#{ono}, #{mname}, #{mid})")
+	@Insert("insert into tbl_buy (ono, mname, mid) values(#{ono}, #{mname}, #{mid})")
 	public void joinCoBuy(CoBuyDTO cDto);
 
-	@Select("select * from tbl_cobuy where ono = #{ono}")
+	@Select("select * from tbl_buy where ono = #{ono}")
 	public List<CoBuyDTO> cbInfo(Long ono);
 
 }
