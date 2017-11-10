@@ -17,7 +17,7 @@ public interface BuyProMapper {
 	@Select("select * from tbl_order where bno = #{bno}")
 	public BuyProDTO bpInfo(Long bno);
 
-	@Insert("insert into tbl_buy (ono, mname, mid) values(LAST_INSERT_ID(), #{writer}, #{mid})")
+	@Insert("insert into tbl_buy (ono, mname, mid) values(LAST_INSERT_ID(), #{mname}, #{mid})")
 	public void registerCoBuy(BoardDTO bDto);
 	
 	@Insert("insert into tbl_buy (ono, mname, mid) values(#{ono}, #{mname}, #{mid})")

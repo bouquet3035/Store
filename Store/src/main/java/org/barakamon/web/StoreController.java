@@ -42,15 +42,15 @@ public class StoreController {
 	}
 	
 	@GetMapping("/register")
-	public void register(Integer pno, Model model) {	
+	public void register(Integer pno, Model model) {
 		model.addAttribute("pinfo", pservice.pInfo(pno));
 	}
 	
 	@PostMapping("/register")
 	public String registerPost(BoardDTO bDto, BuyProDTO bpDto, Model model) {
 		service.registerPost(bDto, bpDto);
-		// log.info(bDto.toString());
-		// log.info(bpDto.toString());
+		 log.info(bDto.toString());
+		 log.info(bpDto.toString());
 		model.addAttribute("register", "success");
 
 		return "redirect:/store/list";

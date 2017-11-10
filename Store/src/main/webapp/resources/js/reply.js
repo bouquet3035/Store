@@ -12,8 +12,8 @@ function makeReplies(param) {
 				var rno = arr[i].rno;
 
 				var rid = arr[i].mid;
-				str += "<li class='rpl'>" + rno + "  " + arr[i].mname + "<pre>  "
-						+ arr[i].reply + "</pre>  " + arr[i].bno;
+				str += "<li class='rpl'>" + arr[i].mname + "<pre>  "
+						+ arr[i].reply + "</pre>  ";
 				
 				if(mid == rid){
 					

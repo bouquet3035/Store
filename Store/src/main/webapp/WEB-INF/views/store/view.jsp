@@ -70,7 +70,7 @@
 				<div>
 					<form action="/store/modify" method="get">
 						<input type="hidden" name="page" value='${cri.page }'> <input
-							type='hidden' name='tno' value='${tobuy.tno}'>
+							type='hidden' name='bno' value='${tobuy.bno}'>
 						<button class="btn btn-2">수정</button>
 					</form>
 				</div>
@@ -94,7 +94,7 @@
 				<div class="review-form">
 					<form name="form1" id="ff" method="post">
 						</label> <label> <span>Your message here:</span> <input
-							type="hidden" id="tno" value="${tobuy.tno }"> <input
+							type="hidden" id="bno" value="${tobuy.bno }"> <input
 							type="hidden" name="mname" readonly="readonly"
 							value="${memberDTO.mname }" id="mname"> <input
 							type="hidden" name="mid" readonly="readonly"
@@ -140,7 +140,7 @@
 	</div>
 
 	<form>
-		<input type="hidden" id="tno" value="${tobuy.tno }"> <input
+		<input type="hidden" id="bno" value="${tobuy.bno }"> <input
 			type="hidden" name="replyer" readonly="readonly"
 			value="${memberDTO.mname }" id="replyer"> <input
 			type="hidden" name="mid" readonly="readonly"
@@ -162,10 +162,10 @@
 		</ul>
 	</div>
 	<h1>${tobuy}</h1>
-	<h2>${tobuy.tno}</h2>
+	<h2>${tobuy.bno}</h2>
 	<h2>${tobuy.title}</h2>
 	<h2>${tobuy.contents}</h2>
-	<h2>${tobuy.regdate}</h2>
+	<h2>${tobuy.bregdate}</h2>
 	<h2>${tobuy.viewcount}</h2>
 	<h2>페이지</h2>
 	 -->
@@ -186,7 +186,7 @@
 
 		<form action="/store/modify" method="get">
 			<input type="hidden" name="page" value='${cri.page }'> <input
-				type='hidden' name='tno' value='${tobuy.tno}'>
+				type='hidden' name='bno' value='${tobuy.bno}'>
 			<button>수정</button>
 		</form>
 
@@ -224,12 +224,12 @@
 		crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/resources/js/reply.js"></script>
 	<script>
-		var tno = $("#tno").val();
+		var bno = $("#bno").val();
 		var mid = $("#mid").val();
 		var mname = $("#mname").val();
 
 		var replyStr = makeReplies({
-			tno : tno,
+			bno : bno,
 			mid : mid
 		})
 
@@ -237,7 +237,7 @@
 			var str = ""
 
 			$.getJSON(
-							"/participate/itemlist?tno=" + tno,
+							"/participate/itemlist?bno=" + bno,
 							function(arr) {
 
 								for (var i = 0; i < arr.length; i++) {
@@ -245,7 +245,7 @@
 									"<div class='product'><div class='col-md-6'><div class='image'>"+
 									"<center><img style='margin-top: 50px;' src='"+ arr[i].pimg+ "'/></center>" +
 									"</div></div><div class='col-md-6'><div class='caption '><div>상품: " +
-									arr[i].pname + "</div><div>행사: " + arr[i].pevent + "</div><div>개당가격: " + arr[i].bsaleprice + "원" +
+									arr[i].pname + "</div><div>행사: " + arr[i].pevent + "</div><div>개당가격: " + arr[i].saleprice + "원" +
 									"</div><div class='well'><div>참여자(<a";
 									
 									if(arr[i].curpeople >= arr[i].maxpeople){

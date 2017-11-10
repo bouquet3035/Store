@@ -26,7 +26,7 @@
 	FROM tbl_order bp
 		left join tbl_buy cb
 		on bp.ono = cb.ono
-	where tno = #{tno}
+	where bno = #{bno}
 	order by cb.yno
 	</select>
 </mapper>

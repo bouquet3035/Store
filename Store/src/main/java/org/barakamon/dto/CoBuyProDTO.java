@@ -13,7 +13,7 @@ public class CoBuyProDTO {
 	private String pimg, pname, pevent;
 	private Long saleprice, oriprice, curpeople, maxpeople;
 //	private Long tno;
-	private Boolean pexpired;
+	private Boolean oexpired;
 //	private Date oregdate;
 //	private List<CoBuyDTO> cdto;
 	private List<String> mname;
