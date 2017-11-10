@@ -79,7 +79,6 @@
 							<input name="mname" value="${memberDTO.mname }"
 								readonly="readonly" type="hidden"> <input name="mid"
 								value="${memberDTO.mid }" readonly="readonly" type="hidden"><input
-								type="hidden" name="pno" value="${pinfo.pno}"> <input
 								type="hidden" name="pimg" value="${pinfo.pimg}"><input
 								type="hidden" name="pname" value="${pinfo.pname}"><input
 								type="hidden" name="pevent" value="${pinfo.pevent}"><input
